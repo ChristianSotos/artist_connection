@@ -1,0 +1,31 @@
+<div id='register-div'>
+	<button class='close'>X</button>
+	<span id='reg-to-log' class='popup-click' data-alt-src='/login_popup'>Already Have An Account? Login</span>
+	<h1>Artist Information</h1>
+	<%= form_for @user, :url => '/register', :html => {:multipart => true} do |f| %>
+		<p><%= f.label :first_name %>
+		<%= f.text_field :first_name %></p>
+		<p><%= f.label :last_name %>
+		<%= f.text_field :last_name %></p>
+		<p><%= f.label :artist_name %>
+		<%= f.text_field :artist_name %></p>
+		<p><%= f.label :email %>
+		<%= f.text_field :email %></p>
+		<p><%= f.label :phone_number %>
+		<%= f.text_field :phone_number %></p>
+		<p><%= f.label :artist_description %><br>
+		<%= f.text_area :description %></p>
+		<p><%= f.label :facebook %>
+		<%= f.text_field :facebook %></p>
+		<p><%= f.label :twitter %>
+		<%= f.text_field :twitter %></p>
+		<p><%= f.label :instagram %>
+		<%= f.text_field :instagram %></p>
+		<p><%= f.label :soundcloud %>
+		<%= f.text_field :soundcloud %></p>
+		<p><%= f.label :artist_picture %>
+		<%= f.file_field :picture %></p>
+		<%= f.submit :Register %>
+	<% end %>
+
+</div>

@@ -1,0 +1,171 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body{
+	background-color: silver;
+	text-align: center;
+}
+#header{
+	width: 10%;
+	display: inline-block;
+	background-color: black;
+	text-align: right;
+	vertical-align: top;
+	float: left;
+	color: white;
+}
+#header ul{
+	padding-right: 10%;
+	list-style-type: none;
+}
+#header li{
+	padding: 1%;
+}
+#header a{
+	text-decoration: none;
+	color: white;
+}
+#login:hover{
+	cursor: pointer;
+}
+
+#sidebar{
+	display: inline-block;
+	width: 30%;
+	margin: 1%;
+	text-align: center;
+	vertical-align: top;
+	float: right;
+}
+
+#button-bar{
+	display: inline-block;
+	width: 50%;
+	margin: 0 auto;
+	vertical-align:top;
+	position: fixed;
+	text-align: center;
+	padding: 1%;
+}
+#button-bar button{
+	display: inline-block;
+	width: 90%;
+	font-size: 2em;
+	border: 4px solid skyblue;
+	border-radius: 1em;
+	background-color: royalblue;
+	color: white;
+}
+#button-bar button:hover{
+	cursor: pointer;
+	background-color:skyblue;
+	border: 5px solid royalblue;
+}
+
+#playbar{
+	position: fixed;
+	bottom: 0;
+	margin: 0 auto;
+	width: 100%;
+}
+#playbar audio{
+	margin: 0 auto;
+	width: inherit;
+}
+#playbar source{
+	display: inline-block;
+	background-color: black;
+	margin: 0 auto;
+}
+
+#popup{
+	display: none;
+	z-index: 1;
+	padding-top: 10%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.9);
+}
+.close{
+	float: right;
+	border: 1px solid red;
+	border-radius: 5px;
+	color: red;
+	padding: 1%;
+	font-weight: normal;
+}
+.close:hover{
+	font-weight: bold;
+	cursor: pointer;
+	border: 2px solid red;
+}
+
+#login-div, #song-qty-div, #register-div{
+	display: inline-block;
+	border: 4px solid skyblue;
+	border-radius: 1em;
+	text-align: left;
+	padding: 1%;
+	background-color:white;
+}
+
+#login-div input{
+	float: right;
+}
+#login-div h3{
+	display: block;
+	text-align:left;
+	padding: 0;
+	margin: 0;
+}
+#login-div form{
+	text-align: right;
+}
+
+#register-div p{
+	text-align: right;
+}
+#register-div label{
+	float: left;
+}
+#register-div textarea{
+	width: 100%;
+}
+#reg-to-log, #log-to-reg{
+	font-size: 0.7em;
+	float: left;
+	color: royalblue;
+}
+#reg-to-log:hover{
+	font-weight: bold;
+	cursor:pointer;
+}
+
+#song-qty-div button{
+	width: 40%;
+	text-align: center;
+	margin: 1%;
+	border: 4px solid royalblue;
+	border-radius: 1em;
+	color: royalblue;
+}
+#song-qty-div button:hover{
+	border: 5px solid navy;
+	color: navy;
+}

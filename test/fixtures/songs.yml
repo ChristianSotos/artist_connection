@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  play_count: 
+  key: MyString
+  bpm: 
+  analysis: MyText
+  rating: 
+  reviewed: false
+  genre_id: 
+  user_id: 
+  admin_id: 
+  reference_id: 
+
+two:
+  name: MyString
+  play_count: 
+  key: MyString
+  bpm: 
+  analysis: MyText
+  rating: 
+  reviewed: false
+  genre_id: 
+  user_id: 
+  admin_id: 
+  reference_id: 

@@ -1,0 +1,120 @@
+// Place all the styles related to the Songs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#main-div{
+	display: inline-block;
+	width: 50%;
+	margin: 5%  1%;
+}
+#public-songs-div{
+	width: 90%;
+	display: inline-block;
+	margin: 1%;
+	text-align: center;
+	vertical-align: top;
+}
+#search-div{
+	text-align: left;
+}
+#search-form{
+	width: 70%;
+	margin: 1%;
+	display: inline-block;
+}
+#search-form input{
+	text-align: center;
+	border-radius: 1em;
+	margin: 1%;
+}
+#search-form option{
+	text-align: center;
+}
+#search-page{
+	text-align: right;
+	width: 25%;
+	display: inline-block;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+#search-page li{
+	display: inline-block;
+}
+
+#public-songs-div table{
+	border-collapse: collapse;
+	width: 100%;
+}
+#public-songs-div td, th{
+	/*border-right: 1px solid white;*/
+	padding: 0.5em;
+}
+#public-songs-div td:last-child, th:last-child{
+	border-right: none;
+}
+#public-songs-div th{
+	background-color: skyblue;
+	color: white;
+}
+#public-songs-div tr:nth-child(odd){
+	background-color: lightblue;
+}
+#public-songs-div tr:nth-child(even){
+	background-color: powderblue;
+}
+
+a{
+	color: navy;
+	text-decoration: none;
+}
+span:hover,h3:hover,p:hover{
+	cursor:default;
+}
+
+tbody tr:hover{
+	border: 1px solid white;
+}
+
+#user-songs-div{
+	width: 90%;
+	display: inline-block;
+	margin: 2% 1%;
+	text-align: center;
+}
+#user-songs-div table{
+	border-collapse: collapse;
+	width: 100%;
+}
+#user-songs-div td, th{
+	/*border-right: 1px solid white;*/
+	padding: 0.5em;
+}
+#user-songs-div td:last-child, th:last-child{
+	border-right: none;
+}
+#user-songs-div th{
+	background-color: skyblue;
+	color: white;
+}
+#user-songs-div tr:nth-child(odd){
+	background-color: lightblue;
+}
+#user-songs-div tr:nth-child(even){
+	background-color: powderblue;
+}
+.availibility span:hover{
+	color:white;
+}
+
+#references-div{
+	text-align: left;
+}
+#song-info-div{
+	width: 100%;
+}
+#song-info-left, #song-info-right{
+	width: 49%;
+	margin: 0;
+	display:inline-block;
+}
