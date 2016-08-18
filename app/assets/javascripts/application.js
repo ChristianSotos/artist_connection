@@ -29,13 +29,30 @@ $(document).ready(function(){
 		})
 	})
 	$(document).on('click', '.popup-click', function(){
-		action = $(this).attr('data-alt-src');
+		var action = $(this).attr('data-alt-src');
 		$.get(action, function(res){
 			$('#popup').html(res);
 		})
 		$('#popup').css("display", "block")
 	})
+
 	$(document).on('click', '.close', function(){
 		$('#popup').css("display", "none")
+	})
+	$(document).on('submit', 'form', function(){
+		if ($('#picture_checker').val() != "picture"){
+			var action = $(this).attr('action');
+			console.log(action);
+			console.log($(this).serialize());
+			$.post(action, $(this).serialize(), function(res){
+				console.log(res);
+				if (res == "exit"){
+					$('#popup').css("display", "none")
+				}else{
+					$('#popup').html(res);
+				}
+			})
+			return false;
+		}
 	})
 })

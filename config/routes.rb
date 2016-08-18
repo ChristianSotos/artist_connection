@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
   get 'login_popup' => 'session#login_popup'
-  get 'login' => 'session#login'
+  post 'login' => 'session#login'
+  get 'logout' => 'session#logout'
 
   get 'users/show'
   get 'profile' => 'users#profile'
+  post 'register' => 'users#register'
+  get '/users/upload_pic'
+  patch 'users/update_pic' => 'users#update_pic'
 
   get 'songs/index'
   get 'songs/show'
   get 'qty' => 'songs#qty'
+  post 'songs/create' => 'songs#create'
+  get 'songs/new/:qty' => 'songs#new'
 
   get 'new_submit' => 'session#new_submit'
   get 'register' => 'session#register'

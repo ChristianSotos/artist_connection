@@ -1,30 +1,36 @@
+<div id='popup'></div>
 <div id='container'>
+	<div id='sidebar'></div>
 	<%= render :partial => "partials/header" %>
 	<%= render :partial => "partials/button_bar" %>
-	<div id='sidebar'></div>
 
 	<div id='main-div'>
-		<h1>Young Thug</h1>
-		<p>Artist Description Goes Here</p>
+		<h1><%=@user.artist_name%></h1>
+		<p><%=@user.description%></p>
 		<div id='artist-pic-div'>
-			<img src='http://www.passionweiss.com/wp-content/uploads/2016/05/youngthug-thefuturefm.png'>
+			<% if @user.picture_file_name %>
+				<img src="<%=@user.picture.url%>">
+				<button id='add-picture' class='popup-click' data-alt-src='/users/upload_pic'>Upload A Picture</button>
+			<% else %>
+				<button id='add-picture' class='popup-click' data-alt-src='/users/upload_pic'>Upload A Picture</button>
+			<% end %>
 		</div>
 		<div id='artist-info-div'>
-			<p>Name: Jeffery Lamar Williams</p>
-			<p>Email: thugHer@email.com</p>
-			<p>Phone: 1(555)-555-5555</p>
+			<p>Name: <%=@user.first_name%> <%=@user.last_name%></p>
+			<p>Email: <%=@user.email%></p>
+			<p>Phone: <%=@user.phone_number%></p>
 			<p id='follow-artist-title'>Social Media</p>
 			<ul id='follow-artist-list'>
-				<li><a href=''>Facebook</a></li>
-				<li><a href=''>Twitter</a></li>
+				<li><a href='<%=@user.facebook%>'>Facebook</a></li>
+				<li><a href='<%=@user.twitter%>'>Twitter</a></li>
 				<br>
-				<li><a href=''>Instagram</a></li>
-				<li><a href=''>Soundcloud</a></li>
+				<li><a href='<%=@user.instagram%>'>Instagram</a></li>
+				<li><a href='<%=@user.soundcloud%>'>Soundcloud</a></li>
 			</ul>
 		</div>
 		<div id='artist-songs-div'>
 			<table>
-			<thead>
+				<thead>
 					<tr class='song-row'>
 						<th></th>
 						<th><span>Song</span></th>
@@ -33,36 +39,14 @@
 					</tr>
 				</thead>
 				<tbody>
+				<% @songs.each{|s| %>
 					<tr class='song-row'>
 						<td>#</td>
-						<td><span><a href=''>Hercules</span></a></td>
-						<td><span>Hip-Hop</span></td>
-						<td><span>5 stars</span></td>
+						<td><span><%=s.name%></span></td>
+						<td><span><%=s.genre%></span></td>
+						<td><span><%=s.rating%></span></td>
 					</tr>
-					<tr class='song-row'>
-						<td>#</td>
-						<td><span><a href=''>With That</a></span></td>
-						<td><span>Hip-Hop</span></td>
-						<td><span>5 stars</span></td>
-					</tr>
-					<tr class='song-row'>
-						<td>#</td>
-						<td><span><a href=''>Thief in the Night</a></span></td>
-						<td><span>Hip-Hop/R&B</span></td>
-						<td><span>5 stars</span></td>
-					</tr>
-					<tr class='song-row'>
-						<td>#</td>
-						<td><span><a href=''>Best Friend</a></span></td>
-						<td><span>Hip-Hop</span></td>
-						<td><span>5 stars</span></td>
-					</tr>
-					<tr class='song-row'>
-						<td>#</td>
-						<td><span><a href=''>Quarterback</a></span></td>
-						<td><span>Hip-Hop</span></td>
-						<td><span>3 stars</span></td>
-					</tr>
+				<% } %>
 				</tbody>
 			</table>
 		</div>

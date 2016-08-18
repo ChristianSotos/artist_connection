@@ -1,0 +1,8 @@
+<div id='upload-pic-div'>
+	<%= form_for @user, :url => '/users/update_pic', :html => {:multipart => true} do |f| %>
+	<input type='hidden' name='picture_checker' id='picture_checker' value='picture'>
+	<p><label for='user[picture]'>Picture</label>
+	<%= f.file_field :picture %></p>
+	<button>Upload Picture</button>
+	<% end %>
+</div>

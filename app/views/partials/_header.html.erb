@@ -1,9 +1,13 @@
 <div id='header'>
 	<ul>
 		<li><a href='/'>Home</a></li>
-		<li><a href='/profile'>My Profile</a></li>
 		<li><a href=''>About</a></li>
 		<li><a href=''>Contact</a></li>
-		<li id='login' class='popup-click' data-alt-src='/login_popup'>Log In</li>
+		<% if session[:user_id] %>
+			<li><a href='/profile'>My Profile</a></li>
+			<li id='logout'><a href='/logout'>Log Out</a></li>
+		<% else %>
+			<li id='login' class='popup-click' data-alt-src='/login_popup'>Log In</li>
+		<% end %>
 	</ul>
 </div>

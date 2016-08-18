@@ -15,7 +15,17 @@
  */
 body{
 	background-color: silver;
-	text-align: center;
+	color: navy;
+}
+.error input, .error textarea{
+	border-color: red;
+}
+.file-error{
+	border: 1px solid red;
+	padding: 1%;
+}
+#container{
+	height: 100%;
 }
 #header{
 	width: 10%;
@@ -25,9 +35,15 @@ body{
 	vertical-align: top;
 	float: left;
 	color: white;
+	height: 100em;
+	position: fixed;
+	top: 0;
+	left: 0;
 }
 #header ul{
+	padding: 0;
 	padding-right: 10%;
+	padding-top: 100%;
 	list-style-type: none;
 }
 #header li{
@@ -37,31 +53,28 @@ body{
 	text-decoration: none;
 	color: white;
 }
-#login:hover{
+#login:hover, #logout:hover{
 	cursor: pointer;
 }
 
-#sidebar{
-	display: inline-block;
-	width: 30%;
-	margin: 1%;
-	text-align: center;
-	vertical-align: top;
-	float: right;
-}
 
 #button-bar{
-	display: inline-block;
-	width: 50%;
-	margin: 0 auto;
+	display: block;
+	width: 68%;
+	height: 3em;
+	margin: 0;
 	vertical-align:top;
 	position: fixed;
-	text-align: center;
+	text-align: right;
+	top: 0;
+	left: 0;
 	padding: 1%;
+	background-color: black;
 }
 #button-bar button{
 	display: inline-block;
-	width: 90%;
+	width: 65%;
+	margin-right: 10%;
 	font-size: 2em;
 	border: 4px solid skyblue;
 	border-radius: 1em;
@@ -72,6 +85,18 @@ body{
 	cursor: pointer;
 	background-color:skyblue;
 	border: 5px solid royalblue;
+}
+#sidebar{
+	display: inline-block;
+	width: 30%;
+	text-align: center;
+	vertical-align: top;
+	background-color: black;
+	height: 100em;
+	position: fixed;
+	right: 0;
+	top: 0;
+	color: white;
 }
 
 #playbar{
@@ -91,6 +116,7 @@ body{
 }
 
 #popup{
+	text-align: center;
 	display: none;
 	z-index: 1;
 	padding-top: 10%;
@@ -116,7 +142,7 @@ body{
 	border: 2px solid red;
 }
 
-#login-div, #song-qty-div, #register-div{
+#login-div, #song-qty-div, #register-div, #new-song-div, #success-div, #upload-pic-div{
 	display: inline-block;
 	border: 4px solid skyblue;
 	border-radius: 1em;
@@ -152,13 +178,16 @@ body{
 	float: left;
 	color: royalblue;
 }
-#reg-to-log:hover{
+#reg-to-log:hover, #log-to-reg:hover{
 	font-weight: bold;
 	cursor:pointer;
 }
 
+#song-qty-div{
+	text-align: center;
+}
 #song-qty-div button{
-	width: 40%;
+	width: 30%;
 	text-align: center;
 	margin: 1%;
 	border: 4px solid royalblue;
@@ -168,4 +197,11 @@ body{
 #song-qty-div button:hover{
 	border: 5px solid navy;
 	color: navy;
+}
+
+#new-song-div p{
+	text-align: right;
+}
+#new-song-div label{
+	float: left;
 }

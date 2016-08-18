@@ -4,8 +4,9 @@
 
 #main-div{
 	display: inline-block;
-	width: 50%;
-	margin: 5%  1%;
+	width: 60%;
+	margin: 3em  10%;
+	text-align: center;
 }
 #public-songs-div{
 	width: 90%;
@@ -110,8 +111,9 @@ tbody tr:hover{
 #references-div{
 	text-align: left;
 }
-#song-info-div{
-	width: 100%;
+#song-info-div, #references-div{
+	width: 90%;
+	margin: 0 auto;
 }
 #song-info-left, #song-info-right{
 	width: 49%;
