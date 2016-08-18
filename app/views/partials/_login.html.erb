@@ -4,7 +4,7 @@
 	<% if flash[:login_error] %>
 		<p style="color:red; font-size:0.8em;"><%=flash[:login_error]%></p>
 	<% end %>
-	<form action='/login' method='post'>
+	<form action='/login' method='post' class='no-file'>
 		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 		<p>Email: <input type='text' name='email'></p>
 		<p>Password: <input type='password' name='password'></p>

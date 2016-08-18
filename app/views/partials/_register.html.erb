@@ -2,7 +2,8 @@
 	<button class='close'>X</button>
 	<span id='reg-to-log' class='popup-click' data-alt-src='/login_popup'>Already Have An Account? Login</span>
 	<h1>Artist Information</h1>
-	<%= form_for @user, :url => '/register', :html => {:multipart => true} do |f| %>
+	<%= form_for @user, :url => '/register', :html => {:multipart => true, :class => "no-file"} do |f| %>
+		<input type='hidden' name='file-field' id='file-field' value='true'>
 		<p<% if flash[:errors]
 				if flash[:errors][:first_name]%> 
 					class='error'
@@ -75,6 +76,8 @@
 				<% end 
 			end %>><%= f.label :soundcloud %>
 		<%= f.text_field :soundcloud %></p>
+		<!-- <p><label for='user[picture]'>Picture</label>
+		<%= f.file_field :picture %></p> -->
 		<button>Register</button>
 	<% end %>
 </div>

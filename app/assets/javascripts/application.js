@@ -17,13 +17,13 @@
 
 $(document).ready(function(){
 	$(document).on('click', '.artist-row', function(){
-		var url = '/users/show';
+		var url = '/users/show/'+$(this).attr('id');
 		$.get(url, function(res){
 			$('#sidebar').html(res);
 		})
 	})
 	$(document).on('click', '.song-row', function(){
-		var url = '/songs/show';
+		var url = $(this).attr('data-alt-src');
 		$.get(url, function(res){
 			$('#sidebar').html(res);
 		})
@@ -39,20 +39,50 @@ $(document).ready(function(){
 	$(document).on('click', '.close', function(){
 		$('#popup').css("display", "none")
 	})
-	$(document).on('submit', 'form', function(){
-		if ($('#picture_checker').val() != "picture"){
-			var action = $(this).attr('action');
-			console.log(action);
-			console.log($(this).serialize());
-			$.post(action, $(this).serialize(), function(res){
-				console.log(res);
-				if (res == "exit"){
-					$('#popup').css("display", "none")
-				}else{
-					$('#popup').html(res);
-				}
-			})
-			return false;
+	$(document).on('submit', '.no-file', function(){
+		var action = $(this).attr('action');
+		$.post(action, $(this).serialize(), function(res){
+			console.log(res);
+			if (res == "exit"){
+				$('#popup').css("display", "none");
+			}else{
+				$('#popup').html(res);
+			}
+		})
+		return false;
+	})
+	$(document).on('click', '.play-btn', function(){
+		url = "/songs/play_count/"+$(this).attr('data-alt-src');
+		$.get(url);
+		$('#play-src').attr('src', $(this).attr('id'));
+		$('#audio').trigger("load");
+		$('#audio').trigger("play");
+	})
+	$(document).on('click', '.show-to-edit', function(){
+		var id = "#edit-" + $(this).attr('id'); 
+		$(this).hide();
+		$(id).show();
+	})
+	$(document).on('change', '.song-edit', function(){
+		var url = "/songs/update/"+$(this).attr('data-alt-src')
+		obj = {
+			field: $(this).attr('data-alt-field'),
+			value: $(this).val()
 		}
+		$.post(url, obj, function(res){
+			$('#sidebar').html(res);
+		})
+	})
+	$(document).on('change', '.top-search', function(){
+		var search_input = $('#top-search-input').val();
+		var genre_input = $('#top-search-genre').val();
+		obj = {
+			search: search_input,
+			genre: genre_input
+		}
+		$.get("/songs/top_search", obj, function(res){
+			$('#public-songs-div').html(res);
+		})
+		return false
 	})
 })

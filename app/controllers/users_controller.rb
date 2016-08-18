@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	def show
+		@artist = User.find(params[:id])
 		render :partial => "partials/artist_info"
 	end
 	def profile
@@ -10,9 +11,10 @@ class UsersController < ApplicationController
 		new_user = User.new(user_params)
 		if new_user.save
 			if session[:from_new_song]
+				session[:from_new_song] = false
 				render :partial => "partials/qty"
 			else
-				rediect_to "/"
+				rediect_to "/songs/index"
 			end
 		else
 			flash[:errors] = new_user.errors.messages
@@ -27,12 +29,11 @@ class UsersController < ApplicationController
 	end
 
 	def update_pic
-		user = current_user
-		user.update(pic_params)
-		if !user.valid?
-			flash[:errors] = "invalid picture type"
-			render :partial => "partials/upload_picture"
+		@user = current_user
+		if !params[:user]
+			redirect_to "/profile"
 		else
+			@user.update(pic_params)
 			redirect_to "/profile"
 		end
 	end

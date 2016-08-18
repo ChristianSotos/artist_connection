@@ -7,5 +7,9 @@ class ApplicationController < ActionController::Base
   	user = User.find(session[:user_id])
   	user
   end
-  helper_method :current_user
+  def get_genres
+  	genres = Genre.all.order(:name)
+  	genres
+  end
+  helper_method :current_user, :get_genres
 end

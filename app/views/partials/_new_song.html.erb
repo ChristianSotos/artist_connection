@@ -1,7 +1,12 @@
 <div id='new-song-div'>
 	<span class='close'>X</span>
 	<h1>Song Information</h1>
-	<%= form_for @song, :url => '/songs/create', :html => {:multipart => true} do |f| %>
+	<% if flash[:errors]
+		flash[:errors].each{|e|%>
+		<p><%=e%></p>
+		<% }
+	end %>
+	<%= form_for @song, :url => '/songs/create', :html => {:multipart => true, :class => "no-file"} do |f| %>
 		<p><%= f.label :name %>
 		<%= f.text_field :name %></p>
 		<p><label for='song[bpm]'>BPM</label>
@@ -17,12 +22,10 @@
 		<p><label for='song[genre]'>Genre</label>
 			<select name='song[genre]'>
 			<%	@genres.each{|g| %>
-					<option value="<$=g.id%>"><%=g.name%></option>
+					<option value="<%=g.id%>"><%=g.name%></option>
 			<% } %>
 			</select>
 		</p>
-		<p><%= f.label :audio_file %>
-		<%= f.file_field :audio_file %></p>
 		<% if session[:song_qty] > 1 %>
 			<button>Add Next Song</button>
 		<% else %>

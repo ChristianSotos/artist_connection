@@ -32,15 +32,14 @@
 #search-form option{
 	text-align: center;
 }
-#search-page{
-	text-align: right;
+#top-songs-search{
 	width: 25%;
 	display: inline-block;
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
 }
-#search-page li{
+#top-songs-search li{
 	display: inline-block;
 }
 
@@ -69,9 +68,6 @@
 a{
 	color: navy;
 	text-decoration: none;
-}
-span:hover,h3:hover,p:hover{
-	cursor:default;
 }
 
 tbody tr:hover{
@@ -105,19 +101,31 @@ tbody tr:hover{
 #user-songs-div tr:nth-child(even){
 	background-color: powderblue;
 }
-.availibility span:hover{
-	color:white;
-}
 
-#references-div{
-	text-align: left;
+#song-edit-div{
+	border-bottom: 1px solid white;
 }
-#song-info-div, #references-div{
-	width: 90%;
-	margin: 0 auto;
-}
-#song-info-left, #song-info-right{
+#song-edit-div div{
+	border-collapse: collapse;
 	width: 49%;
+	display: inline-block;
+	text-align: center;
 	margin: 0;
-	display:inline-block;
+}
+#song-edit-div span{
+	display: block;
+	margin-bottom: 5%;
+}
+#song-edit-left-div{
+}
+#song-edit-right-div{
+	border-left: 1px solid white;
+}
+#song-edit-div input, #song-edit-div select{
+	display: none;
+	text-align: center;
+	width: 80%;
+}
+#song-edit-div h1 input{
+	font-size: 1em;
 }

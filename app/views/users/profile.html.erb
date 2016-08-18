@@ -12,7 +12,7 @@
 				<img src="<%=@user.picture.url%>">
 				<button id='add-picture' class='popup-click' data-alt-src='/users/upload_pic'>Upload A Picture</button>
 			<% else %>
-				<button id='add-picture' class='popup-click' data-alt-src='/users/upload_pic'>Upload A Picture</button>
+				<button id='add-picture' class='popup-click' data-alt-src='/users/upload_pic'>Update Picture</button>
 			<% end %>
 		</div>
 		<div id='artist-info-div'>
@@ -40,11 +40,22 @@
 				</thead>
 				<tbody>
 				<% @songs.each{|s| %>
-					<tr class='song-row'>
-						<td>#</td>
+					<tr class='song-row' data-alt-src='/songs/show/<%=s.id%>'>
+						<td>
+						<% if !s.audio_file_file_name %>
+							<button class='popup-click' data-alt-src='/songs/upload_audio/<%=s.id%>'>Song</button>
+						<% else %>
+							<button class='play-btn' id="<%=s.audio_file.url%>">Play</button>
+						<% end %></td>
 						<td><span><%=s.name%></span></td>
-						<td><span><%=s.genre%></span></td>
-						<td><span><%=s.rating%></span></td>
+						<td><span><%=s.genre.name%></span></td>
+						<td>
+						<% if s.reviewed %>
+							<span><%=s.rating%></span>
+						<% else %>
+							<span class='pending'>Pending</span>
+						<% end %>
+						</td>
 					</tr>
 				<% } %>
 				</tbody>
@@ -56,4 +67,10 @@
 			<li>--></li>
 		</ul>
 	</div>
+	<% if flash[:errors]
+		flash[:errors].each{|e|%>
+		<p style="display:block"><%=e%></p>
+		<% }
+	end %>
 </div>
+<%= render :partial => "partials/playbar" %>

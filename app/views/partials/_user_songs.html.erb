@@ -1,0 +1,40 @@
+<h3>User Songs</h3>
+<table>
+	<thead>
+		<tr class='song-row'>
+			<th></th>
+			<th><span>Song</span></th>
+			<th><span>Genre</span></th>
+			<th><span>Availibility</span></th>
+			<th><span>Rating</span></th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @user_songs.each{|s| %>
+		<tr class='song-row' data-alt-src='/songs/show/<%=s.id%>'>
+			<td>
+			<% if !s.audio_file_file_name %>
+				<button class='popup-click' data-alt-src='/songs/upload_audio/<%=s.id%>'>Song</button>
+			<% else %>
+				<button class='play-btn' id="<%=s.audio_file.url%>" data-alt-src='<%=s.id%>'>Play</button>
+			<% end %></td>
+			<td><span><%=s.name%></span></td>
+			<td><span><%=s.genre.name%></span></td>
+			<td>
+			<% if s.public %>
+				<span>Public</span>
+			<% else %>
+				<span>Private</span>
+			<% end %>
+			</td>
+			<td>
+			<% if s.reviewed %>
+				<span><%=s.rating%></span>
+			<% else %>
+				<span class='pending'>Pending</span>
+			<% end %>
+			</td>
+		</tr>
+	<% } %>
+	</tbody>
+</table>
