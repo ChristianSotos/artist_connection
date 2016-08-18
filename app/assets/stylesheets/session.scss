@@ -1,3 +1,135 @@
 // Place all the styles related to the Session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#head {
+		background-color: black;
+		height: 4%;
+		width: 90%;
+		margin-bottom: 1em;
+		text-align: left;
+		padding-top: .5em;
+		vertical-align: top;
+		opacity: .9;
+		margin-left: 10%;
+}
+	#head h1, h3 {
+		color: black;
+		display: block;
+		margin-left: 1%;
+		font-family: 'Oswald', sans-serif;
+		background-color: white;
+	}
+	#head h1 {
+		font-size: 3em;
+		font-weight: bolder;
+		margin-top: 0px;
+		margin-bottom: 1%;
+	}
+	#head h3 {
+		font-size: 1.5em;
+		font-style: italic;
+		margin-top: 0px;
+	}
+
+#grammy {
+	width: 13%;
+	float: right;
+	vertical-align: top;
+}
+	#grammy img {
+		width: 100%;
+	}
+
+.home-main-content {
+	background-color: white;
+	margin-left: 20%;
+	width: 60%;
+	padding: 1%;
+	opacity: .9;
+	margin-bottom: 3%;
+}
+	#home-main-content h3{
+		font-size: 1.5em;
+	}
+	#home-main-content p{
+		font-size: 1.2em;
+	}
+
+
+#main-submit-button-div {
+	margin-left: 10%;
+}
+#session-index-video {
+	background-color: white;
+	padding: .5%;
+	margin: .5%;
+	display: inline-block;
+}
+
+#main-img-div {
+	width: 60%;
+	text-align: left;
+	margin-left: 20%;
+	vertical-align: top;
+	margin-bottom: 3%;
+
+}
+.horizon-img {
+	width: 60%;
+	display: inline-block;
+	margin-top: 3%;
+}
+	.horizon-img img{
+		width: 100%;
+	}
+
+#get-discovered-div {
+	display: inline-block;
+	width: 37%;
+	vertical-align: top;
+	background-color: white;
+	text-align: center;
+	margin-left: 2%;
+	opacity: .9;
+	margin-top: 4%;
+	}
+	#get-discovered-div h4 {
+		margin: 0%;
+		padding: 3%;
+		text-align: center;
+		font-size: 2em;
+		margin-top: 4%;
+	}
+	#get-discovered-div h5 {
+		margin: 0%;
+		padding: 3%;
+		text-align: center;
+		font-size: 1.5em;
+	}
+	#get-discovered-div button {
+		margin: 3%;
+		height: 3em;
+		font-size: 1.75em;
+		font-weight: bolder;
+		padding: 3%;
+		border-radius: 5px;
+	}
+
+.column-third {
+	display: inline-block;
+	width: 30%;
+	/*border: lightgrey solid 1px;*/
+	vertical-align: top;
+	margin-right: 2%;
+	margin-bottom: 2%;
+}
+	.column-third h3 {
+		font-size: 1.5em;
+	}
+
+
+
+
+

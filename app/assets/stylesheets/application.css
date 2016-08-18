@@ -16,6 +16,10 @@
 body{
 	background-color: silver;
 	color: navy;
+	background-image: url("future.jpg");
+	background-size: fill;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 .error input, .error textarea{
 	border-color: red;
@@ -26,6 +30,7 @@ body{
 }
 #container{
 	height: 100%;
+	/*font-family: Futura, “Trebuchet MS”, Arial, sans-serif;*/
 }
 #header{
 	width: 10%;
@@ -33,27 +38,31 @@ body{
 	background-color: black;
 	text-align: right;
 	vertical-align: top;
-	float: left;
-	color: white;
-	height: 100em;
 	position: fixed;
 	top: 0;
 	left: 0;
+	color: white;
 }
 #header ul{
-	padding: 0;
+	padding-left: 0%;
 	padding-right: 10%;
 	padding-top: 100%;
 	list-style-type: none;
 }
 #header li{
 	padding: 1%;
+	font-size: 1.25em;
 }
 #header a{
 	text-decoration: none;
 	color: white;
+
 }
-#login:hover, #logout:hover{
+
+#login {
+	margin-top: 100%;
+}
+#header li:hover{
 	cursor: pointer;
 }
 
@@ -91,8 +100,6 @@ body{
 	width: 30%;
 	text-align: center;
 	vertical-align: top;
-	background-color: black;
-	height: 100em;
 	position: fixed;
 	right: 0;
 	top: 0;
