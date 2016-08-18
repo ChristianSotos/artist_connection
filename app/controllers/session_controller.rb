@@ -2,6 +2,11 @@ class SessionController < ApplicationController
 	def login_popup
 		render :partial => "partials/login"
 	end
+
+	def index
+		
+	end
+
 	def login
 	end
 	def logout
