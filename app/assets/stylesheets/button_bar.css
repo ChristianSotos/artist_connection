@@ -1,0 +1,28 @@
+#button-bar{
+	display: block;
+	width: 68%;
+	height: 3em;
+	margin: 0;
+	vertical-align:top;
+	position: fixed;
+	text-align: right;
+	top: 0;
+	left: 0;
+	padding: 1%;
+	background-color: black;
+}
+#button-bar button{
+	display: inline-block;
+	width: 65%;
+	margin-right: 10%;
+	font-size: 2em;
+	border: 4px solid skyblue;
+	border-radius: 1em;
+	background-color: royalblue;
+	color: white;
+}
+#button-bar button:hover{
+	cursor: pointer;
+	background-color:skyblue;
+	border: 5px solid royalblue;
+}

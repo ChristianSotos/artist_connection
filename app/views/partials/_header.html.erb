@@ -4,7 +4,11 @@
 		<li><a href="">Our Services</a></li>
 		<li><a href=''>About Us</a></li>
 		<li><a href=''>Contact</a></li>
-		<li id='login' class='popup-click' data-alt-src='/login_popup'>Log In</li>
-		<li><a href='/profile'>My Profile</a></li>
+		<% if session[:user_id] %>
+			<li><a href='/profile'>My Profile</a></li>
+			<li id='logout'><a href='/logout'>Log Out</a></li>
+		<% else %>
+			<li id='login' class='popup-click' data-alt-src='/login_popup'>Log In</li>
+		<% end %>
 	</ul>
 </div>

@@ -1,0 +1,18 @@
+#register-div p{
+	text-align: right;
+}
+#register-div label{
+	float: left;
+}
+#register-div textarea{
+	width: 100%;
+}
+#reg-to-log{
+	font-size: 0.7em;
+	float: left;
+	color: royalblue;
+}
+#reg-to-log:hover{
+	font-weight: bold;
+	cursor:pointer;
+}

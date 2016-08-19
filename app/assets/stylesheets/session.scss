@@ -10,14 +10,15 @@ body {
 #head {
 		background-color: black;
 		height: 4%;
-		width: 100%;
+		width: 90%;
 		margin-bottom: 1em;
 		text-align: left;
 		padding-top: .5em;
 		vertical-align: top;
 		opacity: .9;
+		margin-left: 10%;
 }
-	#head h1, h3 {
+	#head h1, #head h3 {
 		color: black;
 		display: block;
 		margin-left: 1%;

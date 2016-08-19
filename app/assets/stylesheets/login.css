@@ -1,0 +1,21 @@
+#login-div input{
+	float: right;
+}
+#login-div h3{
+	display: block;
+	text-align:left;
+	padding: 0;
+	margin: 0;
+}
+#login-div form{
+	text-align: right;
+}
+#log-to-reg{
+	font-size: 0.7em;
+	float: left;
+	color: royalblue;
+}
+#log-to-reg:hover{
+	font-weight: bold;
+	cursor:pointer;
+}

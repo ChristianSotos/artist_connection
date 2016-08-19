@@ -1,0 +1,36 @@
+#new-song-div{
+	padding: 2%;
+	max-height: 60%;
+	overflow: scroll;
+	vertical-align: top;
+}
+#new-song-div p{
+	text-align: right;
+	white-space: nowrap;
+}
+#new-song-div label, .song-complete-div span{
+	float: left;
+}
+.small-input input{
+	width: 25%;
+}
+.new-song-form, .song-complete-div{
+	display: inline-block;
+	/*width: 45%;*/
+	padding: 1em;
+}
+/*.new-song-1, .new-song-3{
+	border-right: 2px solid black;
+}
+.new-song-1, .new-song-2{
+	border-bottom: 1px solid black;
+}
+.new-song-2, .new-song-4{
+	border-left: 2px solid black;
+}
+.new-song-3, .new-song-4{
+	border-top: 1px solid black;
+}
+.new-song-5{
+	border-top: 2px solid black;
+}*/

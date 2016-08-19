@@ -1,5 +1,5 @@
 class Genre < ActiveRecord::Base
-	has_many :songs
+	has_many :songs	
 
-	validates :name, presence:true, uniqueness{case_sensitive:false}
+	validates :name, presence:true, uniqueness:{case_sensitive:false}
 end

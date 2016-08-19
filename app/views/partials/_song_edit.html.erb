@@ -1,0 +1,47 @@
+<div id='song-div'>
+	<div id='song-edit-div'>
+		<h1 id='name' class='show-to-edit'><%=@song.name%></h1>
+		<h1><input type='text' value='<%=@song.name%>' id='edit-name' class='song-edit' data-alt-field="name" data-alt-src="<%=@song.id%>"></h1>
+		<div id='song-edit-left-div'>
+			<span id='key' class='show-to-edit'>Key: <%=@song.key%></span>
+			<span><input type='text' value='<%=@song.key%>' id='edit-key' class='song-edit' data-alt-field="key" data-alt-src="<%=@song.id%>"></span>
+			<span id='public' class='show-to-edit'>Availability: 
+				<% if @song.public %>
+					Public
+				<% else %>
+					Private
+				<% end %>
+			</span>
+			<span>
+			<select id='edit-public' class='song-edit' data-alt-field="public" data-alt-src="<%=@song.id%>">
+				<option value='true'
+				<% if @song.public == true %>
+				selected='selected'
+				<% end %>
+				>Public</option>
+				<option value='false'
+				<% if @song.public == false %>
+				selected='selected'
+				<% end %>
+				>Private</option>
+			</select>
+			</span>
+		</div>
+		<div id='song-edit-right-div'>
+			<span  id='bpm' class='show-to-edit'>BPM: <%=@song.bpm%></span>
+			<span><input type='text' value='<%=@song.bpm%>' id='edit-bpm' class='song-edit' data-alt-field="bpm" data-alt-src="<%=@song.id%>"></span>
+			<span id='genre' class='show-to-edit'>Genre : <%=@song.genre.name%></span>
+			<select id='edit-genre' class='song-edit' data-alt-field="genre" data-alt-src="<%=@song.id%>">
+			<% genres = get_genres
+				genres.each{|g| %>
+				<option value='<%=g.id%>'
+				<% if @song.genre_id == g.id %>
+				selected='selected'
+				<% end %>
+				><%=g.name%></option>
+			<% } %>
+			</select>
+		</div>
+	</div>
+<button class='popup-click' data-alt-src='/songs/upload_audio/<%=@song.id%>'>Upload New Audio File</button>
+</div>

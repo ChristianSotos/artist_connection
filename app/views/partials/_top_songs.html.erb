@@ -1,0 +1,35 @@
+<h3>Top Reviewed Songs</h3>
+<div id='search-div'>
+	<form action='' method='get' id='search-form'>
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden" id>
+		<input class='top-search' id='top-search-input' type='text' name='artist-song' placeholder="Search">
+		<select class='top-search' id='top-search-genre' name='genre'>
+			<option value='0' selected='selected'>All</option>
+		<% genres = get_genres
+			genres.each{|g| %>
+			<option value='<%=g.id%>'><%=g.name%></option>
+		<% } %>
+		</select>
+	</form>
+</div>
+<table>
+	<thead>
+		<tr>
+			<th><span></span></th>
+			<th><span>Artist</span></th>
+			<th><span>Song</span></th>
+			<th><span>Genre</span></th>
+		</tr>
+	</thead>
+	<tbody>
+	<% @songs.each{|song|%>
+		<tr class='artist-row' id="<%=song.user.id%>">
+			<td><button class='play-btn' id="<%=song.audio_file.url%>" data-alt-src='<%=song.id%>'>Play</button></td>
+			<td><span><%=song.user.artist_name%></td>
+			<td><span><%=song.name%></span></td>
+			<td><span><%=song.genre.name%></span></td>
+		</tr>
+	<% } %>
+	</tbody>
+</table>
+

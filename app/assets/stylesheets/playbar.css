@@ -1,0 +1,16 @@
+#playbar{
+	position: fixed;
+	bottom: 0;
+	margin: 0 auto;
+	width: 100%;
+}
+#playbar audio{
+	margin: 0 auto;
+	width: inherit;
+	display: block;
+}
+#playbar source{
+	display: inline-block;
+	background-color: black;
+	margin: 0 auto;
+}
