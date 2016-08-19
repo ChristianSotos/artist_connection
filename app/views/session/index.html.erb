@@ -14,9 +14,11 @@
 
 <%= render :partial => "partials/header" %>
 
-<div id="main-img-div">
-	<div class="horizon-img">
-		<%= image_tag "guitarist-close-up"%>
+<div id="main-top-content">
+	<div id="main-img-div">
+		<div class="horizon-img">
+			<%= image_tag "/assets/images/guitarist-close-up.jpeg"%>
+		</div>
 	</div>
 	<div id="get-discovered-div">
 		<h4>Get Discovered Today</h4>
@@ -24,6 +26,7 @@
 		<a href="/songs/index"><button>SUBMIT SONGS</button></a>
 	</div>
 </div>
+
 
 <div class="home-main-content">
 	<div class="column-third">
@@ -38,7 +41,7 @@
 	<div class="column-third">
 		<h3>Discover Other Upcoming Artists</h3>
 		<%= image_tag("magnifyingglass", width: 110) %>
-	</div>
+	</div> 
 </div>
 
 

@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+body {
+	font-family: 'Oswald', sans-serif;
+}
+
 #head {
 		background-color: black;
 		height: 4%;
@@ -49,34 +53,30 @@
 	opacity: .9;
 	margin-bottom: 3%;
 }
-	#home-main-content h3{
+	.home-main-content h3{
 		font-size: 1.5em;
 	}
-	#home-main-content p{
-		font-size: 1.2em;
+	.home-main-content p{
+		font-size: 1.5em;
 	}
 
 
-#main-submit-button-div {
-	margin-left: 10%;
-}
-#session-index-video {
-	background-color: white;
-	padding: .5%;
-	margin: .5%;
-	display: inline-block;
+#main-top-content {
+	margin-left: 20%;
+	width: 60%;
+	text-align: left;
 }
 
 #main-img-div {
-	width: 60%;
-	text-align: left;
-	margin-left: 20%;
+	width: 70%;
+	
 	vertical-align: top;
 	margin-bottom: 3%;
-
+	text-align: left;
+	display: inline-block;
 }
 .horizon-img {
-	width: 60%;
+	width: 100%;
 	display: inline-block;
 	margin-top: 3%;
 }
@@ -86,13 +86,12 @@
 
 #get-discovered-div {
 	display: inline-block;
-	width: 37%;
+	width: 25%;
 	vertical-align: top;
 	background-color: white;
 	text-align: center;
-	margin-left: 2%;
 	opacity: .9;
-	margin-top: 4%;
+/*	margin-top: 4%;*/
 	}
 	#get-discovered-div h4 {
 		margin: 0%;
@@ -117,6 +116,7 @@
 	}
 
 .column-third {
+	font-family: 'Oswald', sans-serif;
 	display: inline-block;
 	width: 30%;
 	/*border: lightgrey solid 1px;*/
