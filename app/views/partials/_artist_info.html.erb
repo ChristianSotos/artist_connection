@@ -1,40 +1,44 @@
-<h2><%=@artist.artist_name%></h2>
-<p><%=@artist.description%></p>
-<p>Email: <%=@artist.email%></p>
-<div id='artist-pic-div'>
-	<% if @artist.picture_file_name %>
-		<img src='<%=@artist.picture.url%>'>
-	<% end %>
-</div>
-<div id='artist-info-div'>
-	<p id='follow-artist-title'>Follow This Artist</p>
-	<ul id='follow-artist-list'>
-		<li><a href='<%=@artist.facebook%>'>Facebook</a></li>
-		<li><a href='<%=@artist.twitter%>'>Twitter</a></li>
+<div id='artist-info-sidebar'>
+	<h2><%=@artist.artist_name%></h2>
+	<p><%=@artist.description%></p>
+	<div id='artist-pic-div'>
+		<% if @artist.picture_file_name %>
+			<img src='<%=@artist.picture.url%>'>
+		<% end %>
+	</div>
+	<div id='artist-info-div'>
+		<h4 id='follow-artist-title'>Follow This Artist</h4>
+		<ul id='follow-artist-list'>
+			<li><a href='<%=@artist.facebook%>'>Facebook</a></li>
+			<li><a href='<%=@artist.twitter%>'>Twitter</a></li>
+			<br>
+			<li><a href='<%=@artist.instagram%>'>Instagram</a></li>
+			<li><a href='<%=@artist.soundcloud%>'>Soundcloud</a></li>
+		</ul>
+		<h4>Contact This Artist</h4>
+		<p id='artist-contact-email'><%=@artist.email%></p>
 		<br>
-		<li><a href='<%=@artist.instagram%>'>Instagram</a></li>
-		<li><a href='<%=@artist.soundcloud%>'>Soundcloud</a></li>
-	</ul>
-</div>
-<div id='artist-songs-div'>
-	<table>
-		<thead>
-			<tr class='song-row'>
-				<th></th>
-				<th><span>Song</span></th>
-				<th><span>Genre</span></th>
-			</tr>
-		</thead>
-		<tbody>
-		<% @artist_songs.each{|s| %>
-			<tr>
-				<td>
-				<button class='play-btn' id="<%=s.audio_file.url%>">P</button>
-				</td>
-				<td><span><%=s.name%></span></td>
-				<td><span><%=s.genre.name%></span></td>
-			</tr>
-		<% } %>
-		</tbody>
-	</table>
+	</div>
+	<div id='artist-songs-div'>
+		<table>
+			<thead>
+				<tr class='song-row'>
+					<th></th>
+					<th><span>Song</span></th>
+					<th><span>Genre</span></th>
+				</tr>
+			</thead>
+			<tbody>
+			<% @artist_songs.each{|s| %>
+				<tr>
+					<td>
+					<button class='play-btn' id="<%=s.audio_file.url%>">P</button>
+					</td>
+					<td><span><%=s.name%></span></td>
+					<td><span><%=s.genre.name%></span></td>
+				</tr>
+			<% } %>
+			</tbody>
+		</table>
+	</div>
 </div>

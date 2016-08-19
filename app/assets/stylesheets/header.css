@@ -28,3 +28,23 @@
 	cursor: default;
 	background-color: grey;
 }
+#head-text{
+	background-color: white;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+#head-text h1, #head-text h3{
+	margin: 0;
+}
+#grammy-div{
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 6em;
+	margin: 0;
+}
+#grammy-div img{
+	width: 100%;
+	margin: 0;
+}

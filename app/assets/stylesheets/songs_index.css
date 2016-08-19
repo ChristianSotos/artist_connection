@@ -1,13 +1,14 @@
-#public-songs-div{
+#top-songs-div, #user-songs-div{
 	width: 90%;
 	display: inline-block;
-	margin: 1%;
+	margin: 1em auto;
 	text-align: center;
 	vertical-align: top;
+	background-color: rgba(0,0,0,0.6);
+	padding: 1em 2em;
+	border-radius: 1em;
 }
-#user-songs-div{
-	width: 90%;
-	display: inline-block;
-	margin: 2% 1%;
-	text-align: center;
+#top-songs-div h3, #user-songs-div h3{
+	margin: 0;
+	margin-bottom: 1em;
 }
