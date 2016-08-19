@@ -21,6 +21,9 @@ body{
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
+table{
+	color: navy;
+}
 td span{
 	white-space: nowrap;
 	text-overflow: ellipsis;
@@ -31,8 +34,11 @@ span:hover,h3:hover,p:hover,li:hover{
 a:hover{
 	cursor:default;
 }
+.song-row, .artist-row{
+	border: 1px solid none;
+}
 .song-row:hover, .artist-row:hover{
-	border: 1px solid white;
+	color: white;
 }
 #container{
 	height: 100%;
@@ -41,11 +47,12 @@ a:hover{
 #sidebar{
 	display: inline-block;
 	width: 30%;
+	overflow: scroll;
 	text-align: center;
 	vertical-align: top;
 	position: fixed;
 	right: 0;
-	top: 2em;
+	top: 6em;
 	color: white;
 }
 #sidebar table{
@@ -54,7 +61,7 @@ a:hover{
 #main-div{
 	display: inline-block;
 	width: 60%;
-	margin: 3em  10%;
+	margin: 6em  10%;
 	text-align: center;
 	z-index: 1;
 }
