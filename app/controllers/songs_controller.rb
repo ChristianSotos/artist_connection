@@ -35,7 +35,10 @@ class SongsController < ApplicationController
 		render :partial => "partials/qty"
 	end
 	def new
+		session[:songs_made] = nil
 		session[:song_qty] = params[:qty].to_i
+		session[:songs_pending] = session[:song_qty]
+		session[:songs_made] = Array.new(session[:song_qty])
 		@song = Song.new
 		@genres = Genre.all.order(:name)
 		render :partial => "partials/new_song"
@@ -48,23 +51,36 @@ class SongsController < ApplicationController
 
 		if new_song.valid?
 			new_song.save
-			session[:song_qty] = session[:song_qty] - 1
-			if session[:song_qty] == 0
-				render :partial => "partials/success" 
-			else
-				@genres = Genre.all.order(:name)
-				@song = Song.new
-				render :partial => "partials/new_song"
-			end
+			session[:songs_pending] = session[:songs_pending] - 1
+			num = params[:songnum].to_i
+			session[:songs_made][num-1] = new_song
 		else
+			flash[:errors] = new_song.errors.full_messages
+		end
 			@genres = Genre.all.order(:name)
 			@song = Song.new
-			flash[:errors] = new_song.errors.full_messages
 			render :partial => "partials/new_song"
+	end
+	#for end of new song submit
+	def audio_upload
+		session[:songs_pending] = session[:song_qty]
+		@song = Song.new
+	end
+	def audio_submit
+		song = Song.find(params[:id])
+		if !params[:song]
+			@song = Song.new
+			redirect_to "/audio_upload"
+		else
+			song.update(audio_params)
+			if song.valid?
+				flash[:errors] = song.errors.full_messages
+			end
+			redirect_to "/audio_upload"
 		end
-
 	end
 
+	#for updating audio file
 	def upload_audio
 		@song = Song.find(params[:id])
 		render :partial => "partials/upload_song"
@@ -75,7 +91,9 @@ class SongsController < ApplicationController
 			redirect_to "/profile"
 		else
 			@song.update(audio_params)
-			flash[:errors] = @song.errors.full_messages
+			if @song.valid?
+				flash[:errors] = @song.errors.full_messages
+			end
 			redirect_to "/profile"
 		end
 	end

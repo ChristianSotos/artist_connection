@@ -1,0 +1,27 @@
+#song-edit-div{
+	border-bottom: 1px solid white;
+}
+#song-edit-div div{
+	border-collapse: collapse;
+	width: 49%;
+	display: inline-block;
+	text-align: center;
+	margin: 0;
+}
+#song-edit-div span{
+	display: block;
+	margin-bottom: 5%;
+}
+#song-edit-left-div{
+}
+#song-edit-right-div{
+	border-left: 1px solid white;
+}
+#song-edit-div input, #song-edit-div select{
+	display: none;
+	text-align: center;
+	width: 80%;
+}
+#song-edit-div h1 input{
+	font-size: 1em;
+}

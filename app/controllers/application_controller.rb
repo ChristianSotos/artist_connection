@@ -11,5 +11,9 @@ class ApplicationController < ActionController::Base
   	genres = Genre.all.order(:name)
   	genres
   end
-  helper_method :current_user, :get_genres
+  def get_song song_id
+    song = Song.find(song_id)
+    song
+  end
+  helper_method :current_user, :get_genres, :get_song
 end

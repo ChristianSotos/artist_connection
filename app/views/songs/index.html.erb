@@ -1,19 +1,11 @@
-<div id='popup'></div>
-<div id='container'>
-	<div id='sidebar'></div>
-	<%= render :partial => "partials/button_bar" %>
-	<%= render :partial => "partials/header" %>
-
-	<div id='main-div'>
-		<div id='public-songs-div'>
-			<%= render :partial => "partials/top_songs" %>
-		</div>
-
-		<div id='user-songs-div'>
-		<% if @user_songs %>
-			<%= render :partial => "partials/user_songs" %>
-		<% end %>
-		</div>
+<div id='main-div'>
+	<div id='top-songs-div'>
+		<%= render :partial => "partials/top_songs" %>
 	</div>
-<%= render :partial => "partials/playbar" %>
+
+	<div id='user-songs-div'>
+	<% if @user_songs %>
+		<%= render :partial => "partials/user_songs" %>
+	<% end %>
+	</div>
 </div>

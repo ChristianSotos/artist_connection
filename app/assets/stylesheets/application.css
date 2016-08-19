@@ -27,79 +27,12 @@ span:hover,h3:hover,p:hover,li:hover{
 a:hover{
 	cursor:default;
 }
-.error input, .error textarea{
-	border-color: red;
-}
-.file-error{
-	border: 1px solid red;
-	padding: 1%;
+tbody tr:hover{
+	border: 1px solid white;
 }
 #container{
 	height: 100%;
 	/*font-family: Futura, “Trebuchet MS”, Arial, sans-serif;*/
-}
-#header{
-	width: 10%;
-	display: inline-block;
-	background-color: black;
-	text-align: right;
-	vertical-align: top;
-	position: fixed;
-	top: 0;
-	left: 0;
-	color: white;
-}
-#header ul{
-	padding-left: 0%;
-	padding-right: 10%;
-	padding-top: 100%;
-	list-style-type: none;
-}
-#header li{
-	padding: 1%;
-	font-size: 1.25em;
-}
-#header a{
-	text-decoration: none;
-	color: white;
-
-}
-
-#login {
-	margin-top: 100%;
-}
-#header li:hover, #header span:hover{
-	cursor: default;
-}
-
-
-#button-bar{
-	display: block;
-	width: 68%;
-	height: 3em;
-	margin: 0;
-	vertical-align:top;
-	position: fixed;
-	text-align: right;
-	top: 0;
-	left: 0;
-	padding: 1%;
-	background-color: black;
-}
-#button-bar button{
-	display: inline-block;
-	width: 65%;
-	margin-right: 10%;
-	font-size: 2em;
-	border: 4px solid skyblue;
-	border-radius: 1em;
-	background-color: royalblue;
-	color: white;
-}
-#button-bar button:hover{
-	cursor: pointer;
-	background-color:skyblue;
-	border: 5px solid royalblue;
 }
 #sidebar{
 	display: inline-block;
@@ -111,22 +44,12 @@ a:hover{
 	top: 0;
 	color: white;
 }
-
-#playbar{
-	position: fixed;
-	bottom: 0;
-	margin: 0 auto;
-	width: 100%;
-}
-#playbar audio{
-	margin: 0 auto;
-	width: inherit;
-	display: block;
-}
-#playbar source{
+#main-div{
 	display: inline-block;
-	background-color: black;
-	margin: 0 auto;
+	width: 60%;
+	margin: 3em  10%;
+	text-align: center;
+	z-index: 1;
 }
 
 #popup{
@@ -161,62 +84,14 @@ a:hover{
 	display: inline-block;
 	border: 4px solid skyblue;
 	border-radius: 1em;
-	text-align: left;
+	text-align: center;
 	padding: 1%;
 	background-color:white;
 }
-
-#login-div input{
-	float: right;
+.error input, .error textarea{
+	border-color: red;
 }
-#login-div h3{
-	display: block;
-	text-align:left;
-	padding: 0;
-	margin: 0;
-}
-#login-div form{
-	text-align: right;
-}
-
-#register-div p{
-	text-align: right;
-}
-#register-div label{
-	float: left;
-}
-#register-div textarea{
-	width: 100%;
-}
-#reg-to-log, #log-to-reg{
-	font-size: 0.7em;
-	float: left;
-	color: royalblue;
-}
-#reg-to-log:hover, #log-to-reg:hover{
-	font-weight: bold;
-	cursor:pointer;
-}
-
-#song-qty-div{
-	text-align: center;
-}
-#song-qty-div button{
-	width: 30%;
-	text-align: center;
-	margin: 1%;
-	border: 4px solid royalblue;
-	border-radius: 1em;
-	color: royalblue;
-}
-#song-qty-div button:hover{
-	border: 5px solid navy;
-	color: navy;
-}
-
-#new-song-div p{
-	text-align: right;
-}
-#new-song-div label{
-	float: left;
+.file-error{
+	border: 1px solid red;
+	padding: 1%;
 }

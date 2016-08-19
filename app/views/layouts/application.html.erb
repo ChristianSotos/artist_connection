@@ -8,7 +8,14 @@
 </head>
 <body>
 
-<%= yield %>
+<div id='popup'></div>
+<div id='container'>
+	<div id='sidebar'></div>
+	<%= render :partial => "partials/button_bar" %>
+	<%= render :partial => "partials/header" %>
+	<%= yield %>
+	<%= render :partial => "partials/playbar" %>
+</div>
 
 </body>
 </html>

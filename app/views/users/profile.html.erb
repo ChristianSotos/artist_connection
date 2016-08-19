@@ -1,76 +1,58 @@
-<div id='popup'></div>
-<div id='container'>
-	<div id='sidebar'></div>
-	<%= render :partial => "partials/header" %>
-	<%= render :partial => "partials/button_bar" %>
-
-	<div id='main-div'>
-		<h1><%=@user.artist_name%></h1>
-		<p><%=@user.description%></p>
-		<div id='artist-pic-div'>
-			<% if @user.picture_file_name %>
-				<img src="<%=@user.picture.url%>">
-				<button id='add-picture' class='popup-click' data-alt-src='/users/upload_pic'>Upload A Picture</button>
-			<% else %>
-				<button id='add-picture' class='popup-click' data-alt-src='/users/upload_pic'>Update Picture</button>
-			<% end %>
-		</div>
-		<div id='artist-info-div'>
-			<p>Name: <%=@user.first_name%> <%=@user.last_name%></p>
-			<p>Email: <%=@user.email%></p>
-			<p>Phone: <%=@user.phone_number%></p>
-			<p id='follow-artist-title'>Social Media</p>
-			<ul id='follow-artist-list'>
-				<li><a href='<%=@user.facebook%>'>Facebook</a></li>
-				<li><a href='<%=@user.twitter%>'>Twitter</a></li>
-				<br>
-				<li><a href='<%=@user.instagram%>'>Instagram</a></li>
-				<li><a href='<%=@user.soundcloud%>'>Soundcloud</a></li>
-			</ul>
-		</div>
-		<div id='artist-songs-div'>
-			<table>
-				<thead>
-					<tr class='song-row'>
-						<th></th>
-						<th><span>Song</span></th>
-						<th><span>Genre</span></th>
-						<th><span>Rating</span></th>
-					</tr>
-				</thead>
-				<tbody>
-				<% @songs.each{|s| %>
-					<tr class='song-row' data-alt-src='/songs/show/<%=s.id%>'>
-						<td>
-						<% if !s.audio_file_file_name %>
-							<button class='popup-click' data-alt-src='/songs/upload_audio/<%=s.id%>'>Song</button>
-						<% else %>
-							<button class='play-btn' id="<%=s.audio_file.url%>">Play</button>
-						<% end %></td>
-						<td><span><%=s.name%></span></td>
-						<td><span><%=s.genre.name%></span></td>
-						<td>
-						<% if s.reviewed %>
-							<span><%=s.rating%></span>
-						<% else %>
-							<span class='pending'>Pending</span>
-						<% end %>
-						</td>
-					</tr>
-				<% } %>
-				</tbody>
-			</table>
-		</div>
-		<ul id='artist-page'>
-			<li><--</li>
-			<li id='page-num'>1</li>
-			<li>--></li>
+<div id='main-div'>
+	<h1><%=@user.artist_name%></h1>
+	<p><%=@user.description%></p>
+	<div id='artist-pic-div'>
+		<% if @user.picture_file_name %>
+			<img src="<%=@user.picture.url%>">
+			<button id='add-picture' class='popup-click' data-alt-src='/users/upload_pic'>Upload A Picture</button>
+		<% else %>
+			<button id='add-picture' class='popup-click' data-alt-src='/users/upload_pic'>Update Picture</button>
+		<% end %>
+	</div>
+	<div id='artist-info-div'>
+		<p>Name: <%=@user.first_name%> <%=@user.last_name%></p>
+		<p>Email: <%=@user.email%></p>
+		<p>Phone: <%=@user.phone_number%></p>
+		<p id='follow-artist-title'>Social Media</p>
+		<ul id='follow-artist-list'>
+			<li><a href='<%=@user.facebook%>'>Facebook</a></li>
+			<li><a href='<%=@user.twitter%>'>Twitter</a></li>
+			<br>
+			<li><a href='<%=@user.instagram%>'>Instagram</a></li>
+			<li><a href='<%=@user.soundcloud%>'>Soundcloud</a></li>
 		</ul>
 	</div>
-	<% if flash[:errors]
-		flash[:errors].each{|e|%>
-		<p style="display:block"><%=e%></p>
-		<% }
-	end %>
+	<div id='artist-songs-div'>
+		<table>
+			<thead>
+				<tr class='song-row'>
+					<th></th>
+					<th><span>Song</span></th>
+					<th><span>Genre</span></th>
+					<th><span>Rating</span></th>
+				</tr>
+			</thead>
+			<tbody>
+			<% @songs.each{|s| %>
+				<tr class='song-row' data-alt-src='/songs/show/<%=s.id%>'>
+					<td>
+					<% if !s.audio_file_file_name %>
+						<button class='popup-click' data-alt-src='/songs/upload_audio/<%=s.id%>'>Song</button>
+					<% else %>
+						<button class='play-btn' id="<%=s.audio_file.url%>">Play</button>
+					<% end %></td>
+					<td><span><%=s.name%></span></td>
+					<td><span><%=s.genre.name%></span></td>
+					<td>
+					<% if s.reviewed %>
+						<span><%=s.rating%></span>
+					<% else %>
+						<span class='pending'>Pending</span>
+					<% end %>
+					</td>
+				</tr>
+			<% } %>
+			</tbody>
+		</table>
+	</div>
 </div>
-<%= render :partial => "partials/playbar" %>

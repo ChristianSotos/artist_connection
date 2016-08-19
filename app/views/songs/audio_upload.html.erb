@@ -1,0 +1,21 @@
+<div id='main-div'>
+	<% session[:songs_made].each do |s| 
+		song = get_song(s["id"])%>
+		<div class='audio-upload-div'>
+			<p><span>Name:</span> <%=song.name%></p>
+			<p><span>BPM:</span> <%=song.bpm%></p>
+			<p><span>Key:</span> <%=song.key%></p>
+			<p><span>Availibility:</span> <%=song.key%></p>
+			<p><span>Genre:</span> <%=song.genre.name%></p>
+			<% if !song.audio_file_file_name %>
+				<%= form_for @song, :url => "/audio_submit/#{song.id}", :html => {:multipart => true} do |f| %>
+					<p><label for='song[audio_file]'>Audio File</label>
+					<%= f.file_field :audio_file %></p>
+					<button>Upload Song</button>
+				<% end %>
+			<% else %>
+				<h2>COMPLETE</h2>
+			<% end %>
+		</div>
+	<% end %>
+</div>

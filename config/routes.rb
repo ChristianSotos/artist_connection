@@ -11,9 +11,11 @@ Rails.application.routes.draw do
 
   get 'songs/index'
   get 'songs/top_search' => 'songs#top_search'
+  get 'qty' => 'songs#qty'
+  get 'audio_upload' => 'songs#audio_upload'
+  post 'audio_submit/:id' => 'songs#audio_submit'
   get 'songs/show/:id' => 'songs#show'
   post 'songs/update/:id' => 'songs#update'
-  get 'qty' => 'songs#qty'
   post 'songs/create' => 'songs#create'
   get 'songs/new/:qty' => 'songs#new'
   get '/songs/upload_audio/:id' => 'songs#upload_audio'
