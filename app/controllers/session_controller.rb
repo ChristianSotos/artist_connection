@@ -8,6 +8,11 @@ class SessionController < ApplicationController
 		session[:user_songs_pagination] = 0
 	end
 
+	# page to view pricing and offerings
+	def show
+		
+	end
+
 	def login
 		user = User.find_by(email: params[:email])
 		if user && user.authenticate(params[:password])
