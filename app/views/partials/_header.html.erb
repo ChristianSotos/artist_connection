@@ -1,12 +1,12 @@
 <div id='header'>
 	<ul>
-		<li><a href='/'>Home</a></li>
-		<li><a href="">Our Services</a></li>
-		<li><a href=''>About Us</a></li>
-		<li><a href=''>Contact</a></li>
+		<a href='/'><li>Home</li></a>
+		<a href=""><li>Our Services</li></a>
+		<a href=''><li>About Us</li></a>
+		<a href=''><li>Contact</li></a>
 		<% if session[:user_id] %>
-			<li><a href='/profile'>My Profile</a></li>
-			<li id='logout'><a href='/logout'>Log Out</a></li>
+			<a href='/profile'><li>My Profile</li></a>
+			<a href='/logout'><li id='logout'>Log Out</li></a>
 		<% else %>
 			<li id='login' class='popup-click' data-alt-src='/login_popup'>Log In</li>
 		<% end %>

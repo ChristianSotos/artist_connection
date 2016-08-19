@@ -18,33 +18,23 @@
 </div>
 <div id='artist-songs-div'>
 	<table>
-	<thead>
-			<tr>
+		<thead>
+			<tr class='song-row'>
 				<th></th>
 				<th><span>Song</span></th>
+				<th><span>Genre</span></th>
 			</tr>
 		</thead>
 		<tbody>
+		<% @artist_songs.each{|s| %>
 			<tr>
-				<td>#</td>
-				<td><span>No Problem</span></td>
+				<td>
+				<button class='play-btn' id="<%=s.audio_file.url%>">P</button>
+				</td>
+				<td><span><%=s.name%></span></td>
+				<td><span><%=s.genre.name%></span></td>
 			</tr>
-			<tr>
-				<td>#</td>
-				<td><span>Cocoa Butter Kisses</span></td>
-			</tr>
-			<tr>
-				<td>#</td>
-				<td><span>Same Drugs</span></td>
-			</tr>
-			<tr>
-				<td>#</td>
-				<td><span>All We Got</span></td>
-			</tr>
-			<tr>
-				<td>#</td>
-				<td><span>Chain Smoker</span></td>
-			</tr>
+		<% } %>
 		</tbody>
 	</table>
 </div>

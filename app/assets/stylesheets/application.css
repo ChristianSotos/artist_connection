@@ -21,13 +21,17 @@ body{
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 }
+td span{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
 span:hover,h3:hover,p:hover,li:hover{
 	cursor:default;
 }
 a:hover{
 	cursor:default;
 }
-tbody tr:hover{
+.song-row:hover, .artist-row:hover{
 	border: 1px solid white;
 }
 #container{
@@ -41,8 +45,11 @@ tbody tr:hover{
 	vertical-align: top;
 	position: fixed;
 	right: 0;
-	top: 0;
+	top: 2em;
 	color: white;
+}
+#sidebar table{
+	font-size: 0.8em;
 }
 #main-div{
 	display: inline-block;
@@ -51,7 +58,6 @@ tbody tr:hover{
 	text-align: center;
 	z-index: 1;
 }
-
 #popup{
 	text-align: center;
 	display: none;
