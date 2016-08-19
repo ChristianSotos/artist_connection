@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	def show
 		@artist = User.find(params[:id])
+		@artist_songs = Song.where(user:@artist).order(rating: :desc, play_count: :desc)
 		render :partial => "partials/artist_info"
 	end
 	def profile
