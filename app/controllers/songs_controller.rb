@@ -1,6 +1,7 @@
 class SongsController < ApplicationController
 	def index
 		session[:from_new_song] = false
+		@song_count = Song.where(public:true).count
 		@songs = Song.offset(0).where(public: true).order(rating: :desc, play_count: :desc).limit(5)
 		if session[:user_id]
 			@user_songs = Song.offset(0).where(user:current_user).limit(5)
@@ -52,13 +53,14 @@ class SongsController < ApplicationController
 			new_song.save
 			session[:songs_pending] = session[:songs_pending] - 1
 			num = params[:songnum].to_i
-			session[:songs_made][num-1] = new_song
+			num = num-1
+			session[:songs_made][num] = new_song
 		else
 			flash[:errors] = new_song.errors.full_messages
 		end
-			@genres = Genre.all.order(:name)
-			@song = Song.new
-			render :partial => "partials/new_song"
+		@genres = Genre.all.order(:name)
+		@song = Song.new
+		render :partial => "partials/new_song"
 	end
 	#for end of new song submit
 	def audio_upload
@@ -121,6 +123,7 @@ class SongsController < ApplicationController
 		end
 		query += "ORDER BY rating DESC, play_count DESC LIMIT 5 "
 		@songs = Song.find_by_sql(query)
+		@song_count = Song.finde_by_sql(query).count
 		render :partial => "partials/top_songs_search"
 	end
 

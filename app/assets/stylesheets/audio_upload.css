@@ -1,0 +1,28 @@
+.audio-upload-div{
+  width: 49%;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+}
+.audio-upload-div span{
+  font-weight: bold;
+  display: block;
+  margin: 0;
+}
+.audio-upload-div p{
+  margin: 0;
+  margin-top: 1em;
+}
+.audio-upload-div button{
+  background-color:black;
+  border:1px solid skyblue;
+  color: white;
+  border-radius: 5px;
+  width: 50%;
+  margin: 0 auto;
+  display: inline-block;
+}
+.audio-upload-half-div{
+  width: 49%;
+  display: inline-block;
+}

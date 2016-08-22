@@ -1,6 +1,5 @@
 <div id='main-div'>
-	<h1><%=@user.artist_name%></h1>
-	<p><%=@user.description%></p>
+	<h1 class='header-text' id='artist-name'><%=@user.artist_name%></h1>
 	<div id='artist-pic-div'>
 		<% if @user.picture_file_name %>
 			<img src="<%=@user.picture.url%>">
@@ -10,57 +9,86 @@
 		<% end %>
 	</div>
 	<div id='artist-info-div'>
-		<p>Name: <%=@user.first_name%> <%=@user.last_name%></p>
-		<p>Email: <%=@user.email%></p>
-		<p>Phone: <%=@user.phone_number%></p>
-		<p id='follow-artist-title'>Social Media</p>
-		<ul id='follow-artist-list'>
-			<li><a href='<%=@user.facebook%>'>Facebook</a></li>
-			<li><a href='<%=@user.twitter%>'>Twitter</a></li>
-			<br>
-			<li><a href='<%=@user.instagram%>'>Instagram</a></li>
-			<li><a href='<%=@user.soundcloud%>'>Soundcloud</a></li>
-		</ul>
+		<div id='artist-info-left-div'>
+			<p><span class='artist-bold-text'>Name:</span> <%=@user.first_name%> <%=@user.last_name%></p>
+			<p><span class='artist-bold-text'>Email:</span> <%=@user.email%></p>
+			<p><span class='artist-bold-text'>Phone:</span> <%=@user.phone_number%></p>
+		</div>
+		<div id='artist-info-right-div'>
+			<p id='follow-artist-title'>Social Media</p>
+			<ul id='follow-artist-list'>
+				<li>
+					<a href='<%=@user.facebook%>'>
+						<div class='sm-pics-div'>
+							<%= image_tag "facebook.png"%>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href='<%=@user.twitter%>'>
+						<div class='sm-pics-div'>
+							<%= image_tag "twitter.png"%>
+						</div>
+					</a>
+					</li>
+				<br>
+				<li>
+					<a href='<%=@user.instagram%>'>
+						<div class='sm-pics-div'>
+							<%= image_tag "instagram.png"%>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href='<%=@user.soundcloud%>'>
+						<div class='sm-pics-div'>
+							<%= image_tag "soundcloud.png"%>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<p><%=@user.description%></p>
 	</div>
 	<div id='artist-songs-div'>
 		<table>
-	<thead>
-		<tr>
-			<th></th>
-			<th><span>Song</span></th>
-			<th><span>Genre</span></th>
-			<th><span>Availibility</span></th>
-			<th><span>Rating</span></th>
-		</tr>
-	</thead>
-	<tbody>
-	<% @songs.each{|s| %>
-		<tr class='song-row' data-alt-src='/songs/show/<%=s.id%>'>
-			<td>
-			<% if !s.audio_file_file_name %>
-				<button class='popup-click' data-alt-src='/songs/upload_audio/<%=s.id%>'>Song</button>
-			<% else %>
-				<button class='play-btn' id="<%=s.audio_file.url%>" data-alt-src='<%=s.id%>'>Play</button>
-			<% end %></td>
-			<td><span><%=s.name%></span></td>
-			<td><span><%=s.genre.name%></span></td>
-			<td>
-			<% if s.public %>
-				<span>Public</span>
-			<% else %>
-				<span>Private</span>
-			<% end %>
-			</td>
-			<td>
-			<% if s.reviewed %>
-				<span><%=s.rating%></span>
-			<% else %>
-				<span class='pending'>Pending</span>
-			<% end %>
-			</td>
-		</tr>
-	<% } %>
-	</tbody>
-</table>
+			<thead>
+				<tr>
+					<th></th>
+					<th><span>Song</span></th>
+					<th><span>Genre</span></th>
+					<th><span>Availibility</span></th>
+					<th><span>Rating</span></th>
+				</tr>
+			</thead>
+			<tbody>
+			<% @songs.each{|s| %>
+				<tr class='song-row' data-alt-src='/songs/show/<%=s.id%>'>
+					<td>
+					<% if !s.audio_file_file_name %>
+						<button class='popup-click' data-alt-src='/songs/upload_audio/<%=s.id%>'>Song</button>
+					<% else %>
+						<button class='play-btn' id="<%=s.audio_file.url%>" data-alt-src='<%=s.id%>'></button>
+					<% end %></td>
+					<td><span><%=s.name%></span></td>
+					<td><span><%=s.genre.name%></span></td>
+					<td>
+					<% if s.public %>
+						<span>Public</span>
+					<% else %>
+						<span>Private</span>
+					<% end %>
+					</td>
+					<td>
+					<% if s.reviewed %>
+						<span><%=s.rating%></span>
+					<% else %>
+						<span class='pending'>Pending</span>
+					<% end %>
+					</td>
+				</tr>
+			<% } %>
+			</tbody>
+		</table>
 	</div>
 </div>

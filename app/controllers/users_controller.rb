@@ -9,6 +9,10 @@ class UsersController < ApplicationController
 		@user = current_user
 	end
 	def register
+		if Admin.find_by(email: params[:user][:email])
+			render :partial => "partials/register"
+		end
+		
 		new_user = User.new(user_params)
 		if new_user.save
 			if session[:from_new_song]

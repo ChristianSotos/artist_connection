@@ -43,6 +43,10 @@ $(document).ready(function(){
 	})
 	$(document).on('submit', '.no-file', function(){
 		var action = $(this).attr('action');
+		if (action == "/register"){
+			var phonum = $('#phone-1').val() + $('#phone-2').val() + $('#phone-3').val()
+			$('#phone-number').val(phonum); 
+		}
 		$.post(action, $(this).serialize(), function(res){
 			console.log(res);
 			if (res == "exit"){

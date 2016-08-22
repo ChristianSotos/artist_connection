@@ -1,25 +1,32 @@
 #artist-info-sidebar{
-	background-color: rgba(0,0,0,0.7);
-	width: 95%;
+	width: 90%;
 	margin: 0 auto;
-	padding: 1em 0;
-	border-radius: 1em;
 }
-#artist-info-sidebar #artist-pic-div, #artist-info-sidebar #artist-info-div{
-	width: 50%;
+#artist-show-pic-div{
+	width: 80%;
+	margin: 0 auto;
+}
+#artist-show-pic-div img{
+	width: 100%;
+	border-radius: 1em;
 }
 #artist-info-sidebar p{
 	margin: 0;
 }
 #artist-info-sidebar h2{
-	margin-top: 1em;
 	margin-bottom: 1%;
 }
 #artist-info-sidebar h4{
 	text-decoration: underline;
 	margin-bottom: 0;
+	margin-top: 0.5em;
+}
+#sidebar table{
+	font-size: 0.9em;
+}
+#artist-info-sidebar #artist-info-div{
+	width: 100%;
 }
 #artist-contact-email{
 	color: royalblue;
-	margin-bottom: 1em;
 }

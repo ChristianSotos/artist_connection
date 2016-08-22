@@ -3,10 +3,20 @@
 		song = get_song(s["id"])%>
 		<div class='audio-upload-div'>
 			<p><span>Name:</span> <%=song.name%></p>
-			<p><span>BPM:</span> <%=song.bpm%></p>
-			<p><span>Key:</span> <%=song.key%></p>
-			<p><span>Availibility:</span> <%=song.key%></p>
-			<p><span>Genre:</span> <%=song.genre.name%></p>
+			<div class='audio-upload-half-div'>
+				<p><span>BPM:</span> <%=song.bpm%></p>
+				<p><span>Availibility:</span>
+					<% if song.public %>
+						Public
+					<% else %>
+						Private
+					<% end %>
+				</p>
+			</div>
+			<div class='audio-upload-half-div'>
+				<p><span>Key:</span> <%=song.key%></p>
+				<p><span>Genre:</span> <%=song.genre.name%></p>
+			</div>
 			<% if !song.audio_file_file_name %>
 				<%= form_for @song, :url => "/audio_submit/#{song.id}", :html => {:multipart => true} do |f| %>
 					<p><label for='song[audio_file]'>Audio File</label>

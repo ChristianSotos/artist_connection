@@ -1,6 +1,6 @@
 <div id='artist-info-sidebar'>
 	<h2><%=@artist.artist_name%></h2>
-	<div id='artist-pic-div'>
+	<div id='artist-show-pic-div'>
 		<% if @artist.picture_file_name %>
 			<img src='<%=@artist.picture.url%>'>
 		<% end %>
@@ -8,13 +8,36 @@
 	<p><%=@artist.description%></p>
 	<div id='artist-info-div'>
 		<h4 id='follow-artist-title'>Follow This Artist</h4>
-		<ul id='follow-artist-list'>
-			<li><a href='<%=@artist.facebook%>'>Facebook</a></li>
-			<li><a href='<%=@artist.twitter%>'>Twitter</a></li>
-			<br>
-			<li><a href='<%=@artist.instagram%>'>Instagram</a></li>
-			<li><a href='<%=@artist.soundcloud%>'>Soundcloud</a></li>
-		</ul>
+			<ul id='follow-artist-list'>
+				<li>
+					<a href='<%=@artist.facebook%>'>
+						<div class='sm-pics-div'>
+							<%= image_tag "facebook.png"%>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href='<%=@artist.twitter%>'>
+						<div class='sm-pics-div'>
+							<%= image_tag "twitter.png"%>
+						</div>
+					</a>
+					</li>
+				<li>
+					<a href='<%=@artist.instagram%>'>
+						<div class='sm-pics-div'>
+							<%= image_tag "instagram.png"%>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href='<%=@artist.soundcloud%>'>
+						<div class='sm-pics-div'>
+							<%= image_tag "soundcloud.png"%>
+						</div>
+					</a>
+				</li>
+			</ul>
 		<h4>Contact This Artist</h4>
 		<p id='artist-contact-email'><%=@artist.email%></p>
 		<br>
@@ -32,7 +55,7 @@
 			<% @artist_songs.each{|s| %>
 				<tr>
 					<td>
-					<button class='play-btn' id="<%=s.audio_file.url%>">P</button>
+					<button class='play-btn' id="<%=s.audio_file.url%>"></button>
 					</td>
 					<td><span><%=s.name%></span></td>
 					<td><span><%=s.genre.name%></span></td>

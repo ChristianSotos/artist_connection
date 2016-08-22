@@ -10,7 +10,7 @@
 	<tbody>
 	<% @songs.each{|song|%>
 		<tr class='artist-row' id="<%=song.user.id%>">
-			<td><button class='play-btn' id="<%=song.audio_file.url%>" data-alt-src='<%=song.id%>'>Play</button></td>
+			<td><button class='play-btn' id="<%=song.audio_file.url%>" data-alt-src='<%=song.id%>'></button></td>
 			<td><span><%=song.user.artist_name%></td>
 			<td><span><%=song.name%></span></td>
 			<td><span><%=song.genre.name%></span></td>
@@ -18,4 +18,12 @@
 	<% } %>
 	</tbody>
 </table>
-
+<div id='page-div'>
+	<ul>
+		<li id='on-page'>1</li>
+	<% pages = (@song_count/5.to_f).ceil
+	for i in 2..pages do %>
+		<li><%=i%></li>
+	<% end %>
+	</ul>
+</div>

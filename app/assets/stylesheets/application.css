@@ -16,10 +16,11 @@
 body{
 	background-color: silver;
 	color: black;
-	/*background-image: url("future.jpg");
-	background-size: fill;
-	background-repeat: no-repeat;
-	background-attachment: fixed;*/
+	font-family: 'Rokkitt', serif;
+	font-size: 1.1em;
+}
+.header-text{
+	font-family: 'Khand', sans-serif;
 }
 #left-background{
 	position: fixed;
@@ -51,14 +52,14 @@ td, th{
 	margin: 0;
 }
 th{
-	background-color: grey;
+	background-color: black;
 	color: white;
 }
 tr:nth-child(odd){
-	background-color: black;
+	background-color: dimgrey;
 }
 tr:nth-child(even){
-	background-color: dimgrey;
+	background-color: grey;
 }
 td span{
 	white-space: nowrap;
@@ -78,27 +79,24 @@ a:hover{
 	margin: 0 auto;
 	margin-top: 6em;
 	width: 80%;
-	text-align: center;
 	padding-top: 1em;
-	/*font-family: Futura, “Trebuchet MS”, Arial, sans-serif;*/
 }
-#sidebar{
-	display: none;
+#side-div{
+	display: inline-block;
 	width: 30%;
 	text-align: center;
 	vertical-align: top;
-	right: 0;
-	color: white;
+	color: black;
 }
-#sidebar table{
-	font-size: 0.8em;
+#sidebar{
+	display: none;
+	width: 100%;
 }
 #main-div{
 	display: inline-block;
-	width: 60%;
-	margin: auto;
-	text-align: center;
+	width: 65%;
 	margin-top: 1em;
+	text-align: center;
 	/*z-index: 1;*/
 }
 #popup{
@@ -145,4 +143,16 @@ a:hover{
 .file-error{
 	border: 1px solid red;
 	padding: 1%;
+}
+
+.play-btn{
+	width: 2.5em;
+	height: 2.5em;
+	border-radius: 100%;
+	border: 2px solid white;
+	background: linear-gradient(lightgrey, grey);
+}
+.play-btn:hover{
+	border: 2px solid white;
+	background: linear-gradient(grey, lightgrey);
 }

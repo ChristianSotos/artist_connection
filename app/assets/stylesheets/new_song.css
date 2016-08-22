@@ -7,7 +7,7 @@
 .new-song-form, .song-complete-div{
 	display: inline-block;
 	padding: 0.5em 1em;
-	width: 44%;
+	width: 43%;
 	vertical-align: top;
 }
 #new-song-div label{
