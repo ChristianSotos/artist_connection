@@ -1,4 +1,39 @@
+<div id='featured-div'>
+	<ul>
+		<li>
+			<div class='featured-images-div'><%= image_tag 'Example.png' %></div>
+		</li>
+		<li>
+			<div class='featured-images-div'><%= image_tag 'Example.png' %></div>
+		</li>
+		<li>
+			<div class='featured-images-div'><%= image_tag 'Example.png' %></div>
+		</li>
+		<li>
+			<div class='featured-images-div'><%= image_tag 'Example.png' %></div>
+		</li>
+		<li>
+			<div class='featured-images-div'><%= image_tag 'Example.png' %></div>
+		</li>
+		<li>
+			<div class='featured-images-div'><%= image_tag 'Example.png' %></div>
+		</li>
+	</ul>
+</div>
 <div id='main-div'>
+	<div id='top-songs-header'>
+		<div id='search-div'>
+			<input class='top-search' id='top-search-input' type='text' name='search' placeholder="Search">
+			<select class='top-search' id='top-search-genre' name='genre'>
+				<option value='0' selected='selected'>All</option>
+			<% genres = get_genres
+				genres.each{|g| %>
+				<option value='<%=g.id%>'><%=g.name%></option>
+			<% } %>
+			</select>
+		</div>
+		<h3>Top Reviewed Songs</h3>
+	</div>
 	<div id='top-songs-div'>
 		<%= render :partial => "partials/top_songs" %>
 	</div>

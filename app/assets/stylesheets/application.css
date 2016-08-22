@@ -15,7 +15,7 @@
  */
 body{
 	background-color: silver;
-	color: white;
+	color: black;
 	/*background-image: url("future.jpg");
 	background-size: fill;
 	background-repeat: no-repeat;
@@ -41,7 +41,24 @@ body{
 	height: 100%;
 }
 table{
-	color: navy;
+	color: white;
+	width: 90%;
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+td, th{
+	padding: 0.5em;
+	margin: 0;
+}
+th{
+	background-color: grey;
+	color: white;
+}
+tr:nth-child(odd){
+	background-color: black;
+}
+tr:nth-child(even){
+	background-color: dimgrey;
 }
 td span{
 	white-space: nowrap;
@@ -53,12 +70,10 @@ span:hover,h3:hover,p:hover,li:hover{
 a:hover{
 	cursor:default;
 }
-.song-row, .artist-row{
-	border: 1px solid none;
-}
 .song-row:hover, .artist-row:hover{
-	color: white;
+	color: skyblue;
 }
+
 #container{
 	margin: 0 auto;
 	margin-top: 6em;
