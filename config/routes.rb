@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   get 'register' => 'session#register'
 
   root 'session#index'
-  get '/services' => 'session#show'
+  get '/about' => 'session#about'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -4,12 +4,10 @@ class SessionController < ApplicationController
 	end
 
 	def index
-		
 	end
 
 	# page to view pricing and offerings
-	def show
-		
+	def about
 	end
 
 	def login
