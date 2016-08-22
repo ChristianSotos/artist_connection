@@ -1,10 +1,9 @@
 class SongsController < ApplicationController
 	def index
-		top_offset = session[:top_songs_pagination]*5
-		@songs = Song.offset(top_offset).order(rating: :desc, play_count: :desc).limit(5)
+		session[:from_new_song] = false
+		@songs = Song.offset(0).where(public: true).order(rating: :desc, play_count: :desc).limit(5)
 		if session[:user_id]
-			user_offset = session[:top_songs_pagination]*5
-			@user_songs = Song.offset(user_offset).where(user:current_user).limit(5)
+			@user_songs = Song.offset(0).where(user:current_user).limit(5)
 		end
 	end
 	def show
@@ -105,14 +104,24 @@ class SongsController < ApplicationController
 	end
 
 	def top_search
-		# session[:top_songs_pagination]
-		# top_offset = session[:top_songs_pagination] * 5
-		if params[:genre] == '0'
-			@songs = Song.offset(0).where("artist_name LIKE '%#{params[:search]}%'").order(rating: :desc, play_count: :desc).limit(5)
-		else
-			@songs = Song.offset(0).where("name LIKE '%#{params[:search]}'", genre:Genre.find(params[:genre])).order(rating: :desc, play_count: :desc).limit(5)
+		gid= params[:genre].to_i
+		query = "SELECT songs.id AS id, songs.genre_id AS genre_id, songs.name AS name, users.artist_name AS artist_name, songs.play_count AS play_count, songs.rating AS rating FROM songs JOIN users ON songs.user_id = users.id "
+		and_checker = false
+		if gid > 0
+			query += "WHERE genre_id = "+params[:genre]+" "
+			and_checker = true
 		end
-		render :partial => "partials/top_songs"
+		if params[:search]
+			if and_checker
+				query += "AND "
+			else
+				query += "WHERE "
+			end
+			query += "(name LIKE '%"+params[:search]+"%' OR artist_name LIKE'%"+params[:search]+"%') "
+		end
+		query += "ORDER BY rating DESC, play_count DESC LIMIT 5 "
+		@songs = Song.find_by_sql(query)
+		render :partial => "partials/top_songs_search"
 	end
 
 	private

@@ -19,12 +19,14 @@ $(document).ready(function(){
 	$(document).on('click', '.artist-row', function(){
 		var url = '/users/show/'+$(this).attr('id');
 		$.get(url, function(res){
+			$('#sidebar').css("display", "inline-block")
 			$('#sidebar').html(res);
 		})
 	})
 	$(document).on('click', '.song-row', function(){
 		var url = $(this).attr('data-alt-src');
 		$.get(url, function(res){
+			$('#sidebar').css("display", "inline-block")
 			$('#sidebar').html(res);
 		})
 	})
@@ -80,8 +82,8 @@ $(document).ready(function(){
 			search: search_input,
 			genre: genre_input
 		}
-		$.get("/songs/top_search", obj, function(res){
-			$('#public-songs-div').html(res);
+		$.post("/songs/top_search", obj, function(res){
+			$('#top-songs-div').html(res);
 		})
 		return false
 	})

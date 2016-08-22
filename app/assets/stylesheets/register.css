@@ -1,12 +1,56 @@
-#register-div p{
-	text-align: right;
-}
+/*#register-div{
+	width: 50%;
+}*/
 #register-div label{
-	float: left;
+	font-weight: bold;
+	display: block;
+	/*margin: 1%;*/
 }
-#register-div textarea{
+.reg-row{
+	text-align: left;
+	display: block;
+	margin: 1em 0;
+}
+.reg-row div{
+	display: inline-block;
+	width: 49%;
+	text-align: left;
+}
+.reg-row input{
+	width: 90%;
+	border: 1px solid grey;
+	border-radius: 5px;
+	padding: 0.5em;
+}
+#phone-input1, #phone-input2{
+	width: 20%;
+}
+#phone-input3{
+	width: 25%;
+}
+.reg-artist-row{
+	display: block;
+	text-align: left;
+}
+.reg-artist-row input{
+	width: 45%;
+	border: 1px solid grey;
+	border-radius: 5px;
+	padding: 0.5em;
+}
+.reg-artist-row div{
 	width: 100%;
+	display: inline-block;
+	margin: 0.5em 0;
 }
+.reg-artist-row textarea{
+	width: 90%;
+	border: 1px solid grey;
+	border-radius: 5px;
+	padding: 0.5em;
+	margin: 0;
+}
+
 #reg-to-log{
 	font-size: 0.7em;
 	float: left;

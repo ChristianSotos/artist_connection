@@ -9,11 +9,13 @@
 <body>
 
 <div id='popup'></div>
+<div id='left-background'><%= image_tag 'courtlin-jabrae.jpg' %></div>
+<div id='right-background'><%= image_tag 'roxxanne-montana.jpg' %></div>
 <div id='container'>
-	<div id='sidebar'></div>
 	<%= render :partial => "partials/header" %>
 	<%= render :partial => "partials/button_bar" %>
 	<%= yield %>
+	<div id='sidebar'></div>
 	<%= render :partial => "partials/playbar" %>
 </div>
 

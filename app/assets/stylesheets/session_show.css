@@ -31,7 +31,7 @@
 		font-size: 2em;
 		margin: 1%;
 	}
-	.services-you-us p, li {
+	.services-you-us p, .services-you-us li {
 		font-size: 1.25em;
 	}
 	.services-you-us li {

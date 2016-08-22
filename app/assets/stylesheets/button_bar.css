@@ -1,14 +1,13 @@
 #button-bar{
 	display: block;
-	width: 10%;
-	/*height: 75%;*/
+	width: 50%;
 	margin: 0;
 	vertical-align:top;
 	position: fixed;
 	text-align: center;
 	top: 6em;
-	left: 0;
-	padding-top: 1em;
+	left: 25%;
+	z-index: 1;
 }
 #button-bar button{
 	display: inline-block;

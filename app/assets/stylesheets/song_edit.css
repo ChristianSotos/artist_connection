@@ -21,6 +21,9 @@
 	display: none;
 	text-align: center;
 	width: 80%;
+	border: 1px solid grey;
+	border-radius: 5px;
+	padding:0.5em;
 }
 #song-edit-div h1 input{
 	font-size: 1em;

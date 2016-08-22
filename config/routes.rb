@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'users/show/:id' => 'users#show'
 
   get 'songs/index'
-  get 'songs/top_search' => 'songs#top_search'
+  post 'songs/top_search' => 'songs#top_search'
   get 'qty' => 'songs#qty'
   get 'audio_upload' => 'songs#audio_upload'
   post 'audio_submit/:id' => 'songs#audio_submit'

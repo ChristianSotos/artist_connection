@@ -10,35 +10,50 @@
 		<% if session[:songs_made][i-1] 
 			song = session[:songs_made][i-1] %>
 			<div class='song-complete-div new-song-<%=i%>'>
-				<p><span>Name:</span> <%=song.name%><p>
-				<p><span>BPM:</span> <%=song.bpm%></p><br>
-				<p><span>Key:</span> <%=song.key%></p><br>
-				<p><span>Availibility:</span> <%=song.key%></p><br>
-				<p><span>Genre:</span> <%=song.genre.name%></p><br>
+				<div class='song-input-row-1'><span>Name:</span><span class='song-info-bold'><%=song.name%></span></div>
+				<div class='song-input-row-2'><span>BPM:</span><span class='song-info-bold'><%=song.bpm%></span></div>
+				<div class='song-input-row-2'><span>Key:</span><span class='song-info-bold'><%=song.key%></span></div>
+				<div class='song-input-row-3'><span>Availibility:</span><span class='song-info-bold'>
+					<% if song.public %>
+						Public
+					<% else %>
+						Private
+					<% end %>
+				</span></div>
+				<div class='song-input-row-3'><span>Genre:</span><span class='song-info-bold'><%=song.genre.name%></span></div>
 			</div>
 		<% else %>
 			<div class='new-song-form new-song-<%=i%>'>
 				<%= form_for @song, :url => '/songs/create', :html => {:multipart => true, :class => "no-file"} do |f| %>
 					<input type='hidden' name='songnum' value="<%=i%>">
-					<p><%= f.label :name %>
-					<%= f.text_field :name %></p>
-					<p class='small-input'><label for='song[bpm]'>BPM</label>
-					<%= f.text_field :bpm %></p>
-					<p class='small-input'><label for='song[key]'>Key Signature</label>
-					<%= f.text_field :key %></p>
-					<p><label for='song[public]'>Availibility</label>
-						<select name='song[public]'>
-							<option value='true'>Public</option>
-							<option value='false'>Private</option>
-						</select>
-					</p>
-					<p><label for='song[genre]'>Genre</label>
-						<select name='song[genre]'>
-						<%	@genres.each{|g| %>
-								<option value="<%=g.id%>"><%=g.name%></option>
-						<% } %>
-						</select>
-					</p>
+					<div class='song-input-row-1'>
+						<label for='song[name]'>Name:</label>
+						<%= f.text_field :name %>
+					</div>
+					<div class='song-input-row-2'>
+						<label for='song[bpm]'>BPM:</label>
+						<%= f.text_field :bpm %></div>
+					<div class='song-input-row-2'>
+						<label for='song[key]'>Key Signature:</label>
+						<%= f.text_field :key %>
+					</div>
+					<div id='song-input-third-row'>
+						<div class='song-input-row-3'>
+							<label for='song[public]'>Availibility:</label>
+							<select name='song[public]'>
+								<option value='true'>Public</option>
+								<option value='false'>Private</option>
+							</select>
+						</div>
+						<div class='song-input-row-3'>
+							<label for='song[genre]'>Genre:</label>
+							<select name='song[genre]'>
+							<%	@genres.each{|g| %>
+									<option value="<%=g.id%>"><%=g.name%></option>
+							<% } %>
+							</select>
+						</div>
+					</div>
 					<button>Add Song</button>
 				<% end %>
 			</div>

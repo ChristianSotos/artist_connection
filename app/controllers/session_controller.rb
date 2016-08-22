@@ -4,8 +4,7 @@ class SessionController < ApplicationController
 	end
 
 	def index
-		session[:top_songs_pagination] = 0
-		session[:user_songs_pagination] = 0
+		
 	end
 
 	# page to view pricing and offerings

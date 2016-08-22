@@ -6,8 +6,8 @@
 	<% end %>
 	<form action='/login' method='post' class='no-file'>
 		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-		<p>Email: <input type='text' name='email'></p>
-		<p>Password: <input type='password' name='password'></p>
+		<div class='log-row'><label>Email:</label><input type='text' name='email'></div>
+		<div class='log-row'><label>Password:</label><input type='password' name='password'></div>
 		<input type='submit' value='Login'>
 	</form>
 	<span id='log-to-reg' class='popup-click' data-alt-src='/new_submit'>Don't Have An Account? Register</span>

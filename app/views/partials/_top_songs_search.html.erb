@@ -19,7 +19,8 @@
 		</tr>
 	</thead>
 	<tbody>
-	<% @songs.each{|song|%>
+	<% @songs.each{|s|
+		song = get_song(s.id)%>
 		<tr class='artist-row' id="<%=song.user.id%>">
 			<td><button class='play-btn' id="<%=song.audio_file.url%>" data-alt-src='<%=song.id%>'>Play</button></td>
 			<td><span><%=song.user.artist_name%></td>
@@ -29,4 +30,3 @@
 	<% } %>
 	</tbody>
 </table>
-

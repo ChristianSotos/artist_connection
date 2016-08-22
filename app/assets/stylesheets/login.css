@@ -1,5 +1,4 @@
-#login-div input{
-	float: right;
+#login-div{
 }
 #login-div h3{
 	display: block;
@@ -8,7 +7,21 @@
 	margin: 0;
 }
 #login-div form{
-	text-align: right;
+	text-align: left;
+}
+.log-row{
+	margin: 1em;
+	margin-left: 0;
+}
+.log-row label{
+	display: block;
+	font-weight: bold;
+}
+.log-row input{
+	width: 90%;
+	border: 1px solid grey;
+	border-radius: 5px;
+	padding:0.5em;
 }
 #log-to-reg{
 	font-size: 0.7em;

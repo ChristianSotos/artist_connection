@@ -1,11 +1,11 @@
 <div id='artist-info-sidebar'>
 	<h2><%=@artist.artist_name%></h2>
-	<p><%=@artist.description%></p>
 	<div id='artist-pic-div'>
 		<% if @artist.picture_file_name %>
 			<img src='<%=@artist.picture.url%>'>
 		<% end %>
 	</div>
+	<p><%=@artist.description%></p>
 	<div id='artist-info-div'>
 		<h4 id='follow-artist-title'>Follow This Artist</h4>
 		<ul id='follow-artist-list'>

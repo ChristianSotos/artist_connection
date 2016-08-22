@@ -1,13 +1,14 @@
 #header{
-	width: 100%;
+	width: 80%;
 	height: 2em;
 	display: inline-block;
 	text-align: right;
 	vertical-align: top;
 	position: fixed;
 	top: 0;
-	left: 0;
+	left: 10%;
 	color: black;
+	z-index: 1;
 }
 #header ul{
 	background-color: white;
