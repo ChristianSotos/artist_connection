@@ -1,14 +1,3 @@
-<h3>Top Reviewed Songs</h3>
-<div id='search-div'>
-	<input class='top-search' id='top-search-input' type='text' name='search' placeholder="Search">
-	<select class='top-search' id='top-search-genre' name='genre'>
-		<option value='0' selected='selected'>All</option>
-	<% genres = get_genres
-		genres.each{|g| %>
-		<option value='<%=g.id%>'><%=g.name%></option>
-	<% } %>
-	</select>
-</div>
 <table>
 	<thead>
 		<tr>
