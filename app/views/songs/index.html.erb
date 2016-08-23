@@ -1,5 +1,6 @@
 <div id='main-div'>
 <div id='featured-div'>
+	<h3{}
 	<ul>
 		<li>
 			<div class='featured-images-div'><%= image_tag 'Example.png' %></div>
@@ -44,3 +45,8 @@
 	<% end %>
 	</div>
 </div>
+<div id='side-div'>
+	<%= render :partial => "partials/button_bar" %>
+	<div id='sidebar'></div>
+</div>
+<%= render :partial => "partials/playbar" %>
