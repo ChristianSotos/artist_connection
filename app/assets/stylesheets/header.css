@@ -27,7 +27,7 @@
 }
 #header li:hover{
 	cursor: default;
-	background-color: grey;
+	background-color: lightgrey;
 }
 #head-text{
 	background-color: white;

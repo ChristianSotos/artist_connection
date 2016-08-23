@@ -12,14 +12,14 @@
 	width: 95%;
 	height: 10vw;
 	font-size: 2em;
-	border: 4px solid skyblue;
-	border-radius: 1em;
+	border: 0.5em ridge skyblue;
+	border-radius: 10px;
 	background-color: black;
-	color: white;
+	color: skyblue;
 }
 #button-bar button:hover{
 	cursor: pointer;
-	background-color:skyblue;
-	border: 5px solid black;
-	color: black;
+	background-color: black;
+	border: 0.5em groove skyblue;
+	color: white;
 }

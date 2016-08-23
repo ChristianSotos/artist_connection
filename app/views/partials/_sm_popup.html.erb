@@ -1,6 +1,6 @@
 <div id='social-media-div'>
-	<span class='close'>X</span>
-	<h2 class='form-header'>Update Social Media</h2>
+	<button class='close'>X</button>
+	<h1 class='form-header'>Update Social Media</h1>
 	<%= form_for @user, :url => '/users/update_sm', :html => {:multipart => true, :class => "no-file"} do |f| %>
 		<label>Facebook:</label>
 		<%= f.text_field :facebook %>

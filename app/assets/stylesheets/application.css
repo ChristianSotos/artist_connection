@@ -65,7 +65,7 @@ td span{
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
-span:hover,h3:hover,p:hover,li:hover{
+span:hover,p:hover,li:hover,h4:hover,h3:hover,h2:hover,h1:hover{
 	cursor:default;
 }
 a:hover{
@@ -118,7 +118,7 @@ a:hover{
 	border: 1px solid red;
 	border-radius: 5px;
 	color: red;
-	padding: 1%;
+	padding: 0.4em;
 	font-weight: normal;
 }
 .close:hover{
@@ -129,8 +129,7 @@ a:hover{
 
 #login-div, #song-qty-div, #register-div, #new-song-div, #success-div, #upload-pic-div, #upload-song-div, #social-media-div{
 	display: inline-block;
-	border: 4px solid skyblue;
-	border-radius: 1em;
+	border: 1em groove skyblue;
 	text-align: center;
 	padding: 1%;
 	background-color:white;
@@ -196,6 +195,5 @@ a:hover{
 	text-align: left;
 	border-bottom: 2px solid black;
 	padding: 0;
-	width: 95%;
 	margin: 0 auto;
 }
