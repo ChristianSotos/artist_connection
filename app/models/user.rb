@@ -6,6 +6,6 @@ class User < ActiveRecord::Base
   	EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
 	validates :email, presence:true, uniqueness:{case_sensitive:false}, format:{with:EMAIL_REGEX}
 	validates :first_name, :last_name, :artist_name, :description, presence:true
-	validates :phone_number, presence:true
+	validates :phone_number, presence:true, length:{is:10}
 	validates_attachment_content_type :picture, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 end

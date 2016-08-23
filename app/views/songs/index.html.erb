@@ -1,3 +1,4 @@
+<div id='main-div'>
 <div id='featured-div'>
 	<ul>
 		<li>
@@ -20,12 +21,11 @@
 		</li>
 	</ul>
 </div>
-<div id='main-div'>
 	<div id='top-songs-header'>
 		<div id='search-div'>
 			<input class='top-search' id='top-search-input' type='text' name='search' placeholder="Search">
 			<select class='top-search' id='top-search-genre' name='genre'>
-				<option value='0' selected='selected'>All</option>
+				<option value='0' selected='selected'>Any Genre</option>
 			<% genres = get_genres
 				genres.each{|g| %>
 				<option value='<%=g.id%>'><%=g.name%></option>

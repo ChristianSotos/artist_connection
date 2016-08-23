@@ -1,22 +1,46 @@
 #artist-pic-div{
-	width: 40%;
+	width: 30%;
 	display: inline-block;
 	vertical-align: bottom;
+	margin-right: 5%;
+}
+#artist-name-show{
+	border-bottom: 2px solid black;
+	text-align: left;
+	padding: 0;
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 0.5em;
+}
+#artist-name-show input{
+	font-size: 0.7em;
+	margin: 1% 0;
 }
 #artist-pic-div img{
 	display: inline-block;
 	width: 100%;
+	height: 12em;
 	border-radius: 10%;
 }
 #artist-info-div{
-	width: 59%;
+	width: 50%;
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
 }
-#follow-artist-title{
-	margin-bottom: 0;
+#artist-info-div span{
+	margin-top: 0.5em;
 }
+#artist-info-div p{
+	margin: 0;
+	margin-bottom: 1em;
+}
+#follow-artist-title{
+	margin-top: 0.5em;
+	margin-bottom: 0;
+	font-weight: bold;
+}
+
 #artist-info-div ul{
 	list-style-type: none;
 	padding: 0;
@@ -24,11 +48,51 @@
 }
 #artist-info-div li{
 	display:inline-block;
-	margin: 0 1%;
+	margin: 1% 2%;
+}
+.sm-pics-div{
+	display: inline-block;
+	width: 100%;
+	height: 2em;
+}
+.sm-pics-div:hover{
+	cursor:pointer;
+}
+.sm-pics-div img{
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	border-radius: 0.5em;
 }
 #artist-info-div a{
 	color: royalblue;
 }
+.artist-bold-text{
+	font-weight: bold;
+	display: block;
+}
+#artist-info-left-div, #artist-info-right-div{
+	display: inline-block;
+	width: 49%;
+	vertical-align: top;
+}
+#artist-info-left-div{
+	text-align: left;
+}
+#artist-info-right-div{
+	margin-top: 1em;
+}
+
+#artist-info-div input, #artist-info-div textarea{
+	border: 1px solid grey;
+	padding: 0.4em;
+	border-radius: 5px;
+}
+
+.user-edit{
+	display: none;
+}
+
 .pending{
 	font-size: 0.8em;
 }

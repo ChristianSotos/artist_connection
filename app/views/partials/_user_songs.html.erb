@@ -16,7 +16,7 @@
 			<% if !s.audio_file_file_name %>
 				<button class='popup-click' data-alt-src='/songs/upload_audio/<%=s.id%>'>Song</button>
 			<% else %>
-				<button class='play-btn' id="<%=s.audio_file.url%>" data-alt-src='<%=s.id%>'>Play</button>
+				<button class='play-btn' id="<%=s.audio_file.url%>" data-alt-src='<%=s.id%>'></button>
 			<% end %></td>
 			<td><span><%=s.name%></span></td>
 			<td><span><%=s.genre.name%></span></td>

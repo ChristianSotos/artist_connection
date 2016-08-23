@@ -7,8 +7,8 @@
 		<% }
 	end %>
 	<% for i in 1..session[:song_qty] do %>
-		<% if session[:songs_made][i-1] 
-			song = session[:songs_made][i-1] %>
+		<% if session[:songs_made][i-1]
+			song = get_song(session[:songs_made][i-1]['id']) %>
 			<div class='song-complete-div new-song-<%=i%>'>
 				<div class='song-input-row-1'><span>Name:</span><span class='song-info-bold'><%=song.name%></span></div>
 				<div class='song-input-row-2'><span>BPM:</span><span class='song-info-bold'><%=song.bpm%></span></div>

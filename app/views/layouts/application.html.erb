@@ -16,6 +16,12 @@
 	<%= render :partial => "partials/header" %>
 	<%= yield %>
 	<div id='sidebar'></div>
+
+	<div id='side-div'>
+		<%= render :partial => "partials/button_bar" %>
+		<div id='sidebar'></div>
+	</div>
+
 	<%= render :partial => "partials/playbar" %>
 </div>
 

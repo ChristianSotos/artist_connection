@@ -3,7 +3,6 @@
 	<span id='reg-to-log' class='popup-click' data-alt-src='/login_popup'>Already Have An Account? Login</span>
 	<h1>Artist Information</h1>
 	<%= form_for @user, :url => '/register', :html => {:multipart => true, :class => "no-file"} do |f| %>
-		<input type='hidden' name='file-field' id='file-field' value='true'>
 		<div class='reg-row'>
 			<div<% if flash[:errors]
 					if flash[:errors][:first_name]%> 
@@ -21,13 +20,13 @@
 		<div class='reg-row'>
 			<div<% if flash[:errors]
 					if flash[:errors][:phone_number]%> 
-						class='error'
+						id='phone-errors'
 					<% end 
 				end %>><label for='user[phone_number]'>Phone Number: </label>
 				<input type='text' name='phone-1' id='phone-input1' maxlength="3">
 				<input type='text' name='phone-2' id='phone-input2' maxlength="3">
 				<input type='text' name='phone-3' id='phone-input3' maxlength="4">
-				<input type='hidden' name='user[phone_number]'></div>
+				<input type='hidden' name='user[phone_number]' id='phone-number'></div>
 			<div<% if flash[:errors]
 					if flash[:errors][:email]%> 
 						class='error'

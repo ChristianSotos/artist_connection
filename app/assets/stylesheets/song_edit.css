@@ -1,30 +1,57 @@
 #song-edit-div{
-	border-bottom: 1px solid white;
+  width: 75%;
+	margin: 0 auto;
+	text-align: left;
+}
+#song-div h1{
+	margin-bottom: 0.5em;
+	border-bottom: 2px solid black;
+	width: 76%;
+	margin: 0.5em auto;
+}
+#song-edit-div h2{
+	margin-top: 0;
 }
 #song-edit-div div{
-	border-collapse: collapse;
 	width: 49%;
 	display: inline-block;
-	text-align: center;
 	margin: 0;
 }
 #song-edit-div span{
 	display: block;
-	margin-bottom: 5%;
+	font-weight: bold;
 }
-#song-edit-left-div{
+#song-edit-div p{
+	margin: 0;
+	margin-bottom: 1em;
 }
-#song-edit-right-div{
-	border-left: 1px solid white;
-}
-#song-edit-div input, #song-edit-div select{
+#song-edit-div input{
 	display: none;
 	text-align: center;
 	width: 80%;
 	border: 1px solid grey;
 	border-radius: 5px;
-	padding:0.5em;
 }
-#song-edit-div h1 input{
-	font-size: 1em;
+#song-edit-div select{
+	display: none;
+	width: 80%;
+}
+#song-edit-div h2 input{
+	font-size: 0.8em;
+}
+#song-div button{
+	width: 60%;
+	height: 2.5em;
+	background-color: black;
+	border: 1px solid skyblue;
+	color: white;
+	border-radius: 5px;
+}
+
+#song-div button:hover{
+	cursor: pointer;
+}
+#song-edit-div p:hover, #song-edit-div h2:hover{
+	color: white;
+	cursor: default;
 }

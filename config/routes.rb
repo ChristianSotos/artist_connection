@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
   get 'profile' => 'users#profile'
   post 'register' => 'users#register'
-  get '/users/upload_pic'
+  post 'users/update' => 'users#update'
+  get 'users/upload_pic' => 'users#upload_pic'
   patch 'users/update_pic' => 'users#update_pic'
   get 'users/show/:id' => 'users#show'
 

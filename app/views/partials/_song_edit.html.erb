@@ -1,36 +1,41 @@
 <div id='song-div'>
+	<h1>Edit Song</h1>
 	<div id='song-edit-div'>
-		<h1 id='name' class='show-to-edit'><%=@song.name%></h1>
-		<h1><input type='text' value='<%=@song.name%>' id='edit-name' class='song-edit' data-alt-field="name" data-alt-src="<%=@song.id%>"></h1>
+		<h2 id='name' class='show-to-edit'><%=@song.name%></h2>
+		<h2><input type='text' value='<%=@song.name%>' id='edit-name' class='song-edit' data-alt-field="name" data-alt-src="<%=@song.id%>"></h2>
 		<div id='song-edit-left-div'>
-			<span id='key' class='show-to-edit'>Key: <%=@song.key%></span>
-			<span><input type='text' value='<%=@song.key%>' id='edit-key' class='song-edit' data-alt-field="key" data-alt-src="<%=@song.id%>"></span>
-			<span id='public' class='show-to-edit'>Availability: 
+			<span>Key:</span>
+			<p id='key' class='show-to-edit'><%=@song.key%></p>
+			<p><input type='text' value='<%=@song.key%>' id='edit-key' class='song-edit' data-alt-field="key" data-alt-src="<%=@song.id%>"></p>
+			<span>Availability:</span> 
+			<p id='public' class='show-to-edit'>
 				<% if @song.public %>
 					Public
 				<% else %>
 					Private
 				<% end %>
-			</span>
-			<span>
-			<select id='edit-public' class='song-edit' data-alt-field="public" data-alt-src="<%=@song.id%>">
-				<option value='true'
-				<% if @song.public == true %>
-				selected='selected'
-				<% end %>
-				>Public</option>
-				<option value='false'
-				<% if @song.public == false %>
-				selected='selected'
-				<% end %>
-				>Private</option>
-			</select>
-			</span>
+			</p>
+			<p>
+				<select id='edit-public' class='song-edit' data-alt-field="public" data-alt-src="<%=@song.id%>">
+					<option value='true'
+					<% if @song.public == true %>
+					selected='selected'
+					<% end %>
+					>Public</option>
+					<option value='false'
+					<% if @song.public == false %>
+					selected='selected'
+					<% end %>
+					>Private</option>
+				</select>
+			</p>
 		</div>
 		<div id='song-edit-right-div'>
-			<span  id='bpm' class='show-to-edit'>BPM: <%=@song.bpm%></span>
-			<span><input type='text' value='<%=@song.bpm%>' id='edit-bpm' class='song-edit' data-alt-field="bpm" data-alt-src="<%=@song.id%>"></span>
-			<span id='genre' class='show-to-edit'>Genre : <%=@song.genre.name%></span>
+			<span>BPM:</span>
+			<p  id='bpm' class='show-to-edit'><%=@song.bpm%></p>
+			<p><input type='text' value='<%=@song.bpm%>' id='edit-bpm' class='song-edit' data-alt-field="bpm" data-alt-src="<%=@song.id%>"></p>
+			<span>Genre:</span>
+			<p id='genre' class='show-to-edit'><%=@song.genre.name%></p>
 			<select id='edit-genre' class='song-edit' data-alt-field="genre" data-alt-src="<%=@song.id%>">
 			<% genres = get_genres
 				genres.each{|g| %>
