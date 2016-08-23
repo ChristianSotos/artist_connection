@@ -1,0 +1,88 @@
+// Place all the styles related to the Session controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.home-main-content {
+	background-color: white;
+	margin: .5% auto;
+	width: 98%;
+	padding: 1%;
+	opacity: .9;
+	color: black;
+	display: inline-block;
+	font-family: 'Rokkitt', serif;
+	text-align: center;
+}
+	.home-main-content h2{
+		font-size: 2.5em;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	.home-main-content h3{
+		font-size: 1.5em;
+	}
+	.home-main-content p, label{
+		font-size: 1.3em;
+		margin-bottom: 3%;
+	}
+	.home-main-content input{
+		text-align: center;
+		float: right;
+	}
+
+#session-contact-form-div {
+	text-align: left;
+	display: inline-block;
+	padding: 1%;
+}
+	#session-contact-form-div textarea {
+	width: 100%;
+	height: 10em;
+	font-size: 1.1em;
+	}
+	#session-contact-form-div input {
+		font-size: 1.1em;
+	}
+	#session-contact-form-div button {
+		font-size: 1.1em;
+		margin-left: 35%;
+		margin-top: 2%;
+	}
+
+#contact-form-button {
+	/*width: 30%;*/
+	font-size: 1em;
+	padding: 2%;
+	color: white;
+	background-color: black;
+}
+
+
+
+.column-third {
+	font-family: 'Oswald', sans-serif;
+	display: inline-block;
+	width: 33%;
+	vertical-align: top;
+	color: black;
+	text-align: center;
+}
+	.column-third h3{
+		font-family: 'Khand', sans-serif;
+		font-size: 1.5em;
+	}
+	.column-img{
+		width: 50%;
+		display: inline-block;
+	}
+	.column-img img{
+		width: 100%;
+	}
+
+
+
+
+
+

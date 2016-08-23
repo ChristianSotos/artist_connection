@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'admin' => 'admin#index'
+  get 'admin/review_song/:id' => 'admin#review_song'
+
   get 'login_popup' => 'session#login_popup'
   post 'login' => 'session#login'
   get 'logout' => 'session#logout'
@@ -27,7 +30,7 @@ Rails.application.routes.draw do
   get 'register' => 'session#register'
 
   root 'session#index'
-  get '/about' => 'session#about'
+  get 'about' => 'session#about'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

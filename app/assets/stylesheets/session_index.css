@@ -31,8 +31,13 @@
 		margin: 1%;
 		font-family: 'Khand', sans-serif;
 	}
+	.services-you-us h3{
+		font-size: 2em;
+		/*margin: 1%;*/
+		font-family: 'Khand', sans-serif;
+	}
 	.services-you-us p, .services-you-us li {
-		font-size: 1.25em;
+		font-size: 1.5em;
 		font-family: 'Rokkitt', serif;
 	}
 	.services-you-us ul {
@@ -41,13 +46,14 @@
 	.services-you-us li {
 		font-weight: bolder;
 		list-style-type: none;
-		font-size: 1.35em;
+		font-size: 1.65em;
 	}
 
 #services-artists {
 	width: 100%;
 	background-color: black;
 	color: white;
+	opacity: .9;
 	text-align: center;
 	padding: 3% 0%;
 	font-family: 'Khand', sans-serif;
@@ -73,5 +79,10 @@
 		border-radius: 50%;
 	}
 
+#price-table {
+	width: 40%;
+	font-size: 1.25em;
+	font-family: 'Rokkitt', serif;
+}
 
 

@@ -1,0 +1,38 @@
+<h1>Review Song</h1>
+<div id="admin-review-page">
+	<div id="admin-artist-info">
+		<div id='admin-artist-pic-div'>
+			<% if @song.user.picture_file_name %>
+				<img src='<%=@song.user.picture.url%>'>
+			<% end %>
+		</div>
+		<div>
+			<% if @song.audio_file.url%>
+				<button class='play-btn' id="<%=@song.audio_file.url%>" data-alt-src='<%=@song.id%>'>Play</button>
+			<% end %>
+			<h3>Song: <%=@song.name%></h3>
+			<h3>Artist: <%=@song.user.artist_name%></h3>
+			<h3>Genre: <%=@song.genre.name%></h3>
+			<h3>Play Count: <%=@song.play_count%></h3>
+			<h3>Key: <%=@song.key%></h3>
+			<h3>BPM: <%=@song.bpm%></h3>
+		</div>
+	</div>
+	<div id="admin-review-div">
+		<form>
+			<input type="hidden" name="song_id" value="<%=@song.id%>">
+			<label>Analysis: </label><textarea></textarea>
+			<label>Rating (1-5): </label>
+			<select>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+			</select>
+			<button>Submit Review</button>
+		</form>
+	</div>
+</div>
+
+
