@@ -10,9 +10,6 @@
 	width: 43%;
 	vertical-align: top;
 }
-#new-song-div label{
-	font-weight: bold;
-}
 .song-input-row-1{
 	text-align: left;
 	margin: 1%;
@@ -56,12 +53,15 @@
 .song-input-row-3 select{
 	width: 60%;
 }
-#new-song-div button{
+.new-song-form button{
 	padding: 0.5em;
-	border: 1px solid skyblue;
-	border-radius: 5px;
-	background-color: black;
+	border-radius: 1em;
+	border: none;
+	background: linear-gradient(steelblue, #0099ff);
 	color: white;
+}
+.new-song-form button:hover{
+	background: linear-gradient(#0099ff, steelblue);
 }
 .song-complete-div span{
 	display: block;

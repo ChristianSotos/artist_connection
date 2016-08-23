@@ -2,9 +2,7 @@
 	overflow: scroll;
 }
 #register-div label{
-	font-weight: bold;
 	display: block;
-	/*margin: 1%;*/
 }
 .reg-row{
 	text-align: left;

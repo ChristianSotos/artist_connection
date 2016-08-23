@@ -5,6 +5,8 @@ class SongsController < ApplicationController
 		@current_page = 1
 		@songs = Song.offset(0).where(public: true).order(rating: :desc, play_count: :desc).limit(5)
 		if session[:user_id]
+			@user_song_count = Song.where(user:current_user).count
+			@user_current_page = 1
 			@user_songs = Song.offset(0).where(user:current_user).limit(5)
 		end
 	end
@@ -129,6 +131,14 @@ class SongsController < ApplicationController
 		query += "LIMIT 5 OFFSET #{page_offset}"
 		@songs = Song.find_by_sql(query)
 		render :partial => "partials/top_songs_search"
+	end
+
+	def user_pagination
+		page_offset = params[:pagination].to_i * 5
+		@user_current_page = params[:pagination].to_i + 1
+		@user_song_count = Song.where(user:current_user).count
+		@user_songs = Song.offset(page_offset).where(user:current_user).limit(5)
+		render :partial => "partials/user_songs"
 	end
 
 	private

@@ -21,6 +21,12 @@
 	margin-bottom: 0;
 	margin-top: 0.5em;
 }
+#follow-artist-show-title{
+	margin-top: 0.5em;
+	margin-bottom: 0;
+	font-weight: bold;
+	text-decoration: underline;
+}
 #sidebar table{
 	font-size: 0.9em;
 }

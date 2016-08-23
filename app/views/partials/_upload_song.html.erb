@@ -1,6 +1,6 @@
 <div id='upload-song-div'>
-	<span class='close'>X</span>
-	<h2><%=@song.name%></h2>
+	<button class='close'>X</button>
+	<h1 class='form-header'><%=@song.name%></h1>
 	<%= form_for @song, :url => "/songs/update_audio/#{@song.id}", :html => {:multipart => true} do |f| %>
 	<input type='hidden' name='file_checker' id='file_checker' value='true'>
 	<p><label for='song[audio_file]'>Audio File</label>

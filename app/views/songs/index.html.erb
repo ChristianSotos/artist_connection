@@ -1,6 +1,8 @@
 <div id='main-div'>
+<div id='featured-header'>
+	<h3 class='header-text'>Featured Artists</h3>
+</div>
 <div id='featured-div'>
-	<h3{}
 	<ul>
 		<li>
 			<div class='featured-images-div'><%= image_tag 'Example.png' %></div>
@@ -33,12 +35,15 @@
 			<% } %>
 			</select>
 		</div>
-		<h3>Top Reviewed Songs</h3>
+		<h3 class='header-text'>Top Reviewed Songs</h3>
 	</div>
 	<div id='top-songs-div'>
 		<%= render :partial => "partials/top_songs" %>
 	</div>
 
+	<div id='top-songs-header'>
+		<h3 class='header-text'>User Songs</h3>
+	</div>
 	<div id='user-songs-div'>
 	<% if @user_songs %>
 		<%= render :partial => "partials/user_songs" %>

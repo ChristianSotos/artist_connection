@@ -18,6 +18,12 @@
 	display: inline-block;
 	text-align: center;
 }
+#featured-header h3{
+	margin: 0 auto;
+	width: 80%;
+	text-align: left;
+	border-bottom: 2px solid black;
+}
 #featured-div ul{
 	list-style-type: none;
 	padding: 0;
@@ -36,7 +42,7 @@
 	height: 100%;
 }
 
-#top-songs-header h3, #user-songs-div h3{
+#top-songs-header h3, #user-songs-header h3{
 	margin: 0 auto;
 	padding: 0;
 	padding-bottom: 0em;
@@ -59,6 +65,7 @@
 	float: right;
 	display: inline-block;
 	margin-right: 5%;
+	margin-top:0.4em;
 }
 #search-div input{
 	border: 1px solid grey;
