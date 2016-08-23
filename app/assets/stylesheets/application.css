@@ -135,7 +135,6 @@ a:hover{
 	padding: 1%;
 	background-color:white;
 	max-height: 60%;
-	overflow: scroll;
 }
 .error input, .error textarea{
 	border-color: red;
@@ -155,4 +154,34 @@ a:hover{
 .play-btn:hover{
 	border: 2px solid white;
 	background: linear-gradient(grey, lightgrey);
+}
+#page-div{
+	
+}
+#page-div ul{
+	border-collapse: collapse;
+	list-style-type: none;
+}
+.pagination{
+	margin: 0;
+	padding: 0.5em;
+	width: 1em;
+	height: 1em;
+	border-collapse: collapse;
+	border: 1px solid black;
+	display: inline-block;
+}
+#on-page{
+	background-color: black;
+	color: white;
+}
+#first-page, #last-page, #prev-page{
+	width: 2em
+}
+.pagination:hover{
+	border: 1px solid royalblue;
+}
+
+::-webkit-scrollbar {
+	display: none;
 }

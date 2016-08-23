@@ -1,18 +1,49 @@
 <div id='main-div'>
-	<h1 class='header-text' id='artist-name'><%=@user.artist_name%></h1>
+	<h1 class='header-text' id='artist-name-show'>
+		<span class='show-to-edit' id='artist-name'><%=@user.artist_name%></span>
+		<input type='text' value='<%=@user.artist_name%>' class='user-edit' id='edit-artist-name' data-alt-field="artist_name">
+	</h1>
 	<div id='artist-pic-div'>
 		<% if @user.picture_file_name %>
 			<img src="<%=@user.picture.url%>">
-			<button id='add-picture' class='popup-click' data-alt-src='/users/upload_pic'>Upload A Picture</button>
-		<% else %>
 			<button id='add-picture' class='popup-click' data-alt-src='/users/upload_pic'>Update Picture</button>
+		<% else %>
+			<button id='add-picture' class='popup-click' data-alt-src='/users/upload_pic'>Upload A Picture</button>
 		<% end %>
 	</div>
 	<div id='artist-info-div'>
 		<div id='artist-info-left-div'>
-			<p><span class='artist-bold-text'>Name:</span> <%=@user.first_name%> <%=@user.last_name%></p>
-			<p><span class='artist-bold-text'>Email:</span> <%=@user.email%></p>
-			<p><span class='artist-bold-text'>Phone:</span> <%=@user.phone_number%></p>
+			<span class='artist-bold-text'>Name:</span>
+			<p class='show-to-edit' id='full_name'><%=@user.first_name%> <%=@user.last_name%></p>
+			<p>
+				<input type='text' value='<%=@user.first_name%>' id='edit-first-name' class='user-edit' data-alt-field="first_name">
+				<input type='text' value='<%=@user.last_name%>' id='edit-last-name' class='user-edit' data-alt-field="last_name">
+			</p>
+
+			<span class='artist-bold-text'>Email:</span>
+			<p class='show-to-edit'  id='email'><%=@user.email%></p>
+			<p>
+				<input type='text' value='<%=@user.email%>' id='edit-email' class='user-edit' data-alt-field="email">
+			</p>
+
+			<span class='artist-bold-text'>Phone:</span> 
+			<p class='show-to-edit' id='phone-number'>
+				(
+					<% for i in 0...3 %>
+					<%=@user.phone_number[i]%>
+					<% end %>
+				)
+					<% for i in 3...6 %>
+					<%=@user.phone_number[i]%>
+					<% end %>
+				-
+					<% for i in 6..10 %>
+					<%=@user.phone_number[i]%>
+					<% end %>
+			</p>
+			<p>
+				<input type='text' value='<%=@user.phone_number%>' id='edit-phone-number' class='user-edit' data-alt-field="phone_number">
+			</p>
 		</div>
 		<div id='artist-info-right-div'>
 			<p id='follow-artist-title'>Social Media</p>
@@ -48,7 +79,10 @@
 				</li>
 			</ul>
 		</div>
-		<p><%=@user.description%></p>
+		<p class='show-to-edit' id='description'><%=@user.description%></p>
+		<p>
+		<textarea id='edit-description' class='user-edit' data-alt-field="description"><%=@user.description%></textarea>
+		</p>
 	</div>
 	<div id='artist-songs-div'>
 		<table>

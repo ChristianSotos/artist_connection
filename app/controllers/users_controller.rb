@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 		if Admin.find_by(email: params[:user][:email])
 			render :partial => "partials/register"
 		end
-		
+
 		new_user = User.new(user_params)
 		if new_user.save
 			if session[:from_new_song]
@@ -26,6 +26,23 @@ class UsersController < ApplicationController
 			@user = User.new
 			render :partial => "partials/register"
 		end
+	end
+	def update
+		@user = current_user
+		if params[:field] == "first_name"
+			@user.update(first_name: params[:value])
+		elsif params[:field] == "last_name"
+			@user.update(last_name: params[:value])
+		elsif params[:field] == "email"
+			@user.update(email: params[:value])
+		elsif params[:field] == "phone_number"
+			@user.update(phone_number: params[:value])
+		elsif params[:field] == "description"
+			@user.update(description: params[:value])
+		elsif params[:field] == "artist_name"
+			@user.update(artist_name: params[:value])
+		end
+		redirect_to "/profile"
 	end
 
 	def upload_pic

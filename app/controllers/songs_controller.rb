@@ -2,6 +2,7 @@ class SongsController < ApplicationController
 	def index
 		session[:from_new_song] = false
 		@song_count = Song.where(public:true).count
+		@current_page = 1
 		@songs = Song.offset(0).where(public: true).order(rating: :desc, play_count: :desc).limit(5)
 		if session[:user_id]
 			@user_songs = Song.offset(0).where(user:current_user).limit(5)
@@ -121,9 +122,12 @@ class SongsController < ApplicationController
 			end
 			query += "(name LIKE '%"+params[:search]+"%' OR artist_name LIKE'%"+params[:search]+"%') "
 		end
-		query += "ORDER BY rating DESC, play_count DESC LIMIT 5 "
+		page_offset = params[:pagination].to_i * 5
+		@current_page = params[:pagination].to_i + 1
+		query += "ORDER BY rating DESC, play_count DESC "
+		@song_count = Song.find_by_sql(query).count
+		query += "LIMIT 5 OFFSET #{page_offset}"
 		@songs = Song.find_by_sql(query)
-		@song_count = Song.finde_by_sql(query).count
 		render :partial => "partials/top_songs_search"
 	end
 

@@ -17,6 +17,8 @@
 	overflow-x:scroll;
 	display: inline-block;
 	text-align: center;
+	background-attachment: fixed;
+	overflow-inline: none;
 }
 #featured-div ul{
 	list-style-type: none;

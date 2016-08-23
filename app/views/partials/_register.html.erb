@@ -20,7 +20,7 @@
 		<div class='reg-row'>
 			<div<% if flash[:errors]
 					if flash[:errors][:phone_number]%> 
-						class='error'
+						id='phone-errors'
 					<% end 
 				end %>><label for='user[phone_number]'>Phone Number: </label>
 				<input type='text' name='phone-1' id='phone-input1' maxlength="3">

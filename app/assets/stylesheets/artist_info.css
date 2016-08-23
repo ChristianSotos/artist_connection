@@ -24,6 +24,9 @@
 #sidebar table{
 	font-size: 0.9em;
 }
+#sidebar td{
+	padding: 0.2em;
+}
 #artist-info-sidebar #artist-info-div{
 	width: 100%;
 }

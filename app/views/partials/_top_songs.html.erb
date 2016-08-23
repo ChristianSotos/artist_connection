@@ -20,10 +20,21 @@
 </table>
 <div id='page-div'>
 	<ul>
-		<li id='on-page'>1</li>
+	<% if @current_page != 1 %>
+		<li class='pagination' id='first-page' data-alt-src='1'>First</li>
+		<span>...</span>
+		<li class='pagination' id='prev-page' data-alt-src='<%=(@current_page.to_i - 1)%>'>Prev</li>
+	<% end %>
 	<% pages = (@song_count/5.to_f).ceil
-	for i in 2..pages do %>
-		<li><%=i%></li>
+	for i in 1..pages do %>
+		<li class='pagination' data-alt-src='<%=i%>'
+		<% if i == @current_page.to_i %>
+			id='on-page'
+		<% end %>
+		><%=i%></li>
+	<% end %>
+	<% if @current_page.to_i != i %>
+		<li class='pagination' id='last-page' data-alt-src='<%=(@current_page.to_i + 1)%>'>Next</li>
 	<% end %>
 	</ul>
 </div>

@@ -44,11 +44,10 @@ $(document).ready(function(){
 	$(document).on('submit', '.no-file', function(){
 		var action = $(this).attr('action');
 		if (action == "/register"){
-			var phonum = $('#phone-1').val() + $('#phone-2').val() + $('#phone-3').val()
+			var phonum = $('#phone-input1').val() + $('#phone-input2').val() + $('#phone-input3').val()
 			$('#phone-number').val(phonum); 
 		}
 		$.post(action, $(this).serialize(), function(res){
-			console.log(res);
 			if (res == "exit"){
 				$('#popup').css("display", "none");
 			}else{
@@ -65,6 +64,11 @@ $(document).ready(function(){
 		$('#audio').trigger("play");
 	})
 	$(document).on('click', '.show-to-edit', function(){
+		if($(this).attr('id') == "full_name"){
+			$(this).hide();
+			$('#edit-first-name').show();
+			$('#edit-last-name').show();
+		}
 		var id = "#edit-" + $(this).attr('id'); 
 		$(this).hide();
 		$(id).show();
@@ -79,12 +83,36 @@ $(document).ready(function(){
 			$('#sidebar').html(res);
 		})
 	})
+	$(document).on('change', '.user-edit', function(){
+		var url = "/users/update";
+		obj = {
+			field: $(this).attr('data-alt-field'),
+			value: $(this).val()
+		}
+		$.post(url, obj, function(){
+		})
+	})
 	$(document).on('change', '.top-search', function(){
 		var search_input = $('#top-search-input').val();
 		var genre_input = $('#top-search-genre').val();
 		obj = {
 			search: search_input,
-			genre: genre_input
+			genre: genre_input,
+			pagination: 0
+		}
+		$.post("/songs/top_search", obj, function(res){
+			$('#top-songs-div').html(res);
+		})
+		return false
+	})
+	$(document).on('click', '.pagination', function(){
+		var search_input = $('#top-search-input').val();
+		var genre_input = $('#top-search-genre').val();
+		var page = $(this).attr('data-alt-src') - 1
+		obj = {
+			search: search_input,
+			genre: genre_input,
+			pagination: page
 		}
 		$.post("/songs/top_search", obj, function(res){
 			$('#top-songs-div').html(res);

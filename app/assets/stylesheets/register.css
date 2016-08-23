@@ -1,6 +1,6 @@
-/*#register-div{
-	width: 50%;
-}*/
+#register-div{
+	overflow: scroll;
+}
 #register-div label{
 	font-weight: bold;
 	display: block;
@@ -27,6 +27,9 @@
 }
 #phone-input3{
 	width: 25%;
+}
+#phone-errors input{
+	border-color: red;
 }
 .reg-artist-row{
 	display: block;
