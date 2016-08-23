@@ -1,0 +1,35 @@
+
+
+#admin-review-page{
+	width: 100%;
+	text-align: left;
+	vertical-align: top;
+	margin-top: 5%;
+}
+
+#admin-artist-info{
+	text-align: center;
+	width: 25%;
+	padding: 2.5% 0%;
+	display: inline-block;
+	background-color: white;
+	opacity: .9;
+	font-size: 1.5em;
+}
+
+#admin-artist-pic-div {
+	width: 100%;
+}
+	#admin-artist-pic-div img{
+	border-radius: 50%;
+	}
+
+#admin-review-div {
+	background-color: white;
+	padding: 2.5%;
+	width: 69%;
+	opacity: .9;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+}

@@ -23,56 +23,71 @@
 		<li>Publicists</li>
 	</ul> 
 </div>
-
 <div id="services-artists">
 	<h2>Artists We've Worked With</h2>
 	<div class="services-artist-div">
-		<img src="https://i1.sndcdn.com/avatars-000173677153-yo5vot-t500x500.jpg">
+		<%=image_tag("roxannemontana.jpg")%>
 		<h3>Roxanne Montana</h3>
 	</div>
 	<div class="services-artist-div">
-		<img src="http://ar-report.com/wp-content/uploads/2015/10/Courtlin-Jabrae.jpg">
+		<%=image_tag("Courtlin_Jabrae.jpg")%>
 		<h3>Courtlin Jabrae</h3>
 	</div>
 	<div class="services-artist-div">
-		<img src="https://i1.sndcdn.com/avatars-000207932472-zjmpdc-t500x500.jpg">
+		<%=image_tag("laci_kay.jpg")%>
 		<h3>Laci Kay</h3>
 	</div>
 	<div class="services-artist-div">
-		<img src="https://i1.sndcdn.com/avatars-000069038365-m8vsoa-t500x500.jpg">
+		<%=image_tag("mr_light_upp.jpg")%>
 		<h3>MrLightUpp</h3>
 	</div>
 	<div class="services-artist-div">
-		<img src="https://i1.sndcdn.com/avatars-000163638065-b4ug6r-t500x500.jpg">
+		<%=image_tag("lorin.jpg")%>
 		<h3>LORIN</h3>
 	</div>
 	<div class="services-artist-div">
-		<img src="https://i1.sndcdn.com/avatars-000233493806-1wlhd5-t500x500.jpg">
+		<%=image_tag("boss_carrot.jpg")%>
 		<h3>Boss Carrot</h3>
 	</div>
 </div>
-
 <div class="services-you-us">
 	<h2>What You Give Us</h2>
-	<p>Have a seasoned vet help you develop your sound. Our award-winning staff has over 40 years of experience and can help take your music career to the next level. We work with artists of all genres and backgrounds and provide clear, specfic advice to all of our customers.</p>
-	<p>Artists can submit their songs on our website and receive personalized advice at a phenominal value. Every time you submit a song, you will receive in return:</p>
-	<ul>
-		<li>One (1) Professional Song Critique & Descriptive Feedback per Song Submitted</li>
-		<li>One (1) Guaranteed Index Referral</li>
-	</ul>
-	<p>Our current collection of index referrals spans across several different industries and practices, including, but not limited to:</p>
-	<ul>
-		<li>Business consultants</li>
-		<li>A&Rs</li>
-		<li>Music publishers</li>
-		<li>Licensing executives</li>
-		<li>Advertising agents</li>
-		<li>Bloggers</li>
-		<li>Journalists</li>
-		<li>Culinary specialists</li>
-		<li>Publicists</li>
-	</ul> 
+
+	<p>If you're interested in getting serious about your music career with us, please complete our new artist registration process by clicking on the "Submit Your Songs" button below. You'll be prompted to create a profile and provide your personal information, including your social media accounts. Once completed, you can upload up to five songs that you want our staff to review. Once payment is completed, you'll receive your reports via email and be contacted by a member of our team within five (5) business days.</p>
+	<%= render :partial => "partials/button_bar" %>
+
+	<h3>Pricing</h3>
+
+	<table id="price-table">
+		<thead>
+			<th># of Song Submissions</th>
+			<th>Price</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1 song</td>
+				<td>$8</td>
+			</tr>
+			<tr>
+				<td>2 songs</td>
+				<td>$10</td>
+			</tr>
+			<tr>
+				<td>3 songs</td>
+				<td>$15</td>
+			</tr>
+			<tr>
+				<td>4 songs</td>
+				<td>$20</td>
+			</tr>
+			<tr>
+				<td>5 songs</td>
+				<td>$25</td>
+			</tr>
+		</tbody>
+	</table> 
 </div>
+
 
 
 
