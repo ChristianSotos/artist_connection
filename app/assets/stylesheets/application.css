@@ -14,7 +14,7 @@
  *= require_self
  */
 body{
-	background-color: silver;
+	background-color: #f2f2f2;
 	color: black;
 	font-family: 'Rokkitt', serif;
 	font-size: 1.1em;
@@ -72,7 +72,7 @@ a:hover{
 	cursor:default;
 }
 .song-row:hover, .artist-row:hover{
-	color: skyblue;
+	color: #0099ff;
 }
 
 #container{
@@ -99,20 +99,6 @@ a:hover{
 	text-align: center;
 	/*z-index: 1;*/
 }
-#popup{
-	text-align: center;
-	display: none;
-	z-index: 2;
-	padding-top: 10%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow: auto;
-	background-color: rgba(0,0,0,0.9);
-	color: black;
-}
 .close{
 	float: right;
 	border: 1px solid red;
@@ -125,15 +111,6 @@ a:hover{
 	font-weight: bold;
 	cursor: pointer;
 	border: 2px solid red;
-}
-
-#login-div, #song-qty-div, #register-div, #new-song-div, #success-div, #upload-pic-div, #upload-song-div, #social-media-div{
-	display: inline-block;
-	border: 1em groove skyblue;
-	text-align: center;
-	padding: 1%;
-	background-color:white;
-	max-height: 60%;
 }
 .error input, .error textarea{
 	border-color: red;
@@ -161,7 +138,7 @@ a:hover{
 	border-collapse: collapse;
 	list-style-type: none;
 }
-.pagination{
+.pagination, .user-pagination{
 	margin: 0;
 	padding: 0.5em;
 	width: 1em;
@@ -177,8 +154,8 @@ a:hover{
 #first-page, #last-page, #prev-page{
 	width: 2em
 }
-.pagination:hover{
-	border: 1px solid royalblue;
+.pagination:hover, .user-pagination:hover{
+	border: 1px solid #0099ff;
 }
 
 ::-webkit-scrollbar {
@@ -196,4 +173,64 @@ a:hover{
 	border-bottom: 2px solid black;
 	padding: 0;
 	margin: 0 auto;
+}
+#popup{
+	text-align: center;
+	display: none;
+	z-index: 2;
+	padding-top: 6em;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.9);
+	color: black;
+	animation-name: popup_background;
+	animation-duration: 1s;
+}
+@keyframes popup_background{
+	from {
+		background-color: transparent;
+	}
+	to {
+		background-color: rgba(0,0,0,0.9);
+	}
+}
+#login-div, #song-qty-div, #register-div, #new-song-div, #success-div, #upload-pic-div, #upload-song-div, #social-media-div{
+	display: inline-block;
+	border: 1em groove skyblue;
+	text-align: center;
+	padding: 1%;
+	background: linear-gradient(#262626, black);
+	max-height: 60%;
+	color: white;
+	position: relative;
+	animation-name: popup_show;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-in;
+	min-width: 20%;
+}
+
+@keyframes popup_show{
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 100%;
+	}
+}
+.disappear{
+	animation-name: div_disappear;
+	animation-duration: 1s;
+}
+@keyframes div_disappear{
+	from{
+		opacity: 100%;
+	}
+	to{
+		opacity: 0;
+
+	}
 }

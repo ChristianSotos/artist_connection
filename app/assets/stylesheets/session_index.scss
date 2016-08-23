@@ -1,0 +1,43 @@
+// Place all the styles related to the Session controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.home-main-content {
+	background-color: white;
+	margin: 2em auto;
+	width: 78%;
+	padding: 1%;
+	opacity: .9;
+	color: black;
+	display: inline-block;
+}
+	.home-main-content h3{
+		font-size: 1.5em;
+	}
+	.home-main-content p{
+		font-size: 1.5em;
+	}
+.column-third {
+	font-family: 'Oswald', sans-serif;
+	display: inline-block;
+	width: 33%;
+	vertical-align: top;
+	color: black;
+	text-align: center;
+}
+	.column-third h3{
+		margin: 0;
+	}
+	.column-img{
+		width: 50%;
+		display: inline-block;
+	}
+	.column-img img{
+		width: 100%;
+	}
+
+
+
+
+

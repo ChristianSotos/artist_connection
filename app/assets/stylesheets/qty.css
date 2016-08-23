@@ -5,11 +5,10 @@
 	width: 30%;
 	text-align: center;
 	margin: 1%;
-	border: 5px solid steelblue;
-	color: steelblue;
+	border: 5px solid #00ccff;
+	color: white;
 	background-color: black;
 }
 .qty-btns:hover{
-	border: 5px solid skyblue;
-	color: skyblue;
+	border: 5px solid #ffcc33;
 }

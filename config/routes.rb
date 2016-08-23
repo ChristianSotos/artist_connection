@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   get 'songs/index'
   post 'songs/top_search' => 'songs#top_search'
+  post 'songs/user_pagination' => 'songs#user_pagination'
   get 'qty' => 'songs#qty'
   get 'audio_upload' => 'songs#audio_upload'
   post 'audio_submit/:id' => 'songs#audio_submit'

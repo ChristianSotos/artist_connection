@@ -31,6 +31,7 @@ $(document).ready(function(){
 		})
 	})
 	$(document).on('click', '.popup-click', function(){
+		// $('#popup > div').fadeOut(500);
 		var action = $(this).attr('data-alt-src');
 		$.get(action, function(res){
 			$('#popup').html(res);
@@ -48,11 +49,10 @@ $(document).ready(function(){
 			$('#phone-number').val(phonum); 
 		}
 		$.post(action, $(this).serialize(), function(res){
-			if (res == "exit"){
-				$('#popup').css("display", "none");
-			}else{
-				$('#popup').html(res);
-			}
+			$('#popup > div').fadeOut(500);
+			setTimeout(function(){
+					$('#popup').html(res);
+				},500);
 		})
 		return false;
 	})
@@ -116,6 +116,16 @@ $(document).ready(function(){
 		}
 		$.post("/songs/top_search", obj, function(res){
 			$('#top-songs-div').html(res);
+		})
+		return false
+	})
+	$(document).on('click', '.user-pagination', function(){
+		var page = $(this).attr('data-alt-src') - 1
+		obj = {
+			pagination: page
+		}
+		$.post("/songs/user_pagination", obj, function(res){
+			$('#user-songs-div').html(res);
 		})
 		return false
 	})

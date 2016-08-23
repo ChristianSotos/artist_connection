@@ -1,4 +1,3 @@
-<h3>User Songs</h3>
 <table>
 	<thead>
 		<tr>
@@ -38,3 +37,25 @@
 	<% } %>
 	</tbody>
 </table>
+<% if @user_song_count > 5 %>
+	<div id='page-div'>
+		<ul>
+		<% if @user_current_page != 1 %>
+			<li class='user-pagination' id='first-page' data-alt-src='1'>First</li>
+			<span>...</span>
+			<li class='user-pagination' id='prev-page' data-alt-src='<%=(@user_current_page.to_i - 1)%>'>Prev</li>
+		<% end %>
+		<% pages = (@user_song_count/5.to_f).ceil
+		for i in 1..pages do %>
+			<li class='user-pagination' data-alt-src='<%=i%>'
+			<% if i == @user_current_page.to_i %>
+				id='on-page'
+			<% end %>
+			><%=i%></li>
+		<% end %>
+		<% if @user_current_page.to_i != i %>
+			<li class='user-pagination' id='last-page' data-alt-src='<%=(@user_current_page.to_i + 1)%>'>Next</li>
+		<% end %>
+		</ul>
+	</div>
+<% end %>
