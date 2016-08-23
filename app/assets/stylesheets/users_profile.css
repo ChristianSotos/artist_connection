@@ -39,6 +39,10 @@
 	margin-top: 0.5em;
 	margin-bottom: 0;
 	font-weight: bold;
+	text-decoration: underline;
+}
+#follow-artist-title:hover{
+	color: white;
 }
 
 #artist-info-div ul{

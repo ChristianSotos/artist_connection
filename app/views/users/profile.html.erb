@@ -46,7 +46,7 @@
 			</p>
 		</div>
 		<div id='artist-info-right-div'>
-			<p id='follow-artist-title'>Social Media</p>
+			<p id='follow-artist-title' class='popup-click' data-alt-src="/users/sm_popup">Social Media</p>
 			<ul id='follow-artist-list'>
 				<li>
 					<a href='<%=@user.facebook%>'>
@@ -126,3 +126,8 @@
 		</table>
 	</div>
 </div>
+<div id='side-div'>
+	<%= render :partial => "partials/button_bar" %>
+	<div id='sidebar'></div>
+</div>
+<%= render :partial => "partials/playbar" %>

@@ -10,15 +10,13 @@
 }
 
 #featured-div{
-	width: 95%;
+	width: 80%;
 	margin: 0 auto;
 	margin-bottom: 1em;
 	white-space: nowrap;
 	overflow-x:scroll;
 	display: inline-block;
 	text-align: center;
-	background-attachment: fixed;
-	overflow-inline: none;
 }
 #featured-div ul{
 	list-style-type: none;
@@ -41,7 +39,7 @@
 #top-songs-header h3, #user-songs-div h3{
 	margin: 0 auto;
 	padding: 0;
-	padding-bottom: 0.5em;
+	padding-bottom: 0em;
 	display: block;
 	border-bottom: 2px solid black;
 	text-align: left;
@@ -65,7 +63,6 @@
 #search-div input{
 	border: 1px solid grey;
 	border-radius: 5px;
-	height: 2em;
 	text-align: center;
 	font-weight: bold;
 }

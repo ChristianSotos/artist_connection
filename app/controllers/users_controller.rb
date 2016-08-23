@@ -60,11 +60,24 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def sm_popup
+		@user = current_user
+		render :partial => "partials/sm_popup"
+	end
+	def update_sm
+		user = current_user
+		user.update(sm_params)
+		redirect_to "/profile"
+	end
+
 	private
 	def user_params
 		params.require(:user).permit(:first_name, :last_name, :artist_name, :phone_number, :email, :password, :password_confirmation, :description, :facebook, :twitter, :instagram, :soundcloud)
 	end
 	def pic_params
 		params.require(:user).permit(:picture)
+	end
+	def sm_params
+		params.require(:user).permit(:facebook, :twitter, :instagram, :soundcloud)
 	end
 end

@@ -127,7 +127,7 @@ a:hover{
 	border: 2px solid red;
 }
 
-#login-div, #song-qty-div, #register-div, #new-song-div, #success-div, #upload-pic-div, #upload-song-div{
+#login-div, #song-qty-div, #register-div, #new-song-div, #success-div, #upload-pic-div, #upload-song-div, #social-media-div{
 	display: inline-block;
 	border: 4px solid skyblue;
 	border-radius: 1em;
@@ -184,4 +184,18 @@ a:hover{
 
 ::-webkit-scrollbar {
 	display: none;
+}
+.asterisk{
+	display: block;
+	text-align: right;
+	margin-top: 1%;
+	font-size: 0.7em;
+	color: blue;
+}
+.form-header{
+	text-align: left;
+	border-bottom: 2px solid black;
+	padding: 0;
+	width: 95%;
+	margin: 0 auto;
 }

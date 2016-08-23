@@ -1,7 +1,7 @@
 <div id='register-div'>
 	<button class='close'>X</button>
 	<span id='reg-to-log' class='popup-click' data-alt-src='/login_popup'>Already Have An Account? Login</span>
-	<h1>Artist Information</h1>
+	<h1 class='form-header'>Artist Information</h1>
 	<%= form_for @user, :url => '/register', :html => {:multipart => true, :class => "no-file"} do |f| %>
 		<div class='reg-row'>
 			<div<% if flash[:errors]

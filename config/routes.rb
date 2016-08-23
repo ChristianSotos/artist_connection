@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post 'users/update' => 'users#update'
   get 'users/upload_pic' => 'users#upload_pic'
   patch 'users/update_pic' => 'users#update_pic'
+  get 'users/sm_popup' => 'users#sm_popup'
+  post 'users/update_sm' => 'users#update_sm'
   get 'users/show/:id' => 'users#show'
 
   get 'songs/index'

@@ -1,0 +1,11 @@
+#social-media-div label{
+  text-align: left;
+  display: block;
+  font-weight: bold;
+}
+#social-media-div input{
+  display: block;
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 1.5em;
+}
