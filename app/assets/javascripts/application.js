@@ -41,6 +41,15 @@ $(document).ready(function(){
 		})
 		$('#popup').css("display", "block")
 	})
+	$(document).on('click', '#back-btn', function(){
+		var action = $(this).attr('data-alt-src');
+		$.get(action, function(res){
+			$('#popup > div').fadeOut(500);
+			setTimeout(function(){
+				$('#popup').html(res);
+			}, 500);
+		})
+	})
 	$(document).on('click', '.qty-btns', function(){
 		var action = $(this).attr('data-alt-src');
 		$.get(action, function(res){
@@ -150,4 +159,11 @@ $(document).ready(function(){
 		})
 		return false
 	})
+	$(document).on('mouseover', '.featured-images-div', function(){
+		$(this).find('h4').fadeIn();
+	})
+	$(document).on('mouseout', '.featured-images-div', function(){
+		$(this).find('h4').hide();
+	})
+
 })

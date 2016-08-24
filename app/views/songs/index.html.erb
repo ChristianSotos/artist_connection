@@ -5,28 +5,52 @@
 <div id='featured-div'>
 	<ul>
 		<li>
-			<div class='featured-images-div'><%= image_tag 'roxannemontana.jpg' %></div>
+			<div class='featured-images-div'>
+				<h4>Roxxanne<br>Montana</h4>
+				<%= image_tag 'roxannemontana.jpg' %>
+			</div>
 		</li>
 		<li>
-			<div class='featured-images-div'><%= image_tag 'courtlinjabrae.jpg' %></div>
+			<div class='featured-images-div'>
+				<h4>Courtline<br>Jabrae</h4>
+				<%= image_tag 'courtlinjabrae.jpg' %>
+			</div>
 		</li>
 		<li>
-			<div class='featured-images-div'><%= image_tag 'lorin1.jpg' %></div>
+			<div class='featured-images-div'>
+				<h4>Lorin</h4>
+				<%= image_tag 'lorin1.jpg' %>
+			</div>
 		</li>
 		<li>
-			<div class='featured-images-div'><%= image_tag 'bosscarrot.png' %></div>
+			<div class='featured-images-div'>
+				<h4>Boss<br>Carrot</h4>
+				<%= image_tag 'bosscarrot.png' %>
+			</div>
 		</li>
 		<li>
-			<div class='featured-images-div'><%= image_tag 'lisalonewolf.png' %></div>
+			<div class='featured-images-div'>
+				<h4>Lisa<br>Lonewolf</h4>
+				<%= image_tag 'lisalonewolf.png' %>
+			</div>
 		</li>
 		<li>
-			<div class='featured-images-div'><%= image_tag 'hassankhaffaf.jpg' %></div>
+			<div class='featured-images-div'>
+				<h4>Hassan<br>Khaffaf</h4>
+				<%= image_tag 'hassankhaffaf.jpg' %>
+			</div>
 		</li>
 		<li>
-			<div class='featured-images-div'><%= image_tag 'lacikay.jpg' %></div>
+			<div class='featured-images-div'>
+				<h4>Laci Kay</h4>
+				<%= image_tag 'lacikay.jpg' %>
+			</div>
 		</li>
 		<li>
-			<div class='featured-images-div'><%= image_tag 'mrlightupp.jpg' %></div>
+			<div class='featured-images-div'>
+				<h4>Mr Light Upp</h4>
+				<%= image_tag 'mrlightupp.jpg' %>
+			</div>
 		</li>
 	</ul>
 </div>
@@ -49,7 +73,7 @@
 
 	<% if @user_songs %>
 		<div id='top-songs-header'>
-			<h3 class='header-text'>User Songs</h3>
+			<h3 class='header-text'>Your Songs</h3>
 		</div>
 		<div id='user-songs-div'>
 			<%= render :partial => "partials/user_songs" %>

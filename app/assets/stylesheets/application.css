@@ -98,7 +98,6 @@ a:hover{
 #main-div{
 	display: inline-block;
 	width: 65%;
-	margin-top: 1em;
 	text-align: center;
 }
 .close{
@@ -200,7 +199,7 @@ a:hover{
 		background-color: rgba(0,0,0,0.9);
 	}
 }
-#login-div, #song-qty-div, #register-div, #new-song-div, #success-div, #upload-pic-div, #upload-song-div, #social-media-div{
+#login-div, #song-qty-div, #register-div, #new-song-div, #success-div, .upload-file-div, #social-media-div{
 	display: inline-block;
 	border: 1em groove skyblue;
 	text-align: center;

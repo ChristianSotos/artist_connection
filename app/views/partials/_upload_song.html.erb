@@ -1,4 +1,4 @@
-<div id='upload-song-div'>
+<div class='upload-file-div'>
 	<button class='close'>X</button>
 	<h1 class='form-header'><%=@song.name%></h1>
 	<%= form_for @song, :url => "/songs/update_audio/#{@song.id}", :html => {:multipart => true} do |f| %>

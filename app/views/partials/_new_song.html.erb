@@ -10,7 +10,7 @@
 		<% if session[:songs_made][i-1]
 			song = get_song(session[:songs_made][i-1]['id']) %>
 			<div class='song-complete-div new-song-<%=i%>'
-			<% if session[:song_qty] = 1 %>
+			<% if session[:song_qty] == 1 %>
 				id='one-song-form'
 			<% end %>
 			>
@@ -40,7 +40,7 @@
 			</div>
 		<% else %>
 			<div class='new-song-form new-song-<%=i%>'
-			<% if session[:song_qty] = 1 %>
+			<% if session[:song_qty] == 1 %>
 				id='one-song-form'
 			<% end %>
 			>
@@ -86,4 +86,5 @@
 		<br>
 		<a href='/audio_upload'><button id='end-song-form-btn'>Upload Audio Files</button></a>
 	<% end %>
+	<button id='back-btn' data-alt-src="/qty">Back</button>
 </div>

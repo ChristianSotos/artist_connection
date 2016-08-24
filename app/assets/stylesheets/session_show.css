@@ -1,0 +1,77 @@
+#services-picture-div {
+	background-image: url("soundboard.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100%;
+	width: 100%;
+	height: 25em;
+	padding: 5% 0%;
+}
+	#services-picture-div h1 {
+		font-size: 3.5em;
+		margin-top: 5%;
+		text-align: center;
+		background-color: white;
+		color: black;
+		display: inline-block;
+		width: 100%;
+		opacity: .9;
+		font-family: 'Khand', sans-serif;
+	}
+
+.services-you-us {
+	width: 94%;
+	background-color: white;
+	opacity: .9;
+	color: black;
+	padding: 3%;
+}
+	.services-you-us h2{
+		font-size: 2.5em;
+		margin: 1%;
+		font-family: 'Khand', sans-serif;
+	}
+	.services-you-us p, .services-you-us li {
+		font-size: 1.25em;
+		font-family: 'Rokkitt', serif;
+	}
+	.services-you-us ul {
+		text-decoration: none;
+	}
+	.services-you-us li {
+		font-weight: bolder;
+		list-style-type: none;
+		font-size: 1.35em;
+	}
+
+#services-artists {
+	width: 100%;
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 3% 0%;
+	font-family: 'Khand', sans-serif;
+}
+	#services-artists h2 {
+		font-size: 2.5em;
+		margin-top: 0%;
+	}
+
+
+.services-artist-div{
+	width: 30%;
+	display: inline-block;
+	text-align: center;
+	padding: .5%;
+}
+	.services-artist-div h3 {
+		font-size: 1.5em;
+	}
+	.services-artist-div img{
+		height: 15em;
+		width: 15em;
+		border-radius: 50%;
+	}
+
+
+

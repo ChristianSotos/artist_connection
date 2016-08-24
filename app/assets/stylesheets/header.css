@@ -39,6 +39,10 @@
 }
 #head-text h1, #head-text h3{
 	margin: 0;
+	padding-top: 0.3em;
+}
+#head-text h3{
+	float: left;
 }
 #grammy-div{
 	position: fixed;

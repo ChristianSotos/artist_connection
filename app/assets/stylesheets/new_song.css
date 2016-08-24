@@ -87,3 +87,16 @@
 #one-song-form{
 	width: 90%;
 }
+#back-btn{
+	display: block;
+	text-align: left; 
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: dimgrey;
+	color: white;
+	padding: 0.2em;
+}
+#back-btn:hover{
+	color: #ffcc33;
+	border: 1px solid #ffcc33;
+}
