@@ -166,4 +166,7 @@ $(document).ready(function(){
 		$(this).find('h4').hide();
 	})
 
+	$(document).on('click', '.icon', function(){
+		$('#MyTopnav').slideToggle();
+	})
 })

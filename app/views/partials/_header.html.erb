@@ -3,10 +3,10 @@
 		<h1>Label Research</h1>
 		<h3>Your Music Reviewed by the Best A&Rs in LA</h3>
 	</div>
-	<ul>
-		<a href='/'><li>Home</li></a>
-		<a href='/songs/index'><li>Portal</li></a>
-		<a href='/about'><li>Contact</li></a>
+	<ul class="topnav" id="MyTopnav">
+		<a href='/'><li>Our Services</li></a>
+		<a href='/songs/index'><li>Artist Portal</li></a>
+		<a href='/about'><li>About Us</li></a>
 		<% if session[:user_id] %>
 			<a href='/profile'><li>My Profile</li></a>
 			<a href='/logout'><li id='logout'>Log Out</li></a>
@@ -14,4 +14,5 @@
 			<li id='login' class='popup-click' data-alt-src='/login_popup_header'>Log In</li>
 		<% end %>
 	</ul>
+	<a class="icon"><li>&#9776;</li></a>
 </div>
