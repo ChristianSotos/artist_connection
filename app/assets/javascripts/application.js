@@ -165,8 +165,41 @@ $(document).ready(function(){
 	$(document).on('mouseout', '.featured-images-div', function(){
 		$(this).find('h4').hide();
 	})
-
 	$(document).on('click', '.icon', function(){
 		$('#MyTopnav').slideToggle();
+	})
+
+	$(document).on('click', '.ref-del', function(){
+		action = $(this).attr('data-alt-src');
+		$.get(action, function(res){
+			$('#reference-div').html(res);
+		})
+	})
+	$(document).on('click', '#add-ref-btn', function(){
+		song_id = $(this).attr('data-alt-src')
+		ref_id = $('#references-select').val()
+		action = "/reference/add/"+song_id+"/"+ref_id
+		$.get(action,function(res){
+			$('#reference-div').html(res);
+		})
+	})
+	$(document).on('submit', '#new-ref', function(){
+		action = $(this).attr('action')
+		$.post(action, $(this).serialize(), function(res){
+			$('#reference-div').html(res);
+		})
+	})
+	$(document).on('click', '#submit-review', function(){
+		ay = $('#song-review-analysis').val();
+		rat = $('#song-review-rating').val();
+		obj = {
+			analysis: ay,
+			rating: rat
+		}
+		song_id = $(this).attr('data-alt-src');
+		action = "/review/add/"+song_id;
+		$.post(action, obj, function(){
+
+		})
 	})
 })

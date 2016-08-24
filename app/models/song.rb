@@ -3,6 +3,7 @@ class Song < ActiveRecord::Base
 	belongs_to :genre
 	belongs_to :user
 	belongs_to :admin
+	has_many :song_references
 	has_many :references, through: :song_references
 
 	validates :name, presence:true

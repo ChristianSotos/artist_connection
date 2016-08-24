@@ -1,38 +1,125 @@
-<h1>Review Song</h1>
-<div id="admin-review-page">
-	<div id="admin-artist-info">
-		<div id='admin-artist-pic-div'>
-			<% if @song.user.picture_file_name %>
-				<img src='<%=@song.user.picture.url%>'>
-			<% end %>
+<div id="admin-review-div">
+	<h1>Review Song</h1>
+	<div id='admin-artist-info-div'>
+		<h2>Artist Info</h2>
+		<div class='admin-half-div'>
+			<span class='admin-bold-text'>Full Name:</span>
+			<p><%=@song.user.first_name%> <%=@song.user.last_name%></p>
+
+			<span class='admin-bold-text'>Email:</span>
+			<p><%=@song.user.email%></p>
+
 		</div>
-		<div>
-			<% if @song.audio_file.url%>
-				<button class='play-btn' id="<%=@song.audio_file.url%>" data-alt-src='<%=@song.id%>'>Play</button>
-			<% end %>
-			<h3>Song: <%=@song.name%></h3>
-			<h3>Artist: <%=@song.user.artist_name%></h3>
-			<h3>Genre: <%=@song.genre.name%></h3>
-			<h3>Play Count: <%=@song.play_count%></h3>
-			<h3>Key: <%=@song.key%></h3>
-			<h3>BPM: <%=@song.bpm%></h3>
+		<div class='admin-half-div'>
+			<span class='admin-bold-text'>Artist Name:</span>
+			<p><%=@song.user.artist_name%></p>
+			<span class='admin-bold-text'>Phone:</span> 
+			<p>
+				(
+					<% for i in 0...3 %>
+					<%=@song.user.phone_number[i]%>
+					<% end %>
+				)
+					<% for i in 3...6 %>
+					<%=@song.user.phone_number[i]%>
+					<% end %>
+				-
+					<% for i in 6..10 %>
+					<%=@song.user.phone_number[i]%>
+					<% end %>
+			</p>
+		</div>
+		<div id='admin-sm-div'>
+			<p id='follow-artist-title'>Social Media</p>
+			<ul id='follow-artist-list'>
+				<li>
+					<a href='<%=@song.user.facebook%>'>
+						<div class='sm-pics-div'>
+							<%= image_tag "facebook.png"%>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href='<%=@song.user.twitter%>'>
+						<div class='sm-pics-div'>
+							<%= image_tag "twitter.png"%>
+						</div>
+					</a>
+					</li>
+				<li>
+					<a href='<%=@song.user.instagram%>'>
+						<div class='sm-pics-div'>
+							<%= image_tag "instagram.png"%>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href='<%=@song.user.soundcloud%>'>
+						<div class='sm-pics-div'>
+							<%= image_tag "soundcloud.png"%>
+						</div>
+					</a>
+				</li>
+			</ul>
 		</div>
 	</div>
-	<div id="admin-review-div">
-		<form>
-			<input type="hidden" name="song_id" value="<%=@song.id%>">
-			<label>Analysis: </label><textarea></textarea>
-			<label>Rating (1-5): </label>
-			<select>
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-				<option>5</option>
+	<div id='admin-artist-pic-div'>
+		<%= image_tag "#{@song.user.picture.url}" %>
+		<p><%=@song.user.description%></p>
+	</div>
+	<div id='admin-song-info-div'>
+		<h2>Song Info</h2>
+		<h3><%=@song.name%></h3>
+		<div class='admin-half-div'>
+			<span class='admin-bold-text'>BPM:</span>
+			<p>
+			<% if @song.bpm == nil %>
+				N/A
+			<% else %>
+				<%=@song.bpm%>
+			<% end %>
+			</p>
+			<span class='admin-bold-text'>Availibility:</span>
+			<p>
+				<% if @song.public %>
+					Public
+				<% else %>
+					Private
+				<% end %>
+			</p>
+		</div>
+		<div class='admin-half-div'>
+			<span class='admin-bold-text'>Key:</span>
+			<p>
+			<% if @song.key == "" %>
+				N/A
+			<% else %>
+				<%=@song.key%>
+			<% end %>
+			</p>
+			<span class='admin-bold-text'>Genre:</span>
+			<p><%=@song.genre.name%></p>
+		</div>
+	</div>
+	<div id="admin-review-form">
+		<div id='analysis-input'>
+			<label>Analysis: </label>
+			<textarea id='song-review-analysis'></textarea>
+			<label>Rating (1-5):</label>
+			<select id='song-review-rating'>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
 			</select>
-			<button>Submit Review</button>
-		</form>
-	</div>
+		</div>
+		<div id='rate-ref-div'>
+			<div id='rating-div'>
+			</div>
+			<div id='reference-div'>
+			<%= render :partial => "partials/references_form" %>
+			</div>
+		</div>
+		<button id='submit-review' data-alt-src="<%=@song.id%>">Submit Review</button>
 </div>
-
-

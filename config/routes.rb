@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'admin' => 'admin#index'
-  get 'admin/review_song/:id' => 'admin#review_song'
-
   get 'login_popup' => 'session#login_popup'
   get 'login_popup_header' => 'session#login_popup_header'
   post 'login' => 'session#login'
@@ -30,6 +27,13 @@ Rails.application.routes.draw do
   get '/songs/upload_audio/:id' => 'songs#upload_audio'
   patch 'songs/update_audio/:id' => 'songs#update_audio'
   get '/songs/play_count/:id' => 'songs#play_count'
+
+  get 'admin' => 'admin#index'
+  post 'reference/new' => 'admin#new_reference'
+  post '/review/add/:id' => 'admin#add_review'
+  get 'admin/review_song/:id' => 'admin#review_song'
+  get 'reference/delete/:song_id/:ref_id' => 'admin#del_ref'
+  get 'reference/add/:song_id/:ref_id' => 'admin#add_reference'
 
   get 'new_submit' => 'session#new_submit'
   get 'register' => 'session#register'

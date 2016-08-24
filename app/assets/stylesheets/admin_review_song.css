@@ -1,35 +1,76 @@
-
-
-#admin-review-page{
+#admin-review-div{
+	text-align: center;
+}
+#admin-review-div p{
+	margin: 0.2em 0;
+}
+#admin-review-div h2{
+	margin: 0.2em 0;
+	border-bottom: 2px solid black;
+}
+#admin-review-div h3{
+	margin: 0.2em 0;
+}
+#admin-artist-info-div, #admin-artist-pic-div, #admin-song-info-div{
+	width: 32%;
+	display: inline-block;
+	vertical-align: top;
+}
+#admin-artist-pic-div img{
 	width: 100%;
+}
+#admin-song-info-div .admin-half-div{
+	text-align: center;
+}
+.admin-half-div{
+	width: 49%;
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+}
+.admin-bold-text{
+	font-weight: bold;
+}
+#admin-sm-div ul{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+#admin-sm-div li{
+	display: inline-block;
+}
+
+#analysis-input, #rate-ref-div{
+	width: 49%;
+	display: inline-block;
 	text-align: left;
 	vertical-align: top;
-	margin-top: 5%;
+}
+#analysis-input textarea{
+	width: 90%;
+	display: block;
+	height: 10em;
+}
+#rating-div{
+	margin: 1em 0;
 }
 
-#admin-artist-info{
-	text-align: center;
-	width: 25%;
-	padding: 2.5% 0%;
-	display: inline-block;
-	background-color: white;
-	opacity: .9;
-	font-size: 1.5em;
+#reference-div form{
+	float: right;
 }
-
-#admin-artist-pic-div {
-	width: 100%;
+#reference-div p{
+	text-align: right;
 }
-	#admin-artist-pic-div img{
-	border-radius: 50%;
-	}
-
-#admin-review-div {
-	background-color: white;
-	padding: 2.5%;
-	width: 69%;
-	opacity: .9;
-	display: inline-block;
-	vertical-align: top;
-	text-align: center;
+#reference-div form button{
+	float: right;
+}
+#ref-left-div h4{
+	margin: 0.3em;
+}
+#ref-left-div ul{
+	padding: 0;
+	margin: 0;
+}
+#ref-left-div li{
+	text-align: left;
 }

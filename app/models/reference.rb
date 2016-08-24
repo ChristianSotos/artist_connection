@@ -1,4 +1,5 @@
 class Reference < ActiveRecord::Base
+	has_many :song_references
 	has_many :songs, through: :song_references
 
 	EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i

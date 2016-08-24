@@ -15,5 +15,14 @@ class ApplicationController < ActionController::Base
     song = Song.find(song_id)
     song
   end
-  helper_method :current_user, :get_genres, :get_song
+  def get_references 
+    references = Reference.all
+    references
+  end
+  def get_song_references song_id
+    song = Song.find(song_id)
+    references = song.references
+    return references
+  end
+  helper_method :current_user, :get_genres, :get_song, :get_references, :get_song_references
 end

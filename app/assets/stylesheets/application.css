@@ -80,7 +80,7 @@ a:hover{
 
 #container{
 	margin: 0 auto;
-	margin-top: 6em;
+	margin-top: 4em;
 	width: 80%;
 	padding-top: 1em;
 }
@@ -91,6 +91,7 @@ a:hover{
 	vertical-align: top;
 	color: black;
 	position: relative;
+	margin-top: 2em;
 }
 #sidebar{
 	width: 100%;
@@ -99,6 +100,7 @@ a:hover{
 	display: inline-block;
 	width: 65%;
 	text-align: center;
+	margin-top: 2em;
 }
 .close{
 	float: right;

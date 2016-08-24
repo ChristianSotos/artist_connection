@@ -1,0 +1,39 @@
+<div id='ref-right-div'>
+	<select id='references-select'>
+	<% references = get_references
+		references.each{|ref| %>
+		<option value="<%=ref.id%>"><%=ref.first_name%> <%=ref.last_name%></option>
+
+		<% } %>
+	</select>
+	<button id='add-ref-btn' data-alt-src='<%=@song.id%>'>Add Existing Reference</button>
+	<%= form_for @reference, :url => "/reference/new", :html => {:multipart => true, :class => "no-file", :id => "new-ref"} do |f| %>
+		<input type='hidden' name='song_id' value="<%=@song.id%>">
+		<p><label for='reference[first_name]'>First Name: </label>
+		<%= f.text_field :first_name %></p>
+		<p><label for='reference[last_name]'>Last Name: </label>
+		<%= f.text_field :last_name %></p>
+		<p><label for='reference[email]'>Email: </label>
+		<%= f.text_field :email %></p>
+		<p><label for='reference[phone_number]'>Phone Number: </label>
+		<%= f.text_field :phone_number %></p>
+		<p><label for='reference[field]'>Field: </label>
+		<%= f.text_field :field %></p>
+		<button>Add New Reference</button>
+	<% end %>
+</div>
+
+<div id='ref-left-div'>
+	<h4>Current Song References</h4>
+	<% song_refs = get_song_references(@song.id) 
+		if song_refs %>
+		<ul>
+			<% song_refs.each{|ref| %>
+			<li>
+				<span><%=ref.first_name%> <%=ref.last_name%></span>
+				<button class='ref-del' data-alt-src="/reference/delete/<%=@song.id%>/<%=ref.id%>">Remove</button>
+			</li>
+			<% } %>
+		</ul> 
+		<% end %>
+</div>

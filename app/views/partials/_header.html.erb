@@ -10,6 +10,8 @@
 		<% if session[:user_id] %>
 			<a href='/profile'><li>My Profile</li></a>
 			<a href='/logout'><li id='logout'>Log Out</li></a>
+		<% elsif session[:admin_id] %>
+			<a href='/logout'><li id='logout'>Log Out</li></a>
 		<% else %>
 			<li id='login' class='popup-click' data-alt-src='/login_popup_header'>Log In</li>
 		<% end %>
