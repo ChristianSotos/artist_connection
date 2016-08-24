@@ -150,4 +150,10 @@ $(document).ready(function(){
 		})
 		return false
 	})
+
+	$(document).on('click', '.icon', function(){
+		$('#MyTopnav').slideToggle();
+	})
+
+
 })
