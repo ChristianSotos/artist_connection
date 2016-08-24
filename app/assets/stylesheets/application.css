@@ -45,7 +45,7 @@ body{
 	background-color: black;
 }
 table{
-	color: white;
+	color: black;
 	width: 90%;
 	margin: 0 auto;
 	border-collapse: collapse;
@@ -55,14 +55,14 @@ td, th{
 	margin: 0;
 }
 th{
-	background-color: black;
+	background-color: #1a1a1a;
 	color: white;
 }
 tr:nth-child(odd){
-	background-color: dimgrey;
+	background-color: #cccccc;
 }
 tr:nth-child(even){
-	background-color: grey;
+	background-color: #b3b3b3;
 }
 td span{
 	white-space: nowrap;

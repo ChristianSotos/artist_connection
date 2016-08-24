@@ -55,11 +55,15 @@
 	margin: 1em 0;
 }
 
-#reference-div form{
-	float: right;
+#ref-right-div, #ref-left-div{
+	width: 49%;
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
 }
-#reference-div p{
-	text-align: right;
+#reference-div input{
+	float: right;
+	
 }
 #reference-div form button{
 	float: right;

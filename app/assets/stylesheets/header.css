@@ -11,7 +11,7 @@
 	z-index: 1;
 }
 #header ul{
-	background-color: black;
+	background-color: rgb(26, 26, 26);
 	color: white;
 	margin: 0;
 	padding: 0;
@@ -34,7 +34,7 @@
 	background-color: dimgrey;
 }
 #head-text{
-	background-color: black;
+	background-color: rgb(26, 26, 26);
 	color: white;
 	margin: 0;
 	padding: 0;
