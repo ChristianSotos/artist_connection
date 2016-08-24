@@ -25,7 +25,7 @@
 	opacity: .9;
 	color: black;
 	padding: 3%;
-	text-align: center;
+	text-align: center; 
 }
 	.services-you-us h2{
 		font-size: 2.5em;
@@ -48,6 +48,7 @@
 		font-weight: bolder;
 		list-style-type: none;
 		font-size: 1.65em;
+		color: #0073e6;
 	}
 
 #services-artists {
@@ -81,7 +82,7 @@
 	}
 
 #price-table {
-	width: 40%;
+	width: 25%;
 	font-size: 1.25em;
 	font-family: 'Rokkitt', serif;
 }
@@ -90,5 +91,14 @@
 	margin: 0px auto;
 	width: 50%;
 }
+	#home-submit-button-div h1{
+		font-size: 2.5em;
+	}
+	#home-submit-button-div h2{
+		font-size: 2em;
+	}
+	#home-submit-button-div button{
+		font-size: 3em;
+	}
 
 
