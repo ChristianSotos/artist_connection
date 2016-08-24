@@ -1,18 +1,34 @@
 <div id='new-song-div'>
 	<button class='close'>X</button>
 	<h1 class='form-header'>Song Information</h1>
-	<% if flash[:errors]
-		flash[:errors].each{|e|%>
+	<% if flash[:song_errors]
+		flash[:song_errors].each{|e|%>
 		<p><%=e%></p>
 		<% }
 	end %>
 	<% for i in 1..session[:song_qty] do %>
 		<% if session[:songs_made][i-1]
 			song = get_song(session[:songs_made][i-1]['id']) %>
-			<div class='song-complete-div new-song-<%=i%>'>
+			<div class='song-complete-div new-song-<%=i%>'
+			<% if session[:song_qty] = 1 %>
+				id='one-song-form'
+			<% end %>
+			>
 				<div class='song-input-row-1'><span>Name:</span><span class='song-info-bold'><%=song.name%></span></div>
-				<div class='song-input-row-2'><span>BPM:</span><span class='song-info-bold'><%=song.bpm%></span></div>
-				<div class='song-input-row-2'><span>Key:</span><span class='song-info-bold'><%=song.key%></span></div>
+				<div class='song-input-row-2'><span>BPM:</span><span class='song-info-bold'>
+				<% if song.bpm == nil %>
+					N/A
+				<% else %>
+					<%=song.bpm%>
+				<% end %>
+				</span></div>
+				<div class='song-input-row-2'><span>Key:</span><span class='song-info-bold'>
+				<% if song.key == "" %>
+					N/A
+				<% else %>
+					<%=song.key%>
+				<% end %>
+				</span></div>
 				<div class='song-input-row-3'><span>Availibility:</span><span class='song-info-bold'>
 					<% if song.public %>
 						Public
@@ -23,7 +39,11 @@
 				<div class='song-input-row-3'><span>Genre:</span><span class='song-info-bold'><%=song.genre.name%></span></div>
 			</div>
 		<% else %>
-			<div class='new-song-form new-song-<%=i%>'>
+			<div class='new-song-form new-song-<%=i%>'
+			<% if session[:song_qty] = 1 %>
+				id='one-song-form'
+			<% end %>
+			>
 				<%= form_for @song, :url => '/songs/create', :html => {:multipart => true, :class => "no-file"} do |f| %>
 					<input type='hidden' name='songnum' value="<%=i%>">
 					<div class='song-input-row-1'>
@@ -64,6 +84,6 @@
 	<% end %>
 	<% if session[:songs_pending] == 0 %>
 		<br>
-		<a href='/audio_upload'><button>Upload Audio Files</button></a>
+		<a href='/audio_upload'><button id='end-song-form-btn'>Upload Audio Files</button></a>
 	<% end %>
 </div>

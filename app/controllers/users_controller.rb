@@ -12,9 +12,9 @@ class UsersController < ApplicationController
 		if Admin.find_by(email: params[:user][:email])
 			render :partial => "partials/register"
 		end
-
 		new_user = User.new(user_params)
 		if new_user.save
+			session[:user_id] = new_user.id
 			if session[:from_new_song]
 				session[:from_new_song] = false
 				render :partial => "partials/qty"
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 				rediect_to "/songs/index"
 			end
 		else
-			flash[:errors] = new_user.errors.messages
+			flash[:reg_errors] = new_user.errors.messages
 			@user = User.new
 			render :partial => "partials/register"
 		end

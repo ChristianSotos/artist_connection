@@ -7,7 +7,7 @@
 .new-song-form, .song-complete-div{
 	display: inline-block;
 	padding: 0.5em 1em;
-	width: 43%;
+	width: 42%;
 	vertical-align: top;
 }
 .song-input-row-1{
@@ -69,4 +69,21 @@
 .song-info-bold{
 	font-weight: bold;
 	line-height: 2em;
+}
+#end-song-form-btn{
+	width: 50%;
+	padding: 0.5em;
+	border: none;
+	border-radius: 1em;
+	background: linear-gradient(skyblue, #0099ff);
+	color: black;
+	font-weight: bold;
+	font-size: 0.8em;
+}
+#end-song-form-btn:hover{
+	background: linear-gradient(#0099ff, skyblue);
+	color: white;
+}
+#one-song-form{
+	width: 90%;
 }

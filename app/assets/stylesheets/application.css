@@ -28,18 +28,21 @@ body{
 	top: 0;
 	width: 10%;
 	height: 100%;
+	background-color: black;
 }
 #left-background img, #right-background img{
 	display: inline-block;
-	width: 100%;
 	height: 100%;
+	width: 100%;
 }
 #right-background{
+	vertical-align: bottom;
 	position: fixed;
 	right: 0;
 	top: 0;
 	width: 10%;
 	height: 100%;
+	background-color: black;
 }
 table{
 	color: white;
@@ -87,9 +90,9 @@ a:hover{
 	text-align: center;
 	vertical-align: top;
 	color: black;
+	position: relative;
 }
 #sidebar{
-	display: none;
 	width: 100%;
 }
 #main-div{
@@ -97,7 +100,6 @@ a:hover{
 	width: 65%;
 	margin-top: 1em;
 	text-align: center;
-	/*z-index: 1;*/
 }
 .close{
 	float: right;
@@ -106,11 +108,11 @@ a:hover{
 	color: red;
 	padding: 0.4em;
 	font-weight: normal;
+	background-color: #d9d9d9;
 }
 .close:hover{
-	font-weight: bold;
 	cursor: pointer;
-	border: 2px solid red;
+	background-color:white;
 }
 .error input, .error textarea{
 	border-color: red;
@@ -166,11 +168,11 @@ a:hover{
 	text-align: right;
 	margin-top: 1%;
 	font-size: 0.7em;
-	color: blue;
+	color: #0099ff;
 }
 .form-header{
 	text-align: left;
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid white;
 	padding: 0;
 	margin: 0 auto;
 }
@@ -209,7 +211,7 @@ a:hover{
 	position: relative;
 	animation-name: popup_show;
 	animation-duration: 1.5s;
-	animation-timing-function: ease-in;
+	animation-timing-function: ease-in-out;
 	min-width: 20%;
 }
 
@@ -221,16 +223,11 @@ a:hover{
 		opacity: 100%;
 	}
 }
-.disappear{
-	animation-name: div_disappear;
-	animation-duration: 1s;
-}
-@keyframes div_disappear{
+@keyframes sidebar_show{
 	from{
-		opacity: 100%;
+		opacity: 0;
 	}
 	to{
-		opacity: 0;
-
+		opacity: 100%;
 	}
 }

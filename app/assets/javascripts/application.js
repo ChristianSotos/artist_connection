@@ -19,28 +19,41 @@ $(document).ready(function(){
 	$(document).on('click', '.artist-row', function(){
 		var url = '/users/show/'+$(this).attr('id');
 		$.get(url, function(res){
-			$('#sidebar').css("display", "inline-block")
-			$('#sidebar').html(res);
+			$('#sidebar > div').fadeOut(500);
+			setTimeout(function(){
+					$('#sidebar').html(res);
+			},500);
 		})
 	})
 	$(document).on('click', '.song-row', function(){
 		var url = $(this).attr('data-alt-src');
 		$.get(url, function(res){
-			$('#sidebar').css("display", "inline-block")
-			$('#sidebar').html(res);
+			$('#sidebar > div').fadeOut(500);
+			setTimeout(function(){
+					$('#sidebar').html(res);
+			},500);
 		})
 	})
 	$(document).on('click', '.popup-click', function(){
-		// $('#popup > div').fadeOut(500);
 		var action = $(this).attr('data-alt-src');
 		$.get(action, function(res){
 			$('#popup').html(res);
 		})
 		$('#popup').css("display", "block")
 	})
+	$(document).on('click', '.qty-btns', function(){
+		var action = $(this).attr('data-alt-src');
+		$.get(action, function(res){
+			$('#popup > div').fadeOut(500);
+			setTimeout(function(){
+					$('#popup').html(res);
+			},500);
+		})
+		$('#popup').css("display", "block")
+	})
 
 	$(document).on('click', '.close', function(){
-		$('#popup').css("display", "none")
+		$('#popup').fadeOut();
 	})
 	$(document).on('submit', '.no-file', function(){
 		var action = $(this).attr('action');
@@ -52,7 +65,7 @@ $(document).ready(function(){
 			$('#popup > div').fadeOut(500);
 			setTimeout(function(){
 					$('#popup').html(res);
-				},500);
+			},500);
 		})
 		return false;
 	})
@@ -65,13 +78,17 @@ $(document).ready(function(){
 	})
 	$(document).on('click', '.show-to-edit', function(){
 		if($(this).attr('id') == "full_name"){
-			$(this).hide();
-			$('#edit-first-name').show();
-			$('#edit-last-name').show();
+			$(this).fadeOut(300);
+			setTimeout(function(){
+					$('#edit-first-name').fadeIn();
+					$('#edit-last-name').fadeIn();
+			},300);
 		}
 		var id = "#edit-" + $(this).attr('id'); 
-		$(this).hide();
-		$(id).show();
+		$(this).fadeOut(300);
+			setTimeout(function(){
+					$(id).fadeIn();
+			},500);
 	})
 	$(document).on('change', '.song-edit', function(){
 		var url = "/songs/update/"+$(this).attr('data-alt-src')
@@ -115,7 +132,11 @@ $(document).ready(function(){
 			pagination: page
 		}
 		$.post("/songs/top_search", obj, function(res){
+			// $('#top-songs-div').toggle("slide", "left", 2000);
 			$('#top-songs-div').html(res);
+			// setTimeout(function(){
+			// 	$('#top-songs-div').toggle("slide", "right", 2000);
+			// }, 2000);
 		})
 		return false
 	})

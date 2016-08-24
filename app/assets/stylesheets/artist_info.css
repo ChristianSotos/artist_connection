@@ -1,6 +1,8 @@
 #artist-info-sidebar{
 	width: 90%;
 	margin: 0 auto;
+	animation-name: sidebar_show;
+	animation-duration: 1s;
 }
 #artist-show-pic-div{
 	width: 80%;

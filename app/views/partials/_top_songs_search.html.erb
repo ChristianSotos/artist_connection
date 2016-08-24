@@ -4,6 +4,7 @@
 			<th><span></span></th>
 			<th><span>Artist</span></th>
 			<th><span>Song</span></th>
+			<th><span>Genre</span></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -13,6 +14,7 @@
 			<td><button class='play-btn' id="<%=song.audio_file.url%>" data-alt-src='<%=song.id%>'></button></td>
 			<td><span><%=song.user.artist_name%></td>
 			<td><span><%=song.name%></span></td>
+			<td><span><%=song.genre.name%></span></td>
 		</tr>
 	<% } %>
 	</tbody>

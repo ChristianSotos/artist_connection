@@ -2,6 +2,10 @@ class SessionController < ApplicationController
 	def login_popup
 		render :partial => "partials/login"
 	end
+	def login_popup_header
+		session[:from_new_song] = false
+		render :partial => "partials/login"
+	end
 
 	def index
 	end

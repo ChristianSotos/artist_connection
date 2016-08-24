@@ -1,5 +1,9 @@
+#song-div{
+	animation-name: sidebar_show;
+	animation-duration: 1.5s;
+}
 #song-edit-div{
-  width: 75%;
+  	width: 75%;
 	margin: 0 auto;
 	text-align: left;
 }
@@ -50,8 +54,4 @@
 
 #song-div button:hover{
 	cursor: pointer;
-}
-#song-edit-div p:hover, #song-edit-div h2:hover{
-	color: white;
-	cursor: default;
 }

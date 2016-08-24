@@ -3,22 +3,22 @@
 	<h1 class='form-header'>Artist Information</h1>
 	<%= form_for @user, :url => '/register', :html => {:multipart => true, :class => "no-file"} do |f| %>
 		<div class='reg-row'>
-			<div<% if flash[:errors]
-					if flash[:errors][:first_name]%> 
+			<div<% if flash[:reg_errors]
+					if flash[:reg_errors][:first_name]%> 
 						class='error'
 					<% end 
 				end %>><label for='user[first_name]'>First Name: </label>
 			<%= f.text_field :first_name %></div>
-			<div<% if flash[:errors]
-					if flash[:errors][:last_name]%> 
+			<div<% if flash[:reg_errors]
+					if flash[:reg_errors][:last_name]%> 
 						class='error'
 					<% end 
 				end %>><label for='user[last_name]'>Last Name: </label>
 			<%= f.text_field :last_name %></div>
 		</div>
 		<div class='reg-row'>
-			<div<% if flash[:errors]
-					if flash[:errors][:phone_number]%> 
+			<div<% if flash[:reg_errors]
+					if flash[:reg_errors][:phone_number]%> 
 						id='phone-errors'
 					<% end 
 				end %>><label for='user[phone_number]'>Phone Number: </label>
@@ -26,36 +26,36 @@
 				<input type='text' name='phone-2' id='phone-input2' maxlength="3">
 				<input type='text' name='phone-3' id='phone-input3' maxlength="4">
 				<input type='hidden' name='user[phone_number]' id='phone-number'></div>
-			<div<% if flash[:errors]
-					if flash[:errors][:email]%> 
+			<div<% if flash[:reg_errors]
+					if flash[:reg_errors][:email]%> 
 						class='error'
 					<% end 
 				end %>><label for='user=[email]'>Email: 
 			<%= f.text_field :email %></div>
 		</div>
 		<div class='reg-row'>
-			<div<% if flash[:errors]
-					if flash[:errors][:password]%> 
+			<div<% if flash[:reg_errors]
+					if flash[:reg_errors][:password]%> 
 						class='error'
 					<% end 
 				end %>><label for='user[password]'>Password: 
 			<%= f.password_field :password %></div>
-			<div<% if flash[:errors]
-					if flash[:errors][:confirm_password]%> 
+			<div<% if flash[:reg_errors]
+					if flash[:reg_errors][:confirm_password]%> 
 						class='error'
 					<% end 
 				end %>><label for='user[password_confirmation]'>Confirm Password: </label>
 			<%= f.password_field :password_confirmation %></div>
 		</div>
 		<div class='reg-artist-row'>
-			<div<% if flash[:errors]
-				if flash[:errors][:artist_name]%> 
+			<div<% if flash[:reg_errors]
+				if flash[:reg_errors][:artist_name]%> 
 					class='error'
 				<% end 
 			end %>><label for='user[artists_name]'>Artist Name: </label>
 			<%= f.text_field :artist_name %></div>
-			<div<% if flash[:errors]
-					if flash[:errors][:description]%> 
+			<div<% if flash[:reg_errors]
+					if flash[:reg_errors][:description]%> 
 						class='error'
 					<% end 
 				end %>><label for='user[description]'>Artist Description: </label>
@@ -63,28 +63,28 @@
 		</div>
 		<h3>Social Media Links</h3>
 		<div class='reg-row'>
-			<div<% if flash[:errors]
-					if flash[:errors][:facebook]%> 
+			<div<% if flash[:reg_errors]
+					if flash[:reg_errors][:facebook]%> 
 						class='error'
 					<% end 
 				end %>><%= f.label :facebook %>
 			<%= f.text_field :facebook %></div>
-			<div<% if flash[:errors]
-					if flash[:errors][:twitter]%> 
+			<div<% if flash[:reg_errors]
+					if flash[:reg_errors][:twitter]%> 
 						class='error'
 					<% end 
 				end %>><%= f.label :twitter %>
 			<%= f.text_field :twitter %></div>
 		</div>
 		<div class='reg-row'>
-			<div<% if flash[:errors]
-					if flash[:errors][:instagram]%> 
+			<div<% if flash[:reg_errors]
+					if flash[:reg_errors][:instagram]%> 
 						class='error'
 					<% end 
 				end %>><%= f.label :instagram %>
 			<%= f.text_field :instagram %></div>
-			<div<% if flash[:errors]
-					if flash[:errors][:soundcloud]%> 
+			<div<% if flash[:reg_errors]
+					if flash[:reg_errors][:soundcloud]%> 
 						class='error'
 					<% end 
 				end %>><%= f.label :soundcloud %>

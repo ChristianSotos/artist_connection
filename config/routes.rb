@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'admin/review_song/:id' => 'admin#review_song'
 
   get 'login_popup' => 'session#login_popup'
+  get 'login_popup_header' => 'session#login_popup_header'
   post 'login' => 'session#login'
   get 'logout' => 'session#logout'
 

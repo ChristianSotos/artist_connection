@@ -1,7 +1,13 @@
+#audio-upload-main-div{
+  text-align: center;
+}
+#audio-upload-main-div h1{
+  width: 90%;
+  border-bottom: 2px solid black;
+}
 .audio-upload-div{
   width: 49%;
   display: inline-block;
-  text-align: left;
   vertical-align: top;
 }
 .audio-upload-div span{
@@ -14,13 +20,18 @@
   margin-top: 1em;
 }
 .audio-upload-div button{
-  background-color:black;
-  border:1px solid skyblue;
+  background: linear-gradient(steelblue, #00ccff);
+  border:none;
   color: white;
   border-radius: 5px;
-  width: 50%;
-  margin: 0 auto;
+  width: 30%;
+  margin: 0;
+  margin-top: 0.5em;
+  padding:0.5em;
   display: inline-block;
+}
+.audio-upload-div button:hover{
+  background: linear-gradient(#00ccff, steelblue);
 }
 .audio-upload-half-div{
   width: 49%;

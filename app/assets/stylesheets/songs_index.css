@@ -42,6 +42,10 @@
 	height: 100%;
 }
 
+.featured-images-div:hover{
+	opacity: 0.5;
+}
+
 #top-songs-header h3, #user-songs-header h3{
 	margin: 0 auto;
 	padding: 0;

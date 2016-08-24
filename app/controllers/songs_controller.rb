@@ -59,7 +59,7 @@ class SongsController < ApplicationController
 			num = num-1
 			session[:songs_made][num] = new_song
 		else
-			flash[:errors] = new_song.errors.full_messages
+			flash[:song_errors] = new_song.errors.full_messages
 		end
 		@genres = Genre.all.order(:name)
 		@song = Song.new
@@ -110,19 +110,14 @@ class SongsController < ApplicationController
 
 	def top_search
 		gid= params[:genre].to_i
-		query = "SELECT songs.id AS id, songs.genre_id AS genre_id, songs.name AS name, users.artist_name AS artist_name, songs.play_count AS play_count, songs.rating AS rating FROM songs JOIN users ON songs.user_id = users.id "
+		query = "SELECT songs.id AS id, songs.genre_id AS genre_id, songs.name AS name, users.artist_name AS artist_name, songs.play_count AS play_count, songs.rating AS rating, songs.public AS public FROM songs JOIN users ON songs.user_id = users.id WHERE public = 't' "
 		and_checker = false
 		if gid > 0
-			query += "WHERE genre_id = "+params[:genre]+" "
+			query += "AND genre_id = "+params[:genre]+" "
 			and_checker = true
 		end
 		if params[:search]
-			if and_checker
-				query += "AND "
-			else
-				query += "WHERE "
-			end
-			query += "(name LIKE '%"+params[:search]+"%' OR artist_name LIKE'%"+params[:search]+"%') "
+			query += "AND (name LIKE '%"+params[:search]+"%' OR artist_name LIKE'%"+params[:search]+"%') "
 		end
 		page_offset = params[:pagination].to_i * 5
 		@current_page = params[:pagination].to_i + 1
