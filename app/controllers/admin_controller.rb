@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
   def index
-  	@pending_songs = Song.offset(0).where(reviewed: false).order(created_at: :desc).limit(10)
-  	@reviewed_songs = Song.offset(0).where(reviewed: true).order(created_at: :desc).limit(10)
+  	@pending_songs = Song.offset(0).where(reviewed: false).order(created_at: :desc)
+  	@reviewed_songs = Song.offset(0).where(reviewed: true).order(created_at: :desc)
   end
 
   def review_song
@@ -13,7 +13,8 @@ class AdminController < ApplicationController
   def add_review
   	song = Song.find(params[:id])
   	rating = params[:rating].to_i
-  	song.update(analysis:params[:analysis], rating:rating, reviewed:"t")
+  	admin = Admin.find(session[:admin_id])
+  	song.update(analysis:params[:analysis], rating:rating, reviewed:"t", admin:admin)
   	redirect_to "/admin"
   end
 
