@@ -1,43 +1,26 @@
-<div class="home-main-content">
-	<h2>About Label Research</h2>
-	<p>Label Research is a company built to examine artist’s offerings and gauge if it is retail market ready. Comprised of musical stardom, hundreds of awards including Grammys, ASCAPs, Tony’s and more not to mention over 40 years of experience, Label Research’s staff and consultants have not only the understanding but the necessary resources to advise you on improving your musical composition. In fact, many of our consultants are artists and producers that you may already be forwarding your music to via social media sites to no avail.</p>
-	<p>We don't take the conventional approach by any means when it comes to the A&R process. Our index of industry professionals and music specialists have been commissioned to take a no-holds-barred approach when it comes down to evaluating sounds and breaking down records. True artists seek constructive criticism and it should be expected. </p>
+<div id="about-main-div">
+	<div class="home-main-content">
+		<h2>About Label Research</h2>
+		<p>Label Research is a company built to examine artist’s offerings and gauge if it is retail market ready. Comprised of musical stardom, hundreds of awards including Grammys, ASCAPs, Tony’s and more not to mention over 40 years of experience, Label Research’s staff and consultants have not only the understanding but the necessary resources to advise you on improving your musical composition. In fact, many of our consultants are artists and producers that you may already be forwarding your music to via social media sites to no avail.</p>
+		<p>We don't take the conventional approach by any means when it comes to the A&R process. Our index of industry professionals and music specialists have been commissioned to take a no-holds-barred approach when it comes down to evaluating sounds and breaking down records.</p>
+		<h2 id="contact-our-team">Contact Our Team</h2>
+		<div id="session-contact-form-div">
+			<form>
+				<p><label>Name: </label><input type="text" name="name"></p>
+				<p><label>Email: </label><input type="text" name="email"></p>
+				<p><label>Phone Number: </label><input type="text" name="phone_number"></p>
+				<p><label>Message: </label></p><textarea name="message"></textarea>
+				<button id="contact-form-button">Send Message</button>
+			</form>
+		</div>
+	</div>
+</div>
+<div id="about-side-div">
 	<div id="home-submit-button-div">
 		<%= render :partial => "partials/button_bar" %>
 	</div>
 </div>
-<div class="home-main-content">
-	<div class="column-third"> 
-		<h3>Receive Expert Song Criticism and Feedback</h3>
-		<div class='column-img'>
-			<%= image_tag("gavel") %>
-		</div>
-	</div>
-	<div class="column-third">
-		<h3>Get Connected to Industry Professionals</h3>
-		<div class='column-img'>
-			<%= image_tag("handshake") %>
-		</div>
-	</div>
-	<div class="column-third">
-		<h3>Discover Other Up and Coming Artists to Collaborate With</h3>
-		<div class='column-img'>
-			<%= image_tag("magnifyingglass") %>
-		</div>
-	</div> 
-</div>
-<div class="home-main-content">
-	<h2>Contact Our Team</h2>
-	<div id="session-contact-form-div">
-		<form>
-			<p><label>Name: </label><input type="text" name="name"></p>
-			<p><label>Email: </label><input type="text" name="email"></p>
-			<p><label>Phone Number: </label><input type="text" name="phone_number"></p>
-			<p><label>Message: </label></p><textarea name="message"></textarea>
-			<button id="contact-form-button">Send Message</button>
-		</form>
-	</div>
-</div>
+
 
 
 

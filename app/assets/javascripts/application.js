@@ -191,7 +191,8 @@ $(document).ready(function(){
 	})
 	$(document).on('click', '#submit-review', function(){
 		ay = $('#song-review-analysis').val();
-		rat = $('#song-review-rating').val();
+		rat = clicked_star.context.dataset.alt;
+		console.log(rat);
 		obj = {
 			analysis: ay,
 			rating: rat
@@ -203,24 +204,52 @@ $(document).ready(function(){
 		})
 	})
 
-	var clicked = false;
+	var clicked_bool = false;
+	var clicked_star = null;
 
 	$(document).on("click", ".star", function(){
 			$(this).css("background-image", "url('/assets/goldstar.png')");
 			for (var i=0; i<$(this).attr("data-alt"); i++) {
 				$('#' + $(this).siblings()[i].id).css("background-image", "url('/assets/goldstar.png')");
 			}
+		for (var i=0; i<4; i++) {
+			$('#' + $(this).siblings()[i].id).css("background-image", "url('/assets/whitestar.png')");
+		}
+		$(this).css("background-image", "url('/assets/whitestar.png')");
+		//if hasnt been clicked yet
+		$(this).css("background-image", "url('/assets/goldstar.png')");
+		for (var i=0; i<$(this).attr("data-alt"); i++) {
+			$('#' + $(this).siblings()[i].id).css("background-image", "url('/assets/goldstar.png')");
+		}
+		clicked_bool = true;
+		clicked_star = $(this);
 	})
 	$(document).on('mouseenter', '.star', function(){
+
 		for (var i=0; i<$(this).attr("data-alt"); i++) {
 			$('#' + $(this).siblings()[i].id).css("background-image", "url('/assets/goldstar.png')");
 		}
 		$(this).css("background-image", "url('/assets/goldstar.png')");
 	})
-	// $(document).on('mouseleave', '.star', function(){
-	// 	for (var i=0; i<$(this).attr("data-alt"); i++) {
-	// 		$('#' + $(this).siblings()[i].id).css("background-image", "url('/assets/whitestar.png')");
-	// 	}
-	// 	$(this).css("background-image", "url('/assets/whitestar.png')");
-	// })	
+	$(document).on('mouseleave', '.star', function(){
+		if (clicked_bool == false) {
+			for (var i=0; i<$(this).attr("data-alt"); i++) {
+				$('#' + $(this).siblings()[i].id).css("background-image", "url('/assets/whitestar.png')");
+			}
+			$(this).css("background-image", "url('/assets/whitestar.png')");
+		}
+		else {
+			console.log(clicked_star);
+			console.log(clicked_star.context.dataset.alt);
+			if ($(this).attr("data-alt") > clicked_star.context.dataset.alt) {
+				for (var i=clicked_star.context.dataset.alt; i<4; i++) {
+					$('#' + $(clicked_star).siblings()[i].id).css("background-image", "url('/assets/whitestar.png')");
+				}
+			}
+		}
+	})	
+
+//if the star i hovered on is greater than the star i clicked, i need to change it back to white
+
+
 })

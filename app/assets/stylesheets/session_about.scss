@@ -2,13 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+#about-main-div {
+	width: 70%;
+	display: inline-block;
+	vertical-align: top;
+}
+#about-side-div {
+	margin: 5% auto;
+	width: 29%;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+/*	position: fixed;*/
+}
 
 .home-main-content { 
 	background-color: white;
 	margin: .5% auto;
-	width: 98%;
-	padding: 1%;
+	width: 78%;
+	padding: 5% 10%;
 	opacity: .9;
 	color: black;
 	display: inline-block;
@@ -16,22 +28,24 @@
 	text-align: center;
 }
 	.home-main-content h2{
-		font-size: 2.5em;
+		font-size: 2.25em;
 		font-weight: bold;
 		text-decoration: underline;
-	}
-	.home-main-content h3{
-		font-size: 1.5em;
+		margin-bottom: 10%;
+		color: #e60000;
 	}
 	.home-main-content p, .home-main-content label{
 		font-size: 1.5em;
 		margin-bottom: 3%;
+		line-height: 110%;
 	}
 	.home-main-content input{
 		text-align: center;
 		float: right;
 	}
-
+#contact-our-team {
+	margin-top: 15%;
+}
 #session-contact-form-div {
 	text-align: left;
 	display: inline-block;
@@ -56,7 +70,8 @@
 	font-size: 1em;
 	padding: 2%;
 	color: white;
-	background-color: black;
+	background-color: #e60000;
+	border: none;
 }
 
 
