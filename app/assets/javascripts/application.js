@@ -208,7 +208,10 @@ $(document).ready(function(){
 	var clicked_star = null;
 
 	$(document).on("click", ".star", function(){
-		console.log($(this).siblings());
+			$(this).css("background-image", "url('/assets/goldstar.png')");
+			for (var i=0; i<$(this).attr("data-alt"); i++) {
+				$('#' + $(this).siblings()[i].id).css("background-image", "url('/assets/goldstar.png')");
+			}
 		for (var i=0; i<4; i++) {
 			$('#' + $(this).siblings()[i].id).css("background-image", "url('/assets/whitestar.png')");
 		}

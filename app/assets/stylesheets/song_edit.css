@@ -1,20 +1,20 @@
 #song-div{
 	animation-name: sidebar_show;
 	animation-duration: 1.5s;
+	width: 80%;
+	margin: 1em auto;
+	border: 3px solid black;
 }
 #song-edit-div{
-  	width: 75%;
 	margin: 0 auto;
 	text-align: center;
 }
 #song-div h1{
-	margin-bottom: 0.5em;
 	border-bottom: 2px solid black;
-	width: 76%;
-	margin: 0.5em auto;
+	margin: 0.2em auto;
 }
 #song-edit-div h2{
-	margin-top: 0;
+	margin: 0.5em auto;
 }
 #song-edit-div div{
 	width: 49%;

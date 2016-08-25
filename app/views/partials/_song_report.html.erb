@@ -1,0 +1,83 @@
+<div id='song-report-div'>
+	<button class='close'>X</button>
+	<div id='full-report-header'>
+		<div id='full-report-name'>
+			<h1><%=@song.name%></h1>
+			<h3><%=@song.user.artist_name%></h3>
+		</div>
+		<div id='full-report-rating-div'>
+			<% for i in 0..5 do
+				if i < @song.rating %>
+				<div class='star-rating-div'>
+					<%= image_tag "goldstar.png" %>
+				</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+	<div id='full-report-left-div'>
+		<div id='full-report-info-div'>
+			<div class='full-report-info-div'>
+				<span>Key:</span>
+				<p>
+				<% if @song.key == "" %>
+					N/A
+				<% else %>
+					<%=@song.key%>
+				<% end %>
+				</p>
+			</div>
+			<div class='full-report-info-div'>
+				<span>Bpm:</span>
+				<p>
+				<% if @song.bpm == nil %>
+					N/A
+				<% else %>
+					<%=@song.bpm%>
+				<% end %>
+				</p>
+			</div>
+			<div class='full-report-info-div'>
+				<span>Genre:</span>
+				<p><%=@song.genre.name%></p>
+			</div>
+		</div>
+
+		<div id='full-report-analysis-div'>
+			<h2>Analysis</h2>
+			<p><%=@song.analysis%>
+		</div>
+		<div id='full-report-ref-div'>
+			<h2>References</h2>
+			<div id='refs-div'>
+				<ul>
+					<% refs = get_song_references(@song.id)
+					refs.each{|ref| %>
+						<li class='ref-names'><span><%=ref.first_name%> <%=ref.last_name%></span>
+							<ul class='ref-info-list'>
+								<li><%=ref.email%></li>
+								<li>
+									(
+									<% for i in 0...3 %>
+										<%=ref.phone_number[i]%>
+									<% end %>
+									)
+									<% for i in 3...6 %>
+										<%=ref.phone_number[i]%>
+									<% end %>
+									-
+									<% for i in 6..10 %>
+										<%=ref.phone_number[i]%>
+									<% end %>
+								</li>
+							</ul>
+						</li>
+					<% } %>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id='full-report-right-div'>
+		<%= image_tag "#{@song.user.picture.url}" %>
+	</div>
+</div>

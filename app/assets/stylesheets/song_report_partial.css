@@ -1,0 +1,59 @@
+#report-partial-div{
+	animation-name: sidebar_show;
+	animation-duration: 1.5s;
+	border: 3px solid black;
+	margin: 1em auto;
+	width: 80%;
+}
+#report-partial-div h1{
+	margin: 0.2em auto;
+	border-bottom: 2px solid black;
+}
+#report-partial-div p{
+	margin: 0.2em;
+}
+
+#report-partial-div span{
+	font-weight: bold;
+}
+#report-partial-div select{
+	display: none;
+}
+
+#song-report-left-div, #song-report-right-div{
+	display: inline-block;
+	width: 49%;
+}
+#rating-div{
+	margin: 1em auto;
+}
+#rating-div h2{
+	width: 80%;
+	margin: 0.2em auto;
+	border-bottom: 2px solid black;
+}
+.star-rating-div{
+	width: 15%;
+	display: inline-block;
+	margin: 0;
+}
+.star-rating-div img{
+	width: 100%;
+	margin: 0;
+}
+
+#report-partial-div button{
+	padding: 0.3em;
+	border-radius: 0.5em;
+	border: none;
+	background: linear-gradient(dimgrey, black);
+	background-color: black;
+	color: #ffcc33;
+	font-family: "Rokkitt", serif;
+	margin-bottom: 1em;
+	width: 75%;
+	font-size: 1.2em;
+}
+#report-partial-div button:hover{
+  background: linear-gradient(black, dimgrey);
+}

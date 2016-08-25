@@ -1,11 +1,8 @@
 #button-bar{
-	display: inline-block;
 	width: 80%;
-	margin-left: 2.5%;
-	margin-top: 1em;
-	vertical-align:top;
+	margin: 1em auto;
+	vertical-align: top;
 	text-align: center;
-	z-index: 1;
 	background: linear-gradient(dimgrey, black);
 	color: white;
 	padding: 1em 0;
@@ -33,14 +30,15 @@
 	display: inline-block;
 	width: 90%;
 	padding: 0.2em;
+	padding-top: 0.3em;
 	font-size: 1.5em;
 	border-radius: 1em;
 	border: none;
-	background: linear-gradient(steelblue, #0099ff);
 	color: white;
 	margin-bottom: 0.4em;
+	background: linear-gradient(#e60000, #990000);
 }
 #button-bar button:hover{
 	cursor: pointer;
-	background: linear-gradient(#0099ff, steelblue);
+	background: linear-gradient(#990000, #e60000);
 }

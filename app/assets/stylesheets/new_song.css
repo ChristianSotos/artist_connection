@@ -57,11 +57,11 @@
 	padding: 0.5em;
 	border-radius: 1em;
 	border: none;
-	background: linear-gradient(steelblue, #0099ff);
+	background: linear-gradient(#e60000, #990000);
 	color: white;
 }
 .new-song-form button:hover{
-	background: linear-gradient(#0099ff, steelblue);
+	background: linear-gradient(#990000, #e60000);
 }
 .song-complete-div span{
 	display: block;
@@ -75,13 +75,13 @@
 	padding: 0.5em;
 	border: none;
 	border-radius: 1em;
-	background: linear-gradient(skyblue, #0099ff);
+	background: linear-gradient(#e60000, #990000);
 	color: black;
 	font-weight: bold;
 	font-size: 0.8em;
 }
 #end-song-form-btn:hover{
-	background: linear-gradient(#0099ff, skyblue);
+	background: linear-gradient(#990000, #e60000);
 	color: white;
 }
 #one-song-form{
@@ -92,11 +92,10 @@
 	text-align: left; 
 	border: 1px solid transparent;
 	border-radius: 4px;
-	background-color: dimgrey;
-	color: white;
+	background-color: white;
+	color: #e60000;
 	padding: 0.2em;
 }
 #back-btn:hover{
-	color: #ffcc33;
-	border: 1px solid #ffcc33;
+	border: 1px solid #e60000;
 }

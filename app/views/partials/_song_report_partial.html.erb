@@ -1,0 +1,58 @@
+<div id='report-partial-div'>
+	<h1><%=@song.name%></h1>
+	<div id='song-report-left-div'>
+		<span>Key:</span>
+		<p>
+		<% if @song.key == "" %>
+			N/A
+		<% else %>
+			<%=@song.key%>
+		<% end %>
+		</p>
+		<span>Availability:</span> 
+		<p id='public' class='show-to-edit'>
+			<% if @song.public %>
+				Public
+			<% else %>
+				Private
+			<% end %>
+		</p>
+		<p>
+			<select id='edit-public' class='song-edit' data-alt-field="public" data-alt-src="<%=@song.id%>">
+				<option value='true'
+				<% if @song.public == true %>
+				selected='selected'
+				<% end %>
+				>Public</option>
+				<option value='false'
+				<% if @song.public == false %>
+				selected='selected'
+				<% end %>
+				>Private</option>
+			</select>
+		</p>
+	</div>
+	<div id='song-report-right-div'>
+		<span>BPM:</span>
+		<p>
+		<% if @song.bpm == nil %>
+			N/A
+		<% else %>
+			<%=@song.bpm%>
+		<% end %>
+		</p>
+		<span>Genre:</span>
+		<p><%=@song.genre.name%></p>
+	</div>
+	<div id='rating-div'>
+		<h2>Rating</h2>
+		<% for i in 0..5 do
+			if i < @song.rating %>
+			<div class='star-rating-div'>
+				<%= image_tag "goldstar.png" %>
+			</div>
+			<% end %>
+		<% end %>
+	</div>
+	<button class='popup-click' data-alt-src="/songs/report_full/<%=@song.id%>">View Full Report</button>
+</div>

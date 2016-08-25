@@ -1,0 +1,103 @@
+#song-report-div{
+	background: linear-gradient(#f2f2f2, #cccccc);
+	color: black;
+	display: inline-block;
+	border: 1em groove skyblue;
+	text-align: center;
+	padding: 1%;
+	/*background: linear-gradient(#262626, black);*/
+	max-height: 60%;
+	/*color: white;*/
+	position: relative;
+	animation-name: popup_show;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-in-out;
+	width: 60%;
+}
+#full-report-header{
+	border-bottom: 2px solid black;
+}
+#full-report-name{
+	width: 59%;
+	display: inline-block;
+	text-align: left;
+}
+#full-report-header h1{
+	margin: 0;
+}
+#full-report-header h3{
+	padding-bottom: 0.2em;
+	margin: 0;
+}
+#full-report-rating-div{
+	display: inline-block;
+	width: 39%;
+	margin: 0;
+	text-align: center;
+}
+#full-report-rating-div h2{
+	margin: 0.2em;
+}
+#song-report-div h2{
+	text-align: left;
+	margin: 0.4em 0;
+}
+#song-report-div span{
+	font-weight: bold;
+}
+#song-report-div p{
+	margin: 0;
+}
+#full-report-left-div{
+	width: 60%;
+	display: inline-block;
+	vertical-align: top;
+}
+#full-report-right-div{
+	width: 39%;
+	display: inline-block;
+	vertical-align: top;
+}
+#full-report-right-div img{
+	width: 100%;
+	border: 3px solid black;
+	margin-top: 1em;
+	margin-left: -0.3em;
+}
+#full-report-info-div{
+	border-bottom: 2px solid black;
+}
+.full-report-info-div{
+	width: 32%;
+	display: inline-block;
+	vertical-align: top;
+	border-right: 2px solid black;
+	margin: 0;
+}
+.full-report-info-div:last-child{
+	border-right: none;
+}
+#full-report-analysis-div p{
+	text-align: left;
+	margin-left: 0.5em;
+}
+#full-report-ref-div ul{
+	list-style-type: none;
+	padding: 0;
+	margin-top: 0;
+
+	text-align: left;
+}
+.ref-names{
+	display: inline-block;
+	width: 32%;
+}
+#full-report-ref-div ul ul {
+	padding-left: 0.5em;
+	font-size: 0.9em;
+}
+#refs-div{
+	width: 98%;
+	display: block;
+	margin: 0 auto;
+}

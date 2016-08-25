@@ -20,7 +20,6 @@
   margin-top: 1em;
 }
 .audio-upload-div button{
-  background: linear-gradient(steelblue, #00ccff);
   border:none;
   color: white;
   border-radius: 5px;
@@ -29,9 +28,10 @@
   margin-top: 0.5em;
   padding:0.5em;
   display: inline-block;
+  background: linear-gradient(#e60000, #990000);
 }
 .audio-upload-div button:hover{
-  background: linear-gradient(#00ccff, steelblue);
+  background: linear-gradient(#990000. #e60000);
 }
 .audio-upload-half-div{
   width: 49%;

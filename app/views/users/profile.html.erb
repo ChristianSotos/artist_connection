@@ -97,7 +97,13 @@
 			</thead>
 			<tbody>
 			<% @songs.each{|s| %>
-				<tr class='song-row' data-alt-src='/songs/show/<%=s.id%>'>
+				<tr class='song-row'
+				<% if s.reviewed %>
+					data-alt-src='/songs/report_partial/<%=s.id%>'
+				<% else %>
+					data-alt-src='/songs/show/<%=s.id%>'
+				<% end %>
+				>
 					<td>
 					<% if !s.audio_file_file_name %>
 						<button class='popup-click' data-alt-src='/songs/upload_audio/<%=s.id%>'>Song</button>

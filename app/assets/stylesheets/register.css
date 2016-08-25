@@ -55,9 +55,20 @@
 #reg-to-log{
 	font-size: 0.7em;
 	float: left;
-	color: royalblue;
+	color: #e60000;
+	letter-spacing: 0.1em;
 }
 #reg-to-log:hover{
 	font-weight: bold;
 	cursor:pointer;
+}
+#register-div button:last-child{
+	border: none;
+	padding: 0.4em;
+	color: white;
+	border-radius: 5px;
+	background: linear-gradient(#e60000, #990000);
+}
+#register-div button:last-child:hover{
+	background: linear-gradient(#990000 ,#e60000);
 }
