@@ -22,7 +22,8 @@ body{
 .header-text{
 	font-family: 'Khand', sans-serif;
 }
-#left-background{
+@media screen and (min-width:901px){
+	#left-background{
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -30,20 +31,22 @@ body{
 	height: 100%;
 	background: linear-gradient(-90deg, rgb(26, 26, 26), black);
 }
-#left-background img, #right-background img{
-	display: inline-block;
-	height: 100%;
-	width: 100%;
+	#left-background img, #right-background img{
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+	}
+	#right-background{
+		vertical-align: bottom;
+		position: fixed;
+		right: 0;
+		top: 0;
+		width: 10%;
+		height: 100%;
+		background: linear-gradient(90deg, rgb(26, 26, 26), black);
+	}
 }
-#right-background{
-	vertical-align: bottom;
-	position: fixed;
-	right: 0;
-	top: 0;
-	width: 10%;
-	height: 100%;
-	background: linear-gradient(90deg, rgb(26, 26, 26), black);
-}
+
 table{
 	color: black;
 	width: 90%;
@@ -238,5 +241,66 @@ a:hover{
 	}
 	to{
 		opacity: 100%;
+	}
+}
+@media (max-width: 1100px) {
+	#left-background{
+		display: none;
+	}
+	#right-background {
+		display: none;
+	}
+	#container {
+		width: 100%;
+		margin-top: 3%;
+	}
+	#header {
+		width: 100%;
+		left: 0;
+	}
+	#MyTopnav {
+		display: none;
+		top: 2.5em;
+		right: 0%;
+		width: 30%;
+		position: fixed;
+	}
+	#MyTopnav li{
+		display: block;
+	}
+	#header h3{
+		display: none;
+	}
+	.icon {
+		display: inline;
+		position: fixed;
+		top: 0.3em;
+		right: 0%;
+	}
+	.services-artist-div{
+		width: 30%;
+	}
+	#about-main-div {
+		width: 100%;
+	}
+	#about-side-div {
+		display: none;
+	}
+}
+@media (max-width: 900px) {
+	.services-artist-div{
+		width: 45%;
+	}
+	.column-third {
+		width: 60%;
+	}
+}
+@media (max-width: 600px) {
+	#services-picture-div {
+		background-color: black;
+		background-image: none;
+	}
+	#services-page-button {
+		width: 40%;
 	}
 }

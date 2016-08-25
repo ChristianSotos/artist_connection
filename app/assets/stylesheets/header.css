@@ -52,29 +52,6 @@
 	float: left;
 }
 
-@media all and (max-width: 1100px){
-	
-	#MyTopnav {
-		display: none;
-		top: 2.5em;
-		right: 10%;
-		width: 30%;
-		position: fixed;
-	}
-	#MyTopnav li{
-		display: block;
-	}
-	#header h3{
-		display: none;
-	}
-	.icon {
-		display: inline;
-		position: fixed;
-		top: 0.3em;
-		right: 10%;
-	}
-}
-
 
 
 

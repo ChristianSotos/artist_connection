@@ -48,7 +48,7 @@
 				<td><span><%=song.genre.name%></span></td>
 				<td><span><%=song.play_count%></span></td>
 				<td><span><%=song.rating%></span></td>
-				<td><span><a href="/admin/review_song/<%=song.id%>"><button>View Review</button></a></span></td>
+				<td><span><button data-alt-src="/songs/report_full/<%=song.id%>" class="popup-click view-review-button">View Review</button></span></td>
 			</tr>
 		<% } %>
 		</tbody>
