@@ -210,7 +210,6 @@ $(document).ready(function(){
 			for (var i=0; i<$(this).attr("data-alt"); i++) {
 				$('#' + $(this).siblings()[i].id).css("background-image", "url('/assets/goldstar.png')");
 			}
-		}
 	})
 	$(document).on('mouseenter', '.star', function(){
 		for (var i=0; i<$(this).attr("data-alt"); i++) {

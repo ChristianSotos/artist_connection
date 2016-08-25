@@ -5,10 +5,10 @@
 	width: 30%;
 	text-align: center;
 	margin: 1%;
-	border: 5px solid #00ccff;
+	border: 5px solid white;
 	color: white;
 	background-color: black;
 }
 .qty-btns:hover{
-	border: 5px solid #ffcc33;
+	border: 5px solid #ef0000;
 }

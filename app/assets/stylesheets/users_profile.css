@@ -32,7 +32,7 @@
 	margin-bottom: 1em;
 }
 #artist-pic-div button:hover{
-	color: #0099ff;
+	color: #e60000;
 }
 #artist-info-div{
 	width: 50%;
@@ -54,7 +54,7 @@
 	text-decoration: underline;
 }
 #follow-artist-title:hover{
-	color: #00ccff
+	color: #e60000
 }
 
 #artist-info-div ul{
@@ -113,5 +113,5 @@
 	font-size: 0.8em;
 }
 .show-to-edit:hover{
-	color: #00ccff;
+	color: #e60000;
 }

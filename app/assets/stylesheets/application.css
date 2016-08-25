@@ -75,7 +75,7 @@ a:hover{
 	cursor:default;
 }
 .song-row:hover, .artist-row:hover{
-	color: #0099ff;
+	color: #e60000;
 }
 
 #container{
@@ -103,17 +103,19 @@ a:hover{
 	margin-top: 2em;
 }
 .close{
-	float: right;
-	border: 1px solid red;
+	position: absolute;
+	top: 0.3em;
+	right: 0.3em;
+	border: 1px solid #e60000;
 	border-radius: 5px;
 	color: red;
-	padding: 0.4em;
-	font-weight: normal;
-	background-color: #d9d9d9;
+	padding: 0.3em;
+	font-weight: bold;
+	background-color:white;
 }
 .close:hover{
-	cursor: pointer;
-	background-color:white;
+	background-color: #d9d9d9;
+	cursor: default;
 }
 .error input, .error textarea{
 	border-color: red;
@@ -147,18 +149,21 @@ a:hover{
 	width: 1em;
 	height: 1em;
 	border-collapse: collapse;
-	border: 1px solid black;
+	border: 2px solid black;
 	display: inline-block;
 }
 #on-page{
 	background-color: black;
 	color: white;
 }
+#on-page:hover{
+	border: 2px solid black;
+}
 #first-page, #last-page, #prev-page{
 	width: 2em
 }
 .pagination:hover, .user-pagination:hover{
-	border: 1px solid #0099ff;
+	border: 2px solid #e60000;
 }
 
 ::-webkit-scrollbar {
@@ -168,8 +173,9 @@ a:hover{
 	display: block;
 	text-align: right;
 	margin-top: 1%;
+	margin-right: 1%;
 	font-size: 0.7em;
-	color: #0099ff;
+	color: #e60000;
 }
 .form-header{
 	text-align: left;
@@ -203,7 +209,7 @@ a:hover{
 }
 #login-div, #song-qty-div, #register-div, #new-song-div, #success-div, .upload-file-div, #social-media-div{
 	display: inline-block;
-	border: 1em groove skyblue;
+	border: 0.8em groove black;
 	text-align: center;
 	padding: 1%;
 	background: linear-gradient(#262626, black);

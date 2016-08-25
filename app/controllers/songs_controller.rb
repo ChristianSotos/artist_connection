@@ -32,7 +32,11 @@ class SongsController < ApplicationController
 		elsif params[:field] == "genre"
 			@song.update(genre: Genre.find(params[:value]))
 		end
-		render :partial => "partials/song_edit"
+		if @song.reviewed
+			render :partial =>"partials/song_report_partial"
+		else
+			render :partial => "partials/song_edit"
+		end
 	end
 	def qty
 		render :partial => "partials/qty"
@@ -134,6 +138,16 @@ class SongsController < ApplicationController
 		@user_song_count = Song.where(user:current_user).count
 		@user_songs = Song.offset(page_offset).where(user:current_user).limit(5)
 		render :partial => "partials/user_songs"
+	end
+
+	def report_full
+		@song = Song.find(params[:id])
+		render :partial => "partials/song_report"
+	end
+
+	def report_partial
+		@song = Song.find(params[:id])
+		render :partial => "partials/song_report_partial"
 	end
 
 	private

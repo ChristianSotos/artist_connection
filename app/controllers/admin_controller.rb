@@ -12,7 +12,7 @@ class AdminController < ApplicationController
 
   def add_review
   	song = Song.find(params[:id])
-  	rating = params[:rating].to_i
+  	rating = (params[:rating].to_i + 1)
   	admin = Admin.find(session[:admin_id])
   	song.update(analysis:params[:analysis], rating:rating, reviewed:"t", admin:admin)
   	redirect_to "/admin"
