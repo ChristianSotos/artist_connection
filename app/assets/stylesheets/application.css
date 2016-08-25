@@ -28,7 +28,7 @@ body{
 	top: 0;
 	width: 10%;
 	height: 100%;
-	background-color: black;
+	background: linear-gradient(-90deg, rgb(26, 26, 26), black);
 }
 #left-background img, #right-background img{
 	display: inline-block;
@@ -42,7 +42,7 @@ body{
 	top: 0;
 	width: 10%;
 	height: 100%;
-	background-color: black;
+	background: linear-gradient(90deg, rgb(26, 26, 26), black);
 }
 table{
 	color: black;
