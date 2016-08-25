@@ -78,3 +78,15 @@
 #ref-left-div li{
 	text-align: left;
 }
+
+#review-star-rating-div{
+	display: inline-block;
+}
+.star {
+	background-image: url("whitestar.png");
+	background-size: 100%;
+	width: 2em;
+	height: 2em;
+	display: inline-block;
+}
+

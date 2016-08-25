@@ -202,4 +202,26 @@ $(document).ready(function(){
 
 		})
 	})
+
+	var clicked = false;
+
+	$(document).on("click", ".star", function(){
+			$(this).css("background-image", "url('/assets/goldstar.png')");
+			for (var i=0; i<$(this).attr("data-alt"); i++) {
+				$('#' + $(this).siblings()[i].id).css("background-image", "url('/assets/goldstar.png')");
+			}
+		}
+	})
+	$(document).on('mouseenter', '.star', function(){
+		for (var i=0; i<$(this).attr("data-alt"); i++) {
+			$('#' + $(this).siblings()[i].id).css("background-image", "url('/assets/goldstar.png')");
+		}
+		$(this).css("background-image", "url('/assets/goldstar.png')");
+	})
+	// $(document).on('mouseleave', '.star', function(){
+	// 	for (var i=0; i<$(this).attr("data-alt"); i++) {
+	// 		$('#' + $(this).siblings()[i].id).css("background-image", "url('/assets/whitestar.png')");
+	// 	}
+	// 	$(this).css("background-image", "url('/assets/whitestar.png')");
+	// })	
 })
