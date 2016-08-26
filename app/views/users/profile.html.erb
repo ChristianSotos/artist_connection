@@ -49,14 +49,14 @@
 			<p id='follow-artist-title' class='popup-click' data-alt-src="/users/sm_popup">Social Media</p>
 			<ul id='follow-artist-list'>
 				<li>
-					<a href='<%=@user.facebook%>'>
+					<a href='<%=@user.facebook%>' target="_blank">
 						<div class='sm-pics-div'>
 							<%= image_tag "facebook.png"%>
 						</div>
 					</a>
 				</li>
 				<li>
-					<a href='<%=@user.twitter%>'>
+					<a href='<%=@user.twitter%>' target="_blank">
 						<div class='sm-pics-div'>
 							<%= image_tag "twitter.png"%>
 						</div>
@@ -64,14 +64,14 @@
 					</li>
 				<br>
 				<li>
-					<a href='<%=@user.instagram%>'>
+					<a href='<%=@user.instagram%>' target="_blank">
 						<div class='sm-pics-div'>
 							<%= image_tag "instagram.png"%>
 						</div>
 					</a>
 				</li>
 				<li>
-					<a href='<%=@user.soundcloud%>'>
+					<a href='<%=@user.soundcloud%>' target="_blank">
 						<div class='sm-pics-div'>
 							<%= image_tag "soundcloud.png"%>
 						</div>
@@ -108,7 +108,7 @@
 					<% if !s.audio_file_file_name %>
 						<button class='popup-click' data-alt-src='/songs/upload_audio/<%=s.id%>'>Song</button>
 					<% else %>
-						<button class='play-btn' id="<%=s.audio_file.url%>" data-alt-src='<%=s.id%>'></button>
+						<button class='play-btn' id="<%=s.audio_file.url%>" data-alt-src='<%=s.id%>'>&#9654</button>
 					<% end %></td>
 					<td><span><%=s.name%></span></td>
 					<td><span><%=s.genre.name%></span></td>
@@ -121,7 +121,15 @@
 					</td>
 					<td>
 					<% if s.reviewed %>
-						<span><%=s.rating%></span>
+						<div id='full-report-rating-div'>
+							<% for i in 0..5 do
+								if i < s.rating %>
+								<div class='star-rating-div'>
+									<%= image_tag "goldstar.png" %>
+								</div>
+								<% end %>
+							<% end %>
+						</div>
 					<% else %>
 						<span class='pending'>Pending</span>
 					<% end %>

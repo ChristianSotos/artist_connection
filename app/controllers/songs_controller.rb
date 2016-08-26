@@ -4,6 +4,7 @@ class SongsController < ApplicationController
 		@song_count = Song.where(public:true).count
 		@current_page = 1
 		@songs = Song.offset(0).where(public: true).order(rating: :desc, play_count: :desc).limit(5)
+		@featured_artists = Song.find_by_sql("SELECT SUM(play_count) AS plays, user_id FROM Songs GROUP BY(user_id) ORDER BY plays DESC LIMIT 10")
 		if session[:user_id]
 			@user_song_count = Song.where(user:current_user).count
 			@user_current_page = 1

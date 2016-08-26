@@ -10,28 +10,28 @@
 		<h4 id='follow-artist-show-title'>Follow This Artist</h4>
 			<ul id='follow-artist-list'>
 				<li>
-					<a href='<%=@artist.facebook%>'>
+					<a href='<%=@artist.facebook%>' target="_blank">
 						<div class='sm-pics-div'>
 							<%= image_tag "facebook.png"%>
 						</div>
 					</a>
 				</li>
 				<li>
-					<a href='<%=@artist.twitter%>'>
+					<a href='<%=@artist.twitter%>' target="_blank">
 						<div class='sm-pics-div'>
 							<%= image_tag "twitter.png"%>
 						</div>
 					</a>
 					</li>
 				<li>
-					<a href='<%=@artist.instagram%>'>
+					<a href='<%=@artist.instagram%>' target="_blank">
 						<div class='sm-pics-div'>
 							<%= image_tag "instagram.png"%>
 						</div>
 					</a>
 				</li>
 				<li>
-					<a href='<%=@artist.soundcloud%>'>
+					<a href='<%=@artist.soundcloud%>' target="_blank">
 						<div class='sm-pics-div'>
 							<%= image_tag "soundcloud.png"%>
 						</div>
@@ -41,6 +41,7 @@
 		<h4>Contact This Artist</h4>
 		<p id='artist-contact-email'><%=@artist.email%></p>
 	</div>
+	<% if @artist_songs.count > 0 %>
 	<div id='artist-songs-div'>
 		<table>
 			<thead>
@@ -54,7 +55,7 @@
 			<% @artist_songs.each{|s| %>
 				<tr>
 					<td>
-					<button class='play-btn' id="<%=s.audio_file.url%>"></button>
+					<button class='play-btn' id="<%=s.audio_file.url%>">&#9654</button>
 					</td>
 					<td><span><%=s.name%></span></td>
 					<td><span><%=s.genre.name%></span></td>
@@ -63,4 +64,5 @@
 			</tbody>
 		</table>
 	</div>
+	<% end %>
 </div>
