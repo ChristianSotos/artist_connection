@@ -8,6 +8,7 @@ class SessionController < ApplicationController
 	end
 
 	def index
+		@featured_artists = Song.find_by_sql("SELECT SUM(play_count) AS plays, user_id FROM Songs GROUP BY(user_id) ORDER BY plays DESC LIMIT 6")
 	end
 
 	# page to view pricing and offerings
