@@ -104,6 +104,17 @@
 	padding: 0.4em;
 	border-radius: 5px;
 }
+.table-rating-div .star-rating-div{
+	width: 15%;
+	height: 1em;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+}
+.table-rating-div .star-rating-div img{
+	height: 100%;
+	width: 100%;
+}
 
 .user-edit{
 	display: none;

@@ -215,7 +215,7 @@ a:hover{
 }
 #login-div, #song-qty-div, #register-div, #new-song-div, #success-div, .upload-file-div, #social-media-div{
 	display: inline-block;
-	border: 0.8em groove black;
+	border: 0.8em groove white;
 	text-align: center;
 	padding: 1%;
 	background: linear-gradient(#262626, black);
