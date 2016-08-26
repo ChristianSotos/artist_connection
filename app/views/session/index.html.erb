@@ -2,7 +2,7 @@
 	<h1>Receive Quality Music Advice from Tenured Industry Veterans</h1>
 	<button id="services-page-button" class='popup-click header-text' data-alt-src='/new_submit'>Upload Music</button>
 </div>
-<div id="home-column-div" class="home-main-content">
+<div id="home-column-div" class="home-main-content">	
 	<div class="column-third"> 
 		<h3>Receive Expert Song Criticism and Feedback</h3>
 		<div class='column-img'>
@@ -22,49 +22,36 @@
 		</div>
 	</div> 
 </div>
+
 <div class="services-you-us" id="what-we-do">
 	<h2>What We Can Do For You</h2>
-	<p>Have a seasoned vet help you develop your sound. Our award-winning staff has over 40 years of experience and can help take your music career to the next level. We work with artists of all genres and backgrounds and provide clear, specfic advice to all of our customers.</p>
+	<p>Have a seasoned vet help you develop your sound. Our award-winning staff has over 50 years of experience and can help take your music career to the next level. We work with artists of all genres and backgrounds and provide them advice tailored specifically for them based on the songs they submit to us.</p>
 	<p>Artists can submit their songs on our website and receive personalized advice at a phenominal value. Every time you submit a song, you will receive in return:</p>
 	<ul>
-		<li>One (1) Professional Song Critique & Descriptive Feedback per Song Submitted</li>
-		<li>One (1) Guaranteed Index Referral</li>
+		<li>One (1) Report with Detailed Analysis and Star Rating per Song</li>
+		<li>Contact Information for at least one (1) Industry Professionals in our Extensive Network</li>
 	</ul>
-	<p>Our current collection of index referrals spans across several different industries and practices, including, but not limited to: <span id="blue">business consultants, A&Rs, music publishers, licensing executives, advertising executives, advertisng agents, bloggers, journalists, culinary specialists, and publicists</span>.</p>
+	<p>Our current collection of professional contacts spans across several different industries and practices, including, but not limited to: <span id="blue">business consultants, A&Rs, music publishers, licensing executives, advertising professionals, bloggers, journalists, publicists, and well-known artists</span>. The number of contacts that are provided to you depends on the quality of songs submitted. We will connect you to our most accomplished contacts if we feel you have the right stuff!</p>
 </div>
+
 <div id="services-artists">
 	<h2>Artists We've Worked With</h2>
-	<div class="services-artist-div">
-		<%=image_tag("roxannemontana.jpg")%>
-		<h3>Roxanne Montana</h3>
-	</div>
-	<div class="services-artist-div">
-		<%=image_tag("Courtlin_Jabrae.jpg")%>
-		<h3>Courtlin Jabrae</h3>
-	</div>
-	<div class="services-artist-div">
-		<%=image_tag("laci_kay.jpg")%>
-		<h3>Laci Kay</h3>
-	</div>
-	<div class="services-artist-div">
-		<%=image_tag("mr_light_upp.jpg")%>
-		<h3>MrLightUpp</h3>
-	</div>
-	<div class="services-artist-div">
-		<%=image_tag("lorin.jpg")%>
-		<h3>LORIN</h3>
-	</div>
-	<div class="services-artist-div">
-		<%=image_tag("boss_carrot.jpg")%>
-		<h3>Boss Carrot</h3>
-	</div>
+	<% if @featured_artists%>
+		<%@featured_artists.each {|a| 
+			artist = get_user(a.user_id)%>
+			<div class="services-artist-div">
+				<%=image_tag("#{artist.picture.url}")%>
+				<h3><%=artist.artist_name%></h3>
+			</div>
+		<%} %>
+	<%end%>
 </div>
 <div class="services-you-us">
 	<h2>What You Give Us</h2>
 
-	<p>If you're interested in getting serious about your music career with us, please complete our new artist registration process by clicking on the "Submit Your Songs" button below. You'll be prompted to create a profile and provide your personal information, including your social media accounts. Once completed, you can upload up to five songs that you want our staff to review. Once payment is completed, you'll receive your reports via email and be contacted by a member of our team within five (5) business days.</p>
-	
-	<p>Label Research will not sell, pirate, license, reproduce, or use your music for any other purpose except for the purpose of to review your music. The music/MP3 files you send to Label Research will be shared with our staff. You must be an authorized representative of the music/files you send and/or the artist/band represented. Label Research does not retain any rights to your music, album cover-art, or band-name. Our consultants name, image, audio, user interface, likeness or any other content cannot be used in the promotion or in reference to the creation or editing of your music or projects except by expressed written consent.</p>
+	<p>If you're interested in getting serious about your music career with us, please complete our new artist registration process by clicking on the "Submit Your Songs" button below. You'll be prompted to create a profile and provide your personal information, including your social media accounts. Once completed, you can upload up to five songs that you want our staff to review. Once payment is completed, you'll receive your reports via email and be contacted by a member of our team within three-five (3-5) business days.</p>
+
+	<p>The Artist Connection understands that you work hard creating your music and have no intentions in acquiring your music other than to review it and provide you feedback. We will not sell, pirate, license, or reproduct any music submitted to us. Any music that we receive through this website will only be shared with our staff for critiqueing purposes. The Artist Connection does not retain rights to any content that is submitted to us.</p>
 	<h2 id="pricing-header">Pricing</h2>
 	<table id="price-table">
 		<thead>
@@ -94,7 +81,7 @@
 			</tr>
 		</tbody>
 	</table> 
-	<p>The processing fee is to indemnify both Label Research and our consulting staff. This fee is per song submission. All terms are non-negotiable. An electronic proof of receipt will be provided.</p>
+	<p>Pricing is non-negotiable. Payment is due at time of submission. No refunds. All sales final. Thank you for choosing us!</p>
 </div>
 
 
