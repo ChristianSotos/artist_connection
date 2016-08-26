@@ -1,11 +1,10 @@
 #admin-index-div{
 	text-align: center;
 }
-#admin-index-div a button{
+.view-review-button{
 	background: linear-gradient(dimgrey, black);
 	color: white;
 	padding:0.2em;
 	border: none;
 	border-radius: 5px;
 }
-#

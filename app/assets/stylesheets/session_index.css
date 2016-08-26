@@ -81,7 +81,7 @@
 
 
 .services-artist-div{
-	width: 30%;
+	width: 15%;
 	display: inline-block;
 	text-align: center;
 	padding: .5%;
@@ -140,5 +140,9 @@
 		width: 100%;
 	}
 
+#home-column-div{
+	padding: 5% 5%;
+	width: 90%;
+}
 
 
