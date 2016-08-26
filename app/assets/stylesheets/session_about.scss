@@ -2,22 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#about-main-div {
-	width: 70%;
-	display: inline-block;
-	vertical-align: top;
-}
-#about-side-div {
-	margin: 5% auto;
-	width: 29%;
-	display: inline-block;
-	vertical-align: top;
-	text-align: center;
-/*	position: fixed;*/
-}
-
 .home-main-content { 
-	background-color: white;
 	margin: .5% auto;
 	width: 80%;
 	padding: 5% 10%;
@@ -72,6 +57,11 @@
 	color: white;
 	background-color: #e60000;
 	border: none;
+}
+#about-p-tags {
+	text-align: left;
+	align: justify-content;
+	text-indent: 5em;
 }
 
 
