@@ -4,11 +4,13 @@
 #audio-upload-main-div h1{
   width: 90%;
   border-bottom: 2px solid black;
+  margin-bottom: 2em;
 }
 .audio-upload-div{
-  width: 49%;
+  width: 30%;
   display: inline-block;
   vertical-align: top;
+  position: relative;
 }
 .audio-upload-div span{
   font-weight: bold;
@@ -31,9 +33,20 @@
   background: linear-gradient(#e60000, #990000);
 }
 .audio-upload-div button:hover{
-  background: linear-gradient(#990000. #e60000);
+  background: linear-gradient(#990000, #e60000);
 }
 .audio-upload-half-div{
   width: 49%;
   display: inline-block;
+}
+.form-complete{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transform: rotate(30deg);
+  font-size: 4em;
+  border: 5px solid #e60000;
+  color: #e60000;
 }

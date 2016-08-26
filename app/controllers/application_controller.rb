@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
   	user = User.find(session[:user_id])
   	user
   end
+  def get_user user_id
+    user = User.find(user_id)
+    user
+  end
   def get_genres
   	genres = Genre.all.order(:name)
   	genres
@@ -24,5 +28,5 @@ class ApplicationController < ActionController::Base
     references = song.references
     return references
   end
-  helper_method :current_user, :get_genres, :get_song, :get_references, :get_song_references
+  helper_method :current_user, :get_user, :get_genres, :get_song, :get_references, :get_song_references
 end

@@ -17,7 +17,6 @@ body{
 	background-color: #f2f2f2;
 	color: black;
 	font-family: 'Rokkitt', serif;
-	
 }
 .header-text{
 	font-family: 'Khand', sans-serif;
@@ -106,6 +105,7 @@ a:hover{
 	text-align: center;
 	margin-top: 2em;
 	font-size: 1.1em;
+	position: relative;
 }
 .close{
 	position: absolute;
@@ -131,15 +131,16 @@ a:hover{
 }
 
 .play-btn{
-	width: 2.5em;
-	height: 2.5em;
 	border-radius: 100%;
-	border: 2px solid white;
-	background: linear-gradient(lightgrey, grey);
+	border: none;
+	background: linear-gradient(grey, rgb(26, 26, 26));
+	padding: 0.3em 0.4em;
+	padding-right: 0.2em;
+	color: white;
+	font-size: 0.6em;
 }
 .play-btn:hover{
-	border: 2px solid white;
-	background: linear-gradient(grey, lightgrey);
+	background: linear-gradient(rgb(26, 26, 26), grey);
 }
 #page-div{
 	

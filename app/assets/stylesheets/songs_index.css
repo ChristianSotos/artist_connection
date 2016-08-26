@@ -7,6 +7,16 @@
 	padding: 1em 2em;
 	border-radius: 1em;
 	color: black;
+	position: relative;
+}
+#top-songs-div{
+	position: relative;
+	animation-name: top_enter;
+	animation-duration: 1s;
+}
+#user-songs-div{
+	animation-name: user_enter;
+	animation-duration: 2s;
 }
 
 #featured-div{
@@ -17,11 +27,16 @@
 	overflow-x:scroll;
 	display: inline-block;
 	text-align: center;
+	position: relative;
+	animation-name: feature_enter;
+	animation-duration: 0.5s;
 }
 #featured-div h4{
 	color: black;
 	font-weight: bold;
 	display: none;
+	width: 80%;
+	margin: 1em auto;
 }
 #featured-header h3{
 	margin: 0 auto;
@@ -44,6 +59,7 @@
 	display: inline-block;
 	position: relative;
 	vertical-align: top;
+	white-space: normal;
 }
 .featured-images-div img{
 	position: absolute;
@@ -87,4 +103,36 @@
 	border-radius: 5px;
 	text-align: center;
 	font-weight: bold;
+}
+
+@keyframes feature_enter{
+	from{
+		left: -50%;
+		opacity: 0;
+	}
+	to{
+		left: 0;
+		opacity: 1;
+	}
+}
+@keyframes top_enter{
+	from{
+		left: -100%;
+		opacity: 0;
+	}
+	to{
+		left: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes user_enter{
+		from{
+		left: -200%;
+		opacity: 0;
+	}
+	to{
+		left: 0;
+		opacity: 1;
+	}
 }
