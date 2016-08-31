@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.home-main-content { 
+.home-main-content {  
 	margin: .5% auto;
 	width: 80%;
-	padding: 5% 10%;
+	padding: 0% 10%;
 	opacity: .9;
 	color: black;
 	display: inline-block;
@@ -19,7 +19,7 @@
 		margin-bottom: 10%;
 		color: #e60000;
 	}
-	.home-main-content p, .home-main-content label{
+	.home-main-content p{
 		font-size: 1.5em;
 		margin-bottom: 3%;
 		line-height: 110%;
@@ -36,6 +36,9 @@
 	display: inline-block;
 	padding: 1%;
 }
+	#session-contact-form-div label {
+		padding-right: 2%;
+	}
 	#session-contact-form-div textarea {
 	width: 100%;
 	height: 10em;
@@ -51,7 +54,6 @@
 	}
 
 #contact-form-button {
-	/*width: 30%;*/
 	font-size: 1em;
 	padding: 2%;
 	color: white;
@@ -59,9 +61,8 @@
 	border: none;
 }
 #about-p-tags {
-	text-align: left;
+	text-align: center;
 	align: justify-content;
-	text-indent: 5em;
 }
 
 
