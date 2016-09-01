@@ -1,6 +1,6 @@
 #playbar{
 	position: fixed;
-	bottom: 0;
+	bottom: -5px;
 	left: 10%;
 	width: 80%;
 }

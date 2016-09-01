@@ -28,12 +28,12 @@
 	display: inline-block;
 	text-align: center;
 	position: relative;
+	backface-visibility: none;
 	animation-name: feature_enter;
 	animation-duration: 0.5s;
 }
 #featured-div h4{
 	color: black;
-	font-weight: bold;
 	display: none;
 	width: 80%;
 	margin: 1em auto;
