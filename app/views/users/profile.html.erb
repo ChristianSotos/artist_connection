@@ -48,6 +48,13 @@
 		<div id='artist-info-right-div'>
 			<p id='follow-artist-title' class='popup-click' data-alt-src="/users/sm_popup">Social Media</p>
 			<ul id='follow-artist-list'>
+				<% if @user.facebook == "" %>
+				<li>
+					<div class='sm-pics-div'>
+						<%= image_tag "facebook.png"%>
+					</div>
+				</li>
+				<% else %>
 				<li>
 					<a href='<%=@user.facebook%>' target="_blank">
 						<div class='sm-pics-div'>
@@ -55,14 +62,30 @@
 						</div>
 					</a>
 				</li>
+				<% end %>
+				<% if @user.twitter == "" %>
+				<li>
+					<div class='sm-pics-div'>
+						<%= image_tag "twitter.png"%>
+					</div>
+				</li>
+				<% else %>
 				<li>
 					<a href='<%=@user.twitter%>' target="_blank">
 						<div class='sm-pics-div'>
 							<%= image_tag "twitter.png"%>
 						</div>
 					</a>
-					</li>
+				</li>
+				<% end %>
 				<br>
+				<% if @user.instagram == "" %>
+				<li>
+					<div class='sm-pics-div'>
+						<%= image_tag "instagram.png"%>
+					</div>
+				</li>
+				<% else %>
 				<li>
 					<a href='<%=@user.instagram%>' target="_blank">
 						<div class='sm-pics-div'>
@@ -70,6 +93,14 @@
 						</div>
 					</a>
 				</li>
+				<% end %>
+				<% if @user.soundcloud == "" %>
+				<li>
+					<div class='sm-pics-div'>
+						<%= image_tag "soundcloud.png"%>
+					</div>
+				</li>
+				<% else %>
 				<li>
 					<a href='<%=@user.soundcloud%>' target="_blank">
 						<div class='sm-pics-div'>
@@ -77,6 +108,7 @@
 						</div>
 					</a>
 				</li>
+				<% end %>
 			</ul>
 		</div>
 		<p class='show-to-edit' id='description'><%=@user.description%></p>
