@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>LabelResearch</title>
+  <title>The Artist Connection - Get Discovered Today</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/css?family=Khand:700|Rokkitt" rel="stylesheet">
 </head>
 <body>
-
-<div id='popup'></div>
-<div id='left-background'></div>
-<div id='right-background'></div>
-<div id='container'>
-	<%= render :partial => "partials/header" %>
-	<%= yield %>
-</div>
+	<div id='popup'></div>
+	<div id='left-background'></div>
+	<div id='right-background'></div>
+	<div id='container'>
+		<%= render :partial => "partials/header" %>
+		<%= yield %>
+	</div>
 </body>
 </html>

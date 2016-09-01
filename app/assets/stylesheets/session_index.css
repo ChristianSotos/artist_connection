@@ -34,11 +34,11 @@
 	color: white;
 }
 .services-you-us {
-	width: 80%;
+	width: 60%;
 	background-color: white;
 	opacity: .9;
 	color: black;
-	padding: 5% 10%;
+	padding: 5% 20%;
 	text-align: center; 
 	display: block;
 	margin: 0% auto;
@@ -51,13 +51,14 @@
 	}
 	.services-you-us ul {
 		text-decoration: none;
+		margin-bottom: 6%;
 	}
 	.services-you-us li {
 		font-weight: bolder;
 		list-style-type: none;
-		color: #e60000;
+		/*color: #e60000;*/
 		font-family: 'Rokkitt', serif;
-		font-size: 1.5em;
+		font-size: 1.7em;
 	}
 	.services-you-us p{
 		font-family: 'Rokkitt', serif;
@@ -79,6 +80,9 @@
 		margin: 0%;
 	}
 
+#red {
+	color: #e60000;
+}
 
 .services-artist-div{
 	width: 15%;
