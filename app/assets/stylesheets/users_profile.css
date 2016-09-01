@@ -9,6 +9,19 @@
 	width: 100%;
 	height: 12em;
 	border-radius: 10%;
+	position: relative;
+	animation-name: profile_pic_enter;
+	animation-duration: 1s;
+}
+@keyframes profile_pic_enter{
+	from{
+		left: -100%;
+		opacity: 0;
+	}
+	to{
+		left: 0;
+		opacity: 1;
+	}
 }
 #artist-name-show{
 	border-bottom: 2px solid black;
@@ -39,6 +52,17 @@
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
+	position: relative;
+	animation-name: profile_info_enter;
+	animation-duration: 0.5s;
+}
+@keyframes profile_info_enter{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
 }
 #artist-info-div span{
 	margin-top: 0.5em;
@@ -104,8 +128,16 @@
 	padding: 0.4em;
 	border-radius: 5px;
 }
+#profile-artist-songs-div{
+	position: relative;
+	animation-name: user_enter;
+	animation-duration: 1.5s;
+}
+.table-rating-div{
+	display: inline;
+}
 .table-rating-div .star-rating-div{
-	width: 15%;
+	width: 1em;
 	height: 1em;
 	margin: 0;
 	padding: 0;

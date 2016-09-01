@@ -2,12 +2,10 @@
 	background: linear-gradient(#f2f2f2, #cccccc);
 	color: black;
 	display: inline-block;
-	border: 1em groove skyblue;
+	border: 1em groove white;
 	text-align: center;
 	padding: 1%;
-	/*background: linear-gradient(#262626, black);*/
 	max-height: 60%;
-	/*color: white;*/
 	position: relative;
 	animation-name: popup_show;
 	animation-duration: 1.5s;
