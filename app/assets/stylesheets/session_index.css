@@ -58,12 +58,13 @@
 		list-style-type: none;
 		/*color: #e60000;*/
 		font-family: 'Rokkitt', serif;
-		font-size: 1.7em;
+		font-size: 1.5em;
+		line-height: 120%;
 	}
 	.services-you-us p{
 		font-family: 'Rokkitt', serif;
-		font-size: 1.5em;
-		line-height: 110%;
+		font-size: 1.35em;
+		line-height: 120%;
 	}
 
 #services-artists {
