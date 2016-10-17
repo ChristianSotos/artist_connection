@@ -36,6 +36,9 @@ gem "paperclip", "~> 5.0.0"
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#for server file uploads
+gem 'aws-sdk', '~> 2'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
