@@ -9,7 +9,7 @@ class Song < ActiveRecord::Base
 	validates :name, presence:true
 	validates :user, :genre, presence:true
 	#validates_attachment_presence :audio_file
-	validates_attachment_content_type :audio_file, :content_type => ["audio/mp3", "audio/x-mp3", "audio/mp4", "audio/x-mp4", "audio/m4a", "audio/x-m4a", "audio/m4p", "audio/x-m4p", "audio/mpeg", "audio/x-mpeg"]
+	validates_attachment_content_type :audio_file, :content_type => ["audio/mp3", "audio/x-mp3", "audio/mp4", "audio/x-mp4", "audio/m4a", "audio/x-m4a", "audio/m4p", "audio/x-m4p", "audio/mpeg", "audio/x-mpeg", "audio/mpeg3", "audio/x-mpeg3", "audio/x-mpegaudio"]
 
 	before_create do
 		self.reviewed = false
