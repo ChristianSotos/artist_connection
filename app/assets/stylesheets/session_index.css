@@ -39,7 +39,7 @@
 	opacity: .9;
 	color: black;
 	padding: 5% 20%;
-	text-align: center; 
+	text-align: justify; 
 	display: block;
 	margin: 0% auto;
 }
@@ -48,6 +48,7 @@
 		margin: 1%;
 		font-family: 'Khand', sans-serif;
 		color: #e60000;
+		text-align: center;
 	}
 	.services-you-us ul {
 		text-decoration: none;
@@ -55,7 +56,7 @@
 	}
 	.services-you-us li {
 		font-weight: bolder;
-		list-style-type: none;
+		/*list-style-type: none;*/
 		/*color: #e60000;*/
 		font-family: 'Rokkitt', serif;
 		font-size: 1.5em;
