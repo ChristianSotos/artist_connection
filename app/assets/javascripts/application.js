@@ -21,7 +21,7 @@ $(document).ready(function(){
 		$.get(url, function(res){
 			$('#sidebar > div').fadeOut(500);
 			setTimeout(function(){
-					$('#sidebar').html(res);
+				$('#sidebar').html(res);
 			},500);
 		})
 	})
